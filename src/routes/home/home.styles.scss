@@ -1,15 +1,28 @@
 .Home-Page
 {
-    .profile-picture
+    .profile-picture-container
     {
-        border-width: 5px;
+        background-color: black;
+        border-width: 1px;
         border-color: black;
         position: absolute;
-        left: 15px;
+        left: 5px;
+        height: 520;
+        width: 420;
+    }
+    .profile-picture
+    {
+        background-color: black;
+        border-width: 1px;
+        border-color: black;
+        position: absolute;
+        left: 5px;
+        height: 520;
+        width: 400;
     }
     .infoCard
     {
-        width: 50%;
+        width: 45%;
         margin: 0 auto;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 20px;
@@ -22,7 +35,7 @@
         -moz-osx-font-smoothing: grayscale;
         backface-visibility: hidden;
         position: absolute;
-        right: 15px;
+        right: 10px;
 
 
         transform: translateZ(0);
