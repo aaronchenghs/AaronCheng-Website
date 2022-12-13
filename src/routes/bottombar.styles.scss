@@ -1,0 +1,32 @@
+.bottombar {
+    height: 60px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid lightgray;
+    box-shadow: 0 0 10px rgb(171, 171, 171);
+
+    background: rgb(32, 32, 56);
+
+    .extlinks-container
+    {
+      width: 25%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: absolute;
+      right: 1px;
+      bottom: 2px;
+      justify-content: flex-end;
+    }
+
+    .powered
+    {
+      font-size: 12px;
+      color:white;
+    }
+
+  }

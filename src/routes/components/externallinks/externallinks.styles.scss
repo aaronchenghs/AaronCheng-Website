@@ -1,0 +1,22 @@
+.ext-box-container
+{
+  display: flex;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+.ext-box
+{ 
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+.ext-box:hover
+{
+  transform: scale(1.05);
+}
+.ext-link
+{
+  padding: 2px 2px;
+  cursor: pointer;
+}

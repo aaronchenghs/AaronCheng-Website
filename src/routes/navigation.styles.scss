@@ -1,0 +1,32 @@
+.navigation {
+    height: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    align-items: center;
+    border-bottom: 2px solid rgb(181, 180, 180);
+    box-shadow: 0 0 10px rgb(143, 143, 143);
+    background: rgb(32, 32, 56);
+
+    .box
+    {
+      padding-left: 25px;
+      padding-top: 4px;
+      
+      -moz-osx-font-smoothing: grayscale;
+      backface-visibility: hidden;
+      transform: translateZ(0);
+      transition: transform 0.25s ease-out;
+    }
+    .box:hover
+    {
+      transform: scale(1.10);
+    }
+
+    .logo-container 
+    {
+      height: 90%;
+      width: 60px;
+    }
+}

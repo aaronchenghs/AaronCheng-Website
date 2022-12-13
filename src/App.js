@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navigation from './routes/navigation.components';
+import Home from './routes/home/home.component';
+import { Route, Routes } from 'react-router-dom';
+import ContactMe from './routes/contactme/contactme.component';
+import Portfolio from './routes/portfolio/portfolio.component';
+import BottomBar from './routes/bottombar.components.jsx'
+import Feedback from './routes/feedback/feedback.component';
 
-function App() {
+const App = () =>
+{
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <div className= 'website'>
+    <Routes>
+
+      <Route path = '/' element = {<Navigation />}>
+
+        <Route index element={<Home />}/>
+        <Route path ='contactme' element = {<ContactMe />} />
+        <Route path ='portfolio' element = {<Portfolio />} />
+        <Route path = 'feedback' element = {<Feedback />} />
+
+      </Route>
+
+    </Routes>
+
+    <BottomBar></BottomBar>
+  </div>
   );
 }
 
