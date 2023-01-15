@@ -1,49 +1,93 @@
+.Page-Header
+{
+    margin-bottom: 4px;
+    border: 1.5px solid rgba(0, 0, 0, 0.383);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ebebeb86;
+    box-shadow: 0 0 8px rgb(75, 75, 75);
+    display: flex;
+    justify-content: center;
+    .Header-Text
+    {
+        font-family: 'Abel';
+    }
+}
+
 .Home-Page
 {
-    .profile-picture-container
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    .breast-container
     {
-        background-color: black;
-        border-width: 1px;
-        border-color: black;
-        position: absolute;
-        left: 5px;
-        height: 520;
-        width: 420;
-    }
-    .profile-picture
-    {
-        background-color: black;
-        border-width: 1px;
-        border-color: black;
-        position: absolute;
-        left: 5px;
-        height: 520;
-        width: 400;
-    }
-    .infoCard
-    {
-        width: 45%;
+        width: 99%;
         margin: 0 auto;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-gap: 20px;
+        background: rgb(255, 255, 255);
         display: flex;
-        flex-direction: column;
-        background-color: #95a2da;
-        border: 1.5px solid rgb(0, 0, 0);
+    }
+
+    $bioSideMargin: 5px;
+    .bio
+    {
+        width: 99%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        background-color: #b8c3f379;
+        border: 1.5px solid rgba(51, 51, 51, 0.384);
         border-radius: 5px;
-        padding: 25px;
+
+        margin-top: $bioSideMargin;
+        margin-bottom: $bioSideMargin;
         -moz-osx-font-smoothing: grayscale;
         backface-visibility: hidden;
-        position: absolute;
-        right: 10px;
+        justify-content:right;
+    }
 
+    .categoryDisplay
+    {
+        margin-left: 3px;
+    }
+    .category-info
+    {
+        flex: 1;
+        background-color: #ffffff5b;
+        border: 1px solid rgba(51, 51, 51, 0.384);
+        border-radius: 2px;
+        margin-right: 1px;
+    }
+    .categories-container
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .category
+    {
+        font-family: 'Abel';
+        background-color: #ffffff;
+        border: 1px solid rgba(51, 51, 51, 0.384);
+        border-radius: 2px;
+        height: 60px;
 
-        transform: translateZ(0);
-        transition: transform 0.25s ease-out;
-
-        .card-container:hover
+        .category-text
         {
-            transform: scale(1.05);
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    }
+    .category:hover
+    {
+        background-color: #e8e8e8;
+    }
+    .category:active
+    {
+        box-shadow: inset 1px 1px 4px rgb(101, 101, 101);
+        .category-text
+        {
+            color:rgb(75, 75, 75);
         }
     }
 }

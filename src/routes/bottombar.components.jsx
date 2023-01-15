@@ -8,7 +8,6 @@ const BottomBar = () =>
     return(
     <Fragment>
         <div className = 'bottombar'>
-            <div className = 'powered'>powered by react</div>
             <div className = 'extlinks-container'>
                 <ExternalLinks/>
             </div>

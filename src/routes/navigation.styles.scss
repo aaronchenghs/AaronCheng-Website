@@ -1,32 +1,53 @@
 .navigation {
-    height: 48px;
-    width: 100%;
+  height: 48px;
+  width: 100%;
+  display: flex;
+
+  justify-content: left;
+  align-content: space-between;
+  margin-bottom: -1px;
+  align-items: center;
+  border-bottom: 1px solid rgb(181, 180, 180);
+  background: rgb(4, 19, 37);
+
+  .nav-container {
     display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-    align-items: center;
-    border-bottom: 2px solid rgb(181, 180, 180);
-    box-shadow: 0 0 10px rgb(143, 143, 143);
-    background: rgb(32, 32, 56);
+    flex-direction: row;
+    flex: 1;
+    justify-content: flex-end;
+    padding-right: 15px;
+  }
 
-    .box
-    {
-      padding-left: 25px;
-      padding-top: 4px;
-      
-      -moz-osx-font-smoothing: grayscale;
-      backface-visibility: hidden;
-      transform: translateZ(0);
-      transition: transform 0.25s ease-out;
-    }
-    .box:hover
-    {
-      transform: scale(1.10);
-    }
+  .home-box {
+    font-size: large;
+    color: white;
+    font-family: 'Abel';
+    padding-left: 16px;
+    text-decoration: none;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+  .home-box:hover {
+    transform: scale(1.10);
+  }
 
-    .logo-container 
-    {
-      height: 90%;
-      width: 60px;
-    }
+  .box {
+    padding-left: 25px;
+    padding-top: 4px;
+
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+
+  .box:hover {
+    transform: scale(1.10);
+  }
+
+  .logo-container {
+    height: 90%;
+    width: 60px;
+  }
 }
