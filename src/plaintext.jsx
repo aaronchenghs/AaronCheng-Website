@@ -1,4 +1,3 @@
-import './routes/home/home.styles.scss';
 export const homecategories =
 {
   Education: 
