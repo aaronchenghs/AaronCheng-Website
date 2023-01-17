@@ -1,11 +1,86 @@
-.RealHome-Page
-{
-    height: 100%;
-    width: 100%;
+.RealHome-Page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
-.breast-container
-{
-    height: 200px;
-    //background: radial-gradient(#ffffff, #f1f8ff);
-    
+.stats-container {
+  height: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-container {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+$buttonTransitionTime: 0.07s;
+$borderRadius: 4px;
+%test {
+  position: absolute;
+  content: "";
+  transition: all $buttonTransitionTime;
+}
+.toVenturesButton {
+  display: inline-block;
+  padding: 5px 10px;
+  margin-top: 5px;
+  color: white;
+  transform: translate(-5%, -5%);
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: 'Abel';
+  font-size: 1.5vw;
+  transition: all $buttonTransitionTime;
+  background-color: #3498db;
+
+  border-width: 1px;
+  border-radius: $borderRadius;
+  border-bottom-right-radius: 0px;
+}
+.toVenturesButton:before { //bottom side
+  @extend %test;
+  bottom: -15px;
+  height: 15px;
+  width: 102%;
+  left: 6.5px;
+  transform: skewX(45deg);
+  background-color: darken(#3498db, 20%);
+
+  border-radius: $borderRadius;
+  border-top-right-radius: 0px;
+}
+
+.toVenturesButton:after { //right side
+  @extend %test;
+  right: -15px;
+  height: 102%;
+  width: 15px;
+  bottom: -8px;
+  transform: skewY(45deg);
+  background-color: darken(#3498db, 30%);
+
+  border-radius: $borderRadius;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 3px;
+}
+
+.toVenturesButton:active {
+  margin-left: 10px;
+  margin-top: 10px;
+  
+  &::before {
+    bottom: -5px;
+    height: 5px;
+    left: 2px;
+  }
+
+  &::after {
+    right: -6px;
+    width: 6px;
+    bottom: -4px;
+  }
 }

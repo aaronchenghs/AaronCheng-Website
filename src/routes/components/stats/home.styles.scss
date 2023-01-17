@@ -1,27 +1,11 @@
-.Page-Header
-{
-    margin-bottom: 4px;
-    border: 1.5px solid rgba(0, 0, 0, 0.383);
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    background-color: #ebebeb86;
-    box-shadow: 0 0 8px rgb(75, 75, 75);
-    display: flex;
-    justify-content: center;
-    .Header-Text
-    {
-        font-family: 'Abel';
-    }
-}
-
 .Home-Page
 {
     display: flex;
     flex-direction: column;
     flex: 1;
     height: 100%;
-    width: 95%;
-    margin-top: 10px;
+    margin-top: 15px;
+
     .breast-container
     {
         width: 99%;
@@ -29,16 +13,16 @@
         background: rgb(255, 255, 255);
         display: flex;
     }
+    
 
-    $bioSideMargin: 5px;
+    $bioSideMargin: 40px;
     .bio
     {
-        width: 100%;
-        height: 600px;
+        width: 98%;
+        height: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: row;
-        background-color: #b8c3f379;
         border: 1.5px solid rgba(51, 51, 51, 0.384);
         border-radius: 5px;
 
@@ -72,7 +56,8 @@
         background-color: #ffffff;
         border: 1px solid rgba(51, 51, 51, 0.384);
         border-radius: 2px;
-        height: 60px;
+        height: 4vw;
+        width: 4vw;
 
         .category-text
         {
