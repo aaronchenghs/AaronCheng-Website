@@ -1,3 +1,5 @@
+@import '../../theme.scss';
+
 .RealHome-Page {
   display: flex;
   flex-direction: column;
@@ -16,6 +18,8 @@
 .button-container {
   width: 100%;
   height: 120px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,62 +30,55 @@ $borderRadius: 4px;
 
 %test {
   position: absolute;
-  content: "";
-  transition: all $buttonTransitionTime;
+	content: '';
+	transition: all $buttonTransitionTime;
 }
 
-.toVenturesButton {
-  display: inline-block;
-  padding: 6px 10px;
-  color: rgb(4, 19, 37);
-  transform: translate(-5%, -5%);
-  vertical-align: middle;
-  text-decoration: none;
-  font-family: 'Abel';
-  font-size: 1.2vw;
-  transition: all $buttonTransitionTime;
-  background-color: white;
+.toVenturesButton { 
+	display: inline-block; 
+	padding: 20px 40px;
+	color: white;
+	transform: translate(-10%, -10%);
+	font-family: 'Abel';
+	text-decoration: none;
+	font-size: 1vw;
+	transition: all $buttonTransitionTime;
+	background-color: $primary;
+  border-width: 0px;
 
-  border-width: 1px;
-}
+	&::before { //bottom side 
+    @extend %test;
+		bottom: -15px;
+		height: 17px;
+		width: 100%;
+		left: 8px;
+		transform: skewX(45deg);
+		background-color: darken($primary, 20%);
+	}
 
-.toVenturesButton:before {
-  //bottom side
-  @extend %test;
-  bottom: -14px;
-  height: 13px;
-  width: 109%;
-  left: 6px;
-  transform: skewX(45deg);
-  background-color: darken(white, 20%);
+	&::after { // right side
+		@extend %test;
+		right: -15px;
+		height: 99%;
+		width: 16px;
+		bottom: -7px;
+		transform: skewY(45deg);
+		background-color: darken($primary, 30%);
+	}
 
-}
-
-.toVenturesButton:after {
-  //right side
-  @extend %test;
-  right: -15px;
-  height: 104%;
-  width: 14px;
-  bottom: -7px;
-  transform: skewY(45deg);
-  background-color: darken(white, 30%);
-
-}
-
-.toVenturesButton:active {
-  margin-left: 10px;
-  margin-top: 10px;
-
-  &::before {
-    bottom: -5px;
-    height: 4px;
-    left: 1px;
-  }
-
-  &::after {
-    right: -6px;
-    width: 5px;
-    bottom: -2px;
-  }
+	&:active {
+		margin-left: 10px;
+		margin-top: 10px;
+		&::before {
+			bottom: -5px;
+			height: 5px;
+			left: 3px;
+		}
+		
+    &::after {
+			right: -5px;
+			width: 5px;
+			bottom: -3px;
+		}	
+	}
 }
