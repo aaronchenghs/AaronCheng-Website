@@ -32,48 +32,41 @@ $borderRadius: 4px;
 
 .toVenturesButton {
   display: inline-block;
-  padding: 5px 10px;
-  color: white;
+  padding: 6px 10px;
+  color: rgb(4, 19, 37);
   transform: translate(-5%, -5%);
   vertical-align: middle;
   text-decoration: none;
   font-family: 'Abel';
   font-size: 1.2vw;
   transition: all $buttonTransitionTime;
-  background-color: rgb(4, 19, 37);
+  background-color: white;
 
   border-width: 1px;
-  border-radius: $borderRadius;
-  border-bottom-right-radius: 0px;
 }
 
 .toVenturesButton:before {
   //bottom side
   @extend %test;
-  bottom: -15px;
-  height: 15px;
-  width: 102%;
-  left: 6.5px;
+  bottom: -14px;
+  height: 13px;
+  width: 109%;
+  left: 6px;
   transform: skewX(45deg);
-  background-color: darken(rgb(4, 19, 37), 20%);
+  background-color: darken(white, 20%);
 
-  border-radius: $borderRadius;
-  border-top-right-radius: 0px;
 }
 
 .toVenturesButton:after {
   //right side
   @extend %test;
   right: -15px;
-  height: 102%;
-  width: 15px;
-  bottom: -8px;
+  height: 104%;
+  width: 14px;
+  bottom: -7px;
   transform: skewY(45deg);
-  background-color: darken(rgb(4, 19, 37), 30%);
+  background-color: darken(white, 30%);
 
-  border-radius: $borderRadius;
-  border-bottom-left-radius: 0px;
-  border-top-left-radius: 3px;
 }
 
 .toVenturesButton:active {
@@ -82,13 +75,13 @@ $borderRadius: 4px;
 
   &::before {
     bottom: -5px;
-    height: 5px;
-    left: 2px;
+    height: 4px;
+    left: 1px;
   }
 
   &::after {
     right: -6px;
-    width: 6px;
-    bottom: -4px;
+    width: 5px;
+    bottom: -2px;
   }
 }
