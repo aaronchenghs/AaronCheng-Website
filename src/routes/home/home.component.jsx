@@ -24,10 +24,6 @@ const Home = () => {
           <text className='Header-Text'>Profile</text>
         </div>
 
-        <div className='breast-container'>
-          hello
-        </div>
-
         <div className='bio'>
 
           <div className='category-info'>{categoryDisplay}</div>

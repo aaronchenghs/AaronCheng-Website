@@ -1,11 +1,14 @@
-.website
-{
-    background-image: url("./assets/bg1.jpg"); 
-    background-color: #cccccc; 
-    height: 100%;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+.website {
+    //background-image: url("./assets/bg1.jpg");
+    background: linear-gradient(90deg,
+            rgba(229, 242, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 50%,
+            rgba(229, 242, 255, 1) 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
