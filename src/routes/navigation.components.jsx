@@ -19,23 +19,21 @@ const Navigation = () => {
 
         <div className='nav-container'>
           <div className='box'>
-            <Link className='logo-container' to='/resume'>
-              <HomeLogo className='logo' />
-            </Link>
-          </div>
-          <div className='box'>
             <Link className='logo-container' to='/portfolio'>
               <Portfolio className='logo' />
+              <div className='logo-title'>Portfolio</div>
             </Link>
           </div>
           <div className='box'>
             <Link className='logo-container' to='/contactme'>
               <Contact className='logo' />
+              <div className='logo-title'>Contact Me</div>
             </Link>
           </div>
           <div className='box'>
             <Link className='logo-container' to='/feedback'>
               <Feedback className='logo' />
+              <div className='logo-title'>Leave Feedback</div>
             </Link>
           </div>
 

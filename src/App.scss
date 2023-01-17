@@ -1,11 +1,14 @@
+@import './theme.scss';
+
 .website {
     //background-image: url("./assets/bg1.jpg");
     background: linear-gradient(90deg,
-            rgba(229, 242, 255, 1) 0%,
-            rgba(255, 255, 255, 1) 50%,
-            rgba(229, 242, 255, 1) 100%);
+        $sub-primary) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        $sub-primary 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    min-width: $page-minimum-width;
 }

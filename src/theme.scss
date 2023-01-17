@@ -1,7 +1,13 @@
 
 $primary: rgb(4, 19, 37);
+$sub-primary: rgba(229, 242, 255, 1);
+$theme-font: 'Abel';
+$page-minimum-width: 538px;
 
 :export
 {
     darknavy: $primary;
+    themefont: $theme-font;
+    pageminwidth: $page-minimum-width;
+    subprimary: $sub-primary;
 }

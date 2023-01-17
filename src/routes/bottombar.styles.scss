@@ -1,3 +1,5 @@
+@import '../theme.scss';
+
 .bottombar {
   height: 4.5vw;
   min-height: 70px;
@@ -8,6 +10,7 @@
   margin-bottom: 10px;
   border-radius: 5px;
   margin-top: 10px;
+  min-width: $page-minimum-width;
 
   border-bottom: 4px solid rgb(4, 19, 37);
   border-top: 4px solid rgb(4, 19, 37);

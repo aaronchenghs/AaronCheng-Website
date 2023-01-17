@@ -1,9 +1,12 @@
+@import '../theme.scss';
+
 .navigation {
   height: 4.5vw;
   min-height: 70px;
   width: 65%;
   margin-top: 10px;
   display: flex;
+  min-width: $page-minimum-width;
 
   justify-content: left;
   align-content: space-between;
@@ -12,8 +15,8 @@
   border-radius: 5px;
   margin-bottom: 10px;
 
-  border-bottom: 4px solid rgb(4, 19, 37);
-  border-top: 4px solid rgb(4, 19, 37);
+  border-bottom: 4px solid $primary;
+  border-top: 4px solid $primary;
   box-shadow: 0 0 10px rgb(171, 171, 171);
   background: #ffffff;
 
@@ -27,7 +30,7 @@
 
   .home-box {
     font-size: x-large;
-    color: rgb(4, 19, 37);
+    color: $primary;
     font-family: 'Abel';
     padding-left: 25px;
     text-decoration: none;
@@ -55,6 +58,16 @@
 
   .logo-container {
     height: 90%;
-    width: 60px;
+    width: 100px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-title
+  {
+    font-family: $theme-font;
+    color: $primary;
   }
 }
