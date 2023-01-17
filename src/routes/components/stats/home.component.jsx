@@ -16,6 +16,9 @@ export const Home = () => {
   return (
     <Fragment>
       <body className="Home-Page">
+        <div className="portrait">
+          SKINS
+        </div>
         <div className="bio">
           <div className="category-info">{categoryDisplay}</div>
           <div className="categories-container">
