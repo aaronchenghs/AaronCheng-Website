@@ -8,16 +8,17 @@ import "./realhome.styles.scss";
 const RealHome = () => {
   return (
     <Fragment>
-      <body className="RealHome-Page">
+      <div className = 'intro-container'>
 
+      </div>
+      <body className="RealHome-Page">
+        <div className="button-container">
+          <button className="toVenturesButton">Explore</button>
+        </div>
         <div className="stats-container">
           <Home></Home>
         </div>
-        <div className = 'button-container'>
-            <button className="toVenturesButton">Explore</button>
-        </div>
         <div></div>
-
       </body>
       <BottomBar></BottomBar>
     </Fragment>

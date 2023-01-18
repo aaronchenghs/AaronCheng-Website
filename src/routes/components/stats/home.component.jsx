@@ -23,16 +23,16 @@ export const Home = () => {
           <div className="category-info">{categoryDisplay}</div>
           <div className="categories-container">
             
-            <button className="category" onClick={openEducation}>
+            <button className="categoryButton" onClick={openEducation}>
               <text className="category-text">Summary</text>
             </button>
-            <button className="category" onClick={openToolbox}>
+            <button className="categoryButton" onClick={openToolbox}>
               <text className="category-text">Skills</text>
             </button>
-            <button className="category" onClick={openExperience}>
+            <button className="categoryButton" onClick={openExperience}>
               <text className="category-text">Experience</text>
             </button>
-            <button className="category" onClick={openOrigins}>
+            <button className="categoryButton" onClick={openOrigins}>
               <text className="category-text">Story</text>
             </button>
           </div>

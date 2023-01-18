@@ -1,4 +1,11 @@
-@import '../../theme.scss';
+@import "../../theme.scss";
+$buttonTransitionTime: 0.07s;
+$borderRadius: 4px;
+%test {
+  position: absolute;
+  content: "";
+  transition: all $buttonTransitionTime;
+}
 
 .RealHome-Page {
   display: flex;
@@ -25,60 +32,93 @@
   align-items: center;
 }
 
-$buttonTransitionTime: 0.07s;
-$borderRadius: 4px;
+.intro-container {
+  margin-top: 25px;
+  background-color: white;
+  border: 3px solid $primary;
+  height: 800px;
+  width: 55%;
 
-%test {
-  position: absolute;
-	content: '';
-	transition: all $buttonTransitionTime;
+  display: inline-block;
+  padding: 20px 40px;
+  color: white;
+  transform: translate(-2%, -2%);
+  font-family: "Abel";
+  text-decoration: none;
+  font-size: 1vw;
+  transition: all $buttonTransitionTime;
+  background-color: white;
+
+  &::before {
+    //bottom side
+    @extend %test;
+    bottom: -15px;
+    height: 17px;
+    width: 100%;
+    left: 8px;
+    transform: skewX(45deg);
+    background-color: darken(white, 20%);
+  }
+
+  &::after {
+    // right side
+    @extend %test;
+    right: -15px;
+    height: 99%;
+    width: 16px;
+    bottom: -7px;
+    transform: skewY(45deg);
+    background-color: darken(white, 30%);
+  }
 }
 
-.toVenturesButton { 
-	display: inline-block; 
-	padding: 20px 40px;
-	color: white;
-	transform: translate(-10%, -10%);
-	font-family: 'Abel';
-	text-decoration: none;
-	font-size: 1vw;
-	transition: all $buttonTransitionTime;
-	background-color: $primary;
+.toVenturesButton {
+  display: inline-block;
+  padding: 20px 40px;
+  color: white;
+  transform: translate(-10%, -10%);
+  font-family: "Abel";
+  text-decoration: none;
+  font-size: 1vw;
+  transition: all $buttonTransitionTime;
+  background-color: $primary;
   border-width: 0px;
 
-	&::before { //bottom side 
+  &::before {
+    //bottom side
     @extend %test;
-		bottom: -15px;
-		height: 17px;
-		width: 100%;
-		left: 8px;
-		transform: skewX(45deg);
-		background-color: darken($primary, 20%);
-	}
+    bottom: -15px;
+    height: 17px;
+    width: 100%;
+    left: 8px;
+    transform: skewX(45deg);
+    background-color: darken($primary, 20%);
+  }
 
-	&::after { // right side
-		@extend %test;
-		right: -15px;
-		height: 99%;
-		width: 16px;
-		bottom: -7px;
-		transform: skewY(45deg);
-		background-color: darken($primary, 30%);
-	}
+  &::after {
+    // right side
+    @extend %test;
+    right: -15px;
+    height: 99%;
+    width: 16px;
+    bottom: -7px;
+    transform: skewY(45deg);
+    background-color: darken($primary, 30%);
+  }
 
-	&:active {
-		margin-left: 10px;
-		margin-top: 10px;
-		&::before {
-			bottom: -5px;
-			height: 5px;
-			left: 3px;
-		}
-		
+  &:active {
+    margin-left: 10px;
+    margin-top: 10px;
+    &::before {
+      bottom: -5px;
+      height: 5px;
+      left: 3px;
+    }
+
     &::after {
-			right: -5px;
-			width: 5px;
-			bottom: -3px;
-		}	
-	}
+      right: -5px;
+      width: 5px;
+      bottom: -3px;
+    }
+  }
 }

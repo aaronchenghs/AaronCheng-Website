@@ -7,6 +7,7 @@
   margin-top: 10px;
   display: flex;
   min-width: 648px;
+  min-height: 130px;
 
   justify-content: left;
   align-content: space-between;
@@ -16,7 +17,7 @@
 
   border-bottom: 4px solid $primary;
   border-top: 4px solid $primary;
-  box-shadow: 0 0 10px rgb(171, 171, 171);
+  box-shadow: 10px 10px 10px rgb(157, 157, 157);
   background: #ffffff;
 
   .nav-container {
@@ -32,10 +33,10 @@
     color: $primary;
     font-family: 'Abel';
     width: 15%;
-    min-width: 154px;
+    min-width: 200px;
 
     font-size: 34px;
-    padding-left: 35px;
+    padding-left: 50px;
     text-decoration: none;
     backface-visibility: hidden;
     transform: translateZ(0);
@@ -46,9 +47,8 @@
   }
 
   .box {
-    padding-left: 25px;
     padding-top: 4px;
-    width: 15%;
+    width: 12%;
     min-width: 122px;
 
     -moz-osx-font-smoothing: grayscale;
@@ -70,9 +70,15 @@
     align-items: center;
     justify-content: center;
   }
+  .logo
+  {
+    max-width: 90px;
+    max-height: 90px;
+  }
   .logo-title
   {
     font-family: $theme-font;
     color: $primary;
+    font-size: larger;
   }
 }

@@ -11,10 +11,11 @@
   border-radius: 5px;
   margin-top: 10px;
   min-width: $page-minimum-width;
+  min-height: 130px;
 
   border-bottom: 4px solid rgb(4, 19, 37);
   border-top: 4px solid rgb(4, 19, 37);
-  box-shadow: 0 0 10px rgb(171, 171, 171);
+  box-shadow: 10px 10px 10px rgb(157, 157, 157);
   background: #ffffff;
 
   .extlinks-container {
@@ -25,6 +26,10 @@
     right: 1px;
     bottom: 2px;
     justify-content: flex-end;
+  }
+  .logo
+  {
+  
   }
 
 }
