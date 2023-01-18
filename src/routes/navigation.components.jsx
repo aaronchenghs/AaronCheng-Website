@@ -1,6 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
 import { Fragment } from "react";
-import { ReactComponent as HomeLogo } from '../assets/logo.svg';
 import { ReactComponent as Portfolio } from '../assets/portfolio.svg';
 import { ReactComponent as Contact } from '../assets/contact.svg';
 import { ReactComponent as Feedback } from '../assets/feedback.svg';
@@ -15,7 +14,6 @@ const Navigation = () => {
         <Link className='home-box' to='/'>
           Aaron Cheng
         </Link>
-
 
         <div className='nav-container'>
           <div className='box'>

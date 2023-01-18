@@ -22,17 +22,18 @@ export const Home = () => {
         <div className="bio">
           <div className="category-info">{categoryDisplay}</div>
           <div className="categories-container">
+            
             <button className="category" onClick={openEducation}>
-              <text className="category-text">Education</text>
+              <text className="category-text">Summary</text>
             </button>
             <button className="category" onClick={openToolbox}>
-              <text className="category-text">Tool Box</text>
+              <text className="category-text">Skills</text>
             </button>
             <button className="category" onClick={openExperience}>
               <text className="category-text">Experience</text>
             </button>
             <button className="category" onClick={openOrigins}>
-              <text className="category-text">Origins</text>
+              <text className="category-text">Story</text>
             </button>
           </div>
         </div>

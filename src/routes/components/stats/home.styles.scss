@@ -1,3 +1,5 @@
+@import '../../../theme.scss';
+
 .Home-Page {
     display: flex;
     flex-direction: row;
@@ -6,9 +8,9 @@
     width: 100%;
 
     .portrait {
-        height: 780px;
-        width: 30%;
-        background-color: rgb(4, 19, 37);
+        height: 800px;
+        width: 25%;
+        background-color: $primary;
     }
 
     .breast-container {
