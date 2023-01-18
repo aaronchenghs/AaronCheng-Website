@@ -1,0 +1,76 @@
+@import "../../globals/theme.scss";
+$buttonTransitionTime: 0.07s;
+$borderRadius: 4px;
+%test {
+  position: absolute;
+  content: "";
+  transition: all $buttonTransitionTime;
+}
+
+.RealHome-Page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 96%;
+}
+
+.stats-container {
+  height: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.button-container {
+  width: 100%;
+  height: 120px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-container {
+  margin-top: 25px;
+  background-color: white;
+  border: 2px solid $primary;
+  border-radius: 4px;
+  height: 800px;
+  width: 55%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  transform: translate(-2%, -2%);
+  font-family: "Abel";
+  text-decoration: none;
+  font-size: 1vw;
+  background-color: white;
+
+  &::before {
+    //bottom side
+    @extend %test;
+    bottom: -19px;
+    height: 17px;
+    width: 100%;
+    left: 10px;
+    transform: skewX(45deg);
+    background-color: darken(white, 15%);
+  }
+
+  &::after {
+    // right side
+    @extend %test;
+    right: -18px;
+    height: 100%;
+    width: 16px;
+    bottom: -9px;
+    transform: skewY(45deg);
+    background-color: darken(white, 25%);
+  }
+
+}

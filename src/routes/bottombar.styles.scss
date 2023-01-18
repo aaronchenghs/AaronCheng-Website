@@ -1,4 +1,4 @@
-@import '../theme.scss';
+@import '../globals/theme.scss';
 
 .bottombar {
   height: 4.5vw;
@@ -9,7 +9,7 @@
   align-items: center;
   margin-bottom: 10px;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 50px;
   min-width: $page-minimum-width;
   min-height: 130px;
 

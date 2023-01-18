@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Fragment } from "react";
 
-import "./home.styles.scss";
-import { homecategories } from '../../../plaintext.jsx';
+import "./stats.styles.scss";
+import { homecategories } from '../../../globals/plaintext.jsx';
 
-export const Home = () => {
+export const Stats = () => {
   const [CategorySelection, SetCategorySelection] = useState("Education");
   const openEducation = () => SetCategorySelection("Education");
   const openToolbox = () => SetCategorySelection("ToolBox");
@@ -41,4 +41,4 @@ export const Home = () => {
     </Fragment>
   );
 };
-export default Home;
+export default Stats;
