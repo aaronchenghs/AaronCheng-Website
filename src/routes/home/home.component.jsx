@@ -1,6 +1,5 @@
 import React from "react";
 import { Fragment } from "react";
-import BottomBar from "../bottombar.components.jsx";
 import Stats from "./stats/stats.component";
 import VentureButton from "./explore_button/venturebutton.component.jsx";
 import Introduction from "./introduction/introduction.component.jsx";
@@ -22,7 +21,6 @@ const Home = () => {
           <Stats></Stats>
         </div>
       </body>
-      <BottomBar></BottomBar>
     </Fragment>
   );
 };

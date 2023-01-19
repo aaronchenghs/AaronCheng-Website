@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import BottomBar from '../bottombar.components.jsx';
 
 import './portfolio.styles.scss';
 
@@ -9,7 +8,6 @@ const Portfolio = () => {
       <div className='Page-Header'>
         <text className='Header-Text'>Portfolio</text>
       </div>
-      <BottomBar></BottomBar>
     </Fragment>
 
   )
