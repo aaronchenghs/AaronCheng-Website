@@ -1,9 +1,61 @@
 @import '../../../globals/theme.scss';
+$buttonTransitionTime: 0.07s;
+$borderRadius: 4px;
 
-.Contact-Container
-{
+%test {
+    position: absolute;
+    content: "";
+    transition: all 0.5s;
+}
+
+.Contact-Container {
     width: 75%;
     height: 300px;
-    border: 2px solid $primary;
-    border-radius: 4px;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    transform: translate(-2%, -2%);
+    background-color: white;
+
+    &::before {
+        //bottom side
+        @extend %test;
+        bottom: -19px;
+        height: 17px;
+        width: 100%;
+        left: 10px;
+        transform: skewX(45deg);
+        background-color: darken(white, 15%);
+    }
+
+    &::after {
+        // right side
+        @extend %test;
+        right: -18px;
+        height: 100%;
+        width: 16px;
+        bottom: -9px;
+        transform: skewY(45deg);
+        background-color: darken(white, 25%);
+    }
+}
+
+.Contact-Container:hover {
+    transition: all 0.5s;
+    margin-left: -20px;
+    margin-top: -20px;
+    
+
+    &::before {
+        //bottom
+        bottom: -35px;
+        height: 35px;
+        left: 12px;
+    }
+
+    &::after {
+        //right
+        right: -30px;
+        width: 30px;
+        bottom: -15px;
+    }
 }
