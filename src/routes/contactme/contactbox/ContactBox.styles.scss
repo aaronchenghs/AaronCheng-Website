@@ -1,0 +1,9 @@
+@import '../../../globals/theme.scss';
+
+.Contact-Container
+{
+    width: 75%;
+    height: 300px;
+    border: 2px solid $primary;
+    border-radius: 4px;
+}
