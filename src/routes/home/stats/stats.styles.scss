@@ -57,11 +57,13 @@
   }
 
   $buttonTransitionTime: 0.1s;
+
   %test {
     position: absolute;
     content: "";
     transition: all $buttonTransitionTime;
   }
+
   .categoryButton {
     display: inline-block;
     font-family: "Abel";
@@ -75,6 +77,7 @@
     border-width: 0px;
     height: 100%;
     width: 100%;
+    max-width: 100%;
 
     &::before {
       //bottom side
@@ -100,7 +103,7 @@
 
     &:active {
       margin-left: 10px;
-      margin-top: 10px;
+
       &::before {
         bottom: -5px;
         height: 5px;

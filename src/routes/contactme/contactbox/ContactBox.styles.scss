@@ -9,9 +9,10 @@ $borderRadius: 4px;
 }
 
 .Contact-Container {
-    width: 75%;
-    height: 300px;
-    margin-bottom: 50px;
+    transition: all 2s;
+    width: 40%;
+    height: 250px;
+    margin-bottom: 9px;
     margin-top: 10px;
     transform: translate(-2%, -2%);
     background-color: white;
@@ -22,7 +23,7 @@ $borderRadius: 4px;
         bottom: -19px;
         height: 17px;
         width: 100%;
-        left: 10px;
+        left: 9px;
         transform: skewX(45deg);
         background-color: darken(white, 15%);
     }
@@ -30,32 +31,34 @@ $borderRadius: 4px;
     &::after {
         // right side
         @extend %test;
-        right: -18px;
+        right: -17px;
         height: 100%;
         width: 16px;
-        bottom: -9px;
+        bottom: -10px;
         transform: skewY(45deg);
         background-color: darken(white, 25%);
     }
 }
 
 .Contact-Container:hover {
-    transition: all 0.5s;
-    margin-left: -20px;
-    margin-top: -20px;
-    
+    transition: all .5s;
+    margin-left: -120px;
+    //margin-top: -30px;
+    box-shadow: 20px 10px 10px rgb(222, 222, 222);
 
     &::before {
         //bottom
-        bottom: -35px;
-        height: 35px;
-        left: 12px;
+        height: 29px;
+        left: 14px;
+        box-shadow: -15px 25px 15px rgb(222, 222, 222);
     }
 
     &::after {
         //right
-        right: -30px;
-        width: 30px;
-        bottom: -15px;
+        right: -28px;
+        width: 28px;
+        bottom: -5px;
+        height: 98%;
+        box-shadow: 25px 10px 15px rgb(222, 222, 222);
     }
 }
