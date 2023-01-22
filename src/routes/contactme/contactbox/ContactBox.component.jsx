@@ -3,12 +3,15 @@ import React from "react";
 import './ContactBox.styles.scss';
 
 const ContactBox = ({ icon }) => {
-    console.log(icon)
     return (
         <div className='Contact-Container'>
-            <div className='contact-thumb'>
+            <a className='contact-thumb' href={icon.link} target="_blank" rel="noreferrer">
                 <img className='contact-icon' src={icon.path} alt={`[  icon]`} />
-                <text className='icon-text'>{icon.name}</text>
+                <div className='icon-text'>{icon.name}</div>
+            </a>
+            <div className='contact-description-container'>
+                <div className='description'>{icon.description}</div>
+                <div className='tag'>{icon.tag}</div>
             </div>
         </div>
     )
