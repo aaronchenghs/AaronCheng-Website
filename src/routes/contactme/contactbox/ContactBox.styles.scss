@@ -8,6 +8,7 @@ $borderRadius: 4px;
     transition: all 0.5s;
 }
 
+$contact-sidesgap: 40px;
 .Contact-Container {
     transition: all 2s;
     width: 40%;
@@ -16,6 +17,11 @@ $borderRadius: 4px;
     margin-top: 10px;
     transform: translate(-2%, -2%);
     background-color: white;
+    font-family: $theme-font;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     &::before {
         //bottom side
@@ -43,7 +49,6 @@ $borderRadius: 4px;
 .Contact-Container:hover {
     transition: all .5s;
     margin-left: -120px;
-    //margin-top: -30px;
     box-shadow: 20px 10px 10px rgb(222, 222, 222);
 
     &::before {
@@ -61,4 +66,9 @@ $borderRadius: 4px;
         height: 98%;
         box-shadow: 25px 10px 15px rgb(222, 222, 222);
     }
+}
+
+.contact-icon {
+    margin-left: $contact-sidesgap;
+    height: 45%;
 }

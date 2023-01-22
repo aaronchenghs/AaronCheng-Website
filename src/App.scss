@@ -1,14 +1,27 @@
 @import './globals/theme.scss';
 
 .website {
-    //background-image: url("./assets/bg1.jpg");
     background: linear-gradient(90deg,
-        $sub-primary -30%,
-        rgb(255, 255, 255) 50%,
-        $sub-primary 130%);
+            $sub-primary -30%,
+            rgb(255, 255, 255) 50%,
+            $sub-primary 130%);
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     min-width: $page-minimum-width;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: $sub-primary;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 2px;
 }

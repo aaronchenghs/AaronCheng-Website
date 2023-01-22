@@ -1,11 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 import './ContactBox.styles.scss';
 
-const ContactBox = () => {
+const ContactBox = ({ icon }) => {
+    console.log(icon)
     return (
-        <div className="Contact-Container">
-
+        <div className='Contact-Container'>
+            <img className='contact-icon' src={icon.path} alt={`[  icon]`}/>
+            <text>{icon.name}</text>
         </div>
     )
 }
