@@ -6,8 +6,10 @@ const ContactBox = ({ icon }) => {
     console.log(icon)
     return (
         <div className='Contact-Container'>
-            <img className='contact-icon' src={icon.path} alt={`[  icon]`}/>
-            <text>{icon.name}</text>
+            <div className='contact-thumb'>
+                <img className='contact-icon' src={icon.path} alt={`[  icon]`} />
+                <text className='icon-text'>{icon.name}</text>
+            </div>
         </div>
     )
 }
