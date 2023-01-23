@@ -1,4 +1,4 @@
-export const Contact_HeaderText = 'Header!';
+export const Contact_HeaderText = 'Don\'t be shy; here are places you can connect with me 😊';
 
 export const iconInfos = [
     {
