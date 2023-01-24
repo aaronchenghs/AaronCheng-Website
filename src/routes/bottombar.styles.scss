@@ -1,23 +1,18 @@
 @import '../globals/theme.scss';
 
 .bottombar {
-  height: 4.5vw;
-  min-height: 70px;
-  width: 65%;
+  height: 6.5rem;
+  width: 60%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   margin-bottom: 25px;
   border-radius: 5px;
-  margin-top: 50px;
+  margin-top: 100px;
   min-width: $page-minimum-width;
   min-width: 771px;
-  min-height: 130px;
 
-  border-bottom: 4px solid $primary;
-  border-top: 4px solid $primary;
-  box-shadow: 10px 10px 10px rgb(157, 157, 157);
-  background: #ffffff;
+  box-shadow: 6px 6px 6px rgb(186, 186, 186);
 
   .extlinks-container {
     width: 25%;

@@ -17,12 +17,12 @@ export const Stats = () => {
     <Fragment>
       <body className="Home-Page">
         <div className="portrait">
-          SKINS
+          <img/>
         </div>
         <div className="bio">
           <div className="category-info">{categoryDisplay}</div>
           <div className="categories-container">
-            
+
             <button className="categoryButton" onClick={openEducation}>
               <text className="category-text">Summary</text>
             </button>

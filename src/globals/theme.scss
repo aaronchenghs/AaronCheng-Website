@@ -1,12 +1,12 @@
-
-$primary: #062940;
-$sub-primary: rgb(231, 243, 255);
-$theme-font: 'Abel';
+$primary: #530e05;
+$sub-primary: #ffebea;
+$title-font: '';
+$theme-font: 'Ubuntu';
 $page-minimum-width: 803px;
 
-:export
-{
+:export {
     darknavy: $primary;
+    titleFont: $title-font;
     themefont: $theme-font;
     pageminwidth: $page-minimum-width;
     subprimary: $sub-primary;

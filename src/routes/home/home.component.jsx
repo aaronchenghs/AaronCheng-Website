@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Fragment>
       <body className="RealHome-Page">
-        
+
         <div className="intro-container">
           <Introduction></Introduction>
         </div>

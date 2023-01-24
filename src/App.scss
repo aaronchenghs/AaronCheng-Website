@@ -2,9 +2,9 @@
 
 .website {
     background: linear-gradient(90deg,
-            $sub-primary -30%,
-            rgb(255, 255, 255) 50%,
-            $sub-primary 130%);
+            white -10%,
+            #f5f4ec 50%,
+            white 110%);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -17,11 +17,11 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: $sub-primary;
+    background: white;
     border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $primary;
+    background: $sub-primary;
     border-radius: 2px;
 }

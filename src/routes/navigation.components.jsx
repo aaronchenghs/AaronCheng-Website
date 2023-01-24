@@ -31,7 +31,7 @@ const Navigation = () => {
           <div className='box'>
             <Link className='logo-container' to='/feedback'>
               <Feedback className='logo' />
-              <div className='logo-title'>Leave Feedback</div>
+              <div className='logo-title'>Feedback</div>
             </Link>
           </div>
 
