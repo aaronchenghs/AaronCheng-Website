@@ -2,7 +2,7 @@
 
 .bottombar {
   height: 6.5rem;
-  width: 60%;
+  width: 65%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -12,7 +12,8 @@
   min-width: $page-minimum-width;
   min-width: 771px;
 
-  box-shadow: 6px 6px 6px rgb(186, 186, 186);
+  background-color: white;
+  box-shadow: 3px 3px 6px rgb(186, 186, 186);
 
   .extlinks-container {
     width: 25%;

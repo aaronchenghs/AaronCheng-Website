@@ -88,6 +88,7 @@ $contact-sidesgap: 2.5rem;
 
     .icon-text {
         font-size: 1.3vw;
+        color: $primary;
     }
 }
 
@@ -102,7 +103,7 @@ $contact-sidesgap: 2.5rem;
 }
 
 .tag {
-    color: darken($sub-primary, 40%);
+    color: $sub-primary;
 }
 
 .contact-description-container {

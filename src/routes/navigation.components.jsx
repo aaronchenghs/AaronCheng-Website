@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { ReactComponent as Portfolio } from '../assets/portfolio.svg';
 import { ReactComponent as Contact } from '../assets/contact.svg';
 import { ReactComponent as Feedback } from '../assets/feedback.svg';
+import { ReactComponent as Home } from '../assets/Home.svg';
 
 import './navigation.styles.scss';
 
@@ -16,6 +17,12 @@ const Navigation = () => {
         </Link>
 
         <div className='nav-container'>
+          <div className='box'>
+            <Link className='logo-container' to='/'>
+              <Home className='logo' />
+              <div className='logo-title'>Home</div>
+            </Link>
+          </div>
           <div className='box'>
             <Link className='logo-container' to='/portfolio'>
               <Portfolio className='logo' />
