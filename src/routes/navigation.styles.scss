@@ -13,7 +13,7 @@
   border-radius: 5px;
   margin-bottom: 40px;
   background-color: white;
-  box-shadow: 9px 9px 10px rgb(209, 209, 209);
+  box-shadow: 6px 7px 4px rgb(209, 209, 209);
 
   .nav-container {
     display: flex;
@@ -44,30 +44,8 @@
     width: 11%;
     min-width: 125px;
     max-width: 180px;
-
-    border-right: 1px solid rgb(181, 181, 181);
     -moz-osx-font-smoothing: grayscale;
     transition: transform 0.25s ease-out;
-  }
-
-  .box:hover {
-    transform: scale(1.10);
-  }
-
-  .boxhome {
-    padding-top: 4px;
-    width: 11%;
-    min-width: 125px;
-    max-width: 180px;
-
-    border-right: 1px solid rgb(181, 181, 181);
-    border-left: 1px solid rgb(181, 181, 181);
-    -moz-osx-font-smoothing: grayscale;
-    transition: transform 0.25s ease-out;
-  }
-
-  .boxhome:hover {
-    transform: scale(1.10);
   }
 
   .logo-container {
@@ -83,6 +61,7 @@
   .logo {
     max-width: 40px;
     max-height: 40px;
+    transition: transform 0.25s ease-out;
   }
 
   .logo-title {
@@ -90,4 +69,25 @@
     color: $primary;
     font-size: 1.1vw;
   }
+
+  .box:hover {
+    transition: transform 0.1s;
+    box-shadow: 2px 1px 4px inset rgb(183, 183, 183);
+    transition: transform 0.25s ease-out;
+
+    .logo {
+      transform: scale(1.10);
+    }
+  }
+
+  .selected-box {
+    padding-top: 4px;
+    width: 11%;
+    min-width: 125px;
+    max-width: 180px;
+    -moz-osx-font-smoothing: grayscale;
+    transition: transform 0.1s;
+    box-shadow: 3px 3px 4px inset rgb(148, 148, 148);
+  }
+
 }
