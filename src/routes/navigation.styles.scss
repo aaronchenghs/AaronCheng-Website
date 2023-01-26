@@ -13,13 +13,14 @@
   border-radius: 5px;
   margin-bottom: 40px;
   background-color: white;
-  box-shadow: 3px 3px 6px rgb(186, 186, 186);
+  box-shadow: 9px 9px 10px rgb(209, 209, 209);
+
   .nav-container {
     display: flex;
     flex-direction: row;
     flex: 1;
     justify-content: flex-end;
-    padding-right: 30px;
+    padding-right: 35px;
   }
 
   .home-box {
@@ -41,14 +42,31 @@
   .box {
     padding-top: 4px;
     width: 11%;
-    min-width: 159px;
+    min-width: 125px;
     max-width: 180px;
 
+    border-right: 1px solid rgb(181, 181, 181);
     -moz-osx-font-smoothing: grayscale;
     transition: transform 0.25s ease-out;
   }
 
   .box:hover {
+    transform: scale(1.10);
+  }
+
+  .boxhome {
+    padding-top: 4px;
+    width: 11%;
+    min-width: 125px;
+    max-width: 180px;
+
+    border-right: 1px solid rgb(181, 181, 181);
+    border-left: 1px solid rgb(181, 181, 181);
+    -moz-osx-font-smoothing: grayscale;
+    transition: transform 0.25s ease-out;
+  }
+
+  .boxhome:hover {
     transform: scale(1.10);
   }
 
@@ -63,13 +81,13 @@
   }
 
   .logo {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 40px;
+    max-height: 40px;
   }
 
   .logo-title {
     font-family: $theme-font;
     color: $primary;
-    font-size: 26px;
+    font-size: 1.1vw;
   }
 }

@@ -24,7 +24,7 @@ $borderRadius: 4px;
       @extend %test;
       bottom: -15px;
       height: 17px;
-      width: 100%;
+      width: 99%;
       left: 8px;
       transform: skewX(45deg);
       background-color: darken($primary, 10%);

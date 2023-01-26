@@ -45,11 +45,12 @@
 
   .category-info {
     flex: 1;
-    background-color: #ffffff5b;
-    border: 1px solid rgba(51, 51, 51, 0.384);
+    background-color: #ffffff3a;
     font-family: $theme-font;
-    border-radius: 2px;
-    margin-right: 1px;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 10px;
   }
 
   .categories-container {

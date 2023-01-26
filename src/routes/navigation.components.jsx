@@ -13,11 +13,11 @@ const Navigation = () => {
       <div className='navigation'>
 
         <Link className='home-box' to='/'>
-          Aaron Cheng
+          ( AC )
         </Link>
 
         <div className='nav-container'>
-          <div className='box'>
+          <div className='boxhome'>
             <Link className='logo-container' to='/'>
               <Home className='logo' />
               <div className='logo-title'>Home</div>

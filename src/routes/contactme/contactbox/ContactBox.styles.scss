@@ -104,6 +104,11 @@ $contact-sidesgap: 2.5rem;
 
 .tag {
     color: $sub-primary;
+    text-decoration: none;
+}
+
+.tag:visited {
+    text-decoration: none;
 }
 
 .contact-description-container {
@@ -112,4 +117,5 @@ $contact-sidesgap: 2.5rem;
     align-items: center;
     width: 75%;
     font-size: 1vw;
+    text-align: center;
 }

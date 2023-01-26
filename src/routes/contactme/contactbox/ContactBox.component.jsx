@@ -11,7 +11,7 @@ const ContactBox = ({ icon }) => {
             </a>
             <div className='contact-description-container'>
                 <div className='description'>{icon.description}</div>
-                <div className='tag'>{icon.tag}</div>
+                <a className='tag' href={icon.link} target="_blank" rel="noreferrer">{icon.tag}</a>
             </div>
         </div>
     )

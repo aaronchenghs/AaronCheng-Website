@@ -1,8 +1,117 @@
 $primary: #062940;
 $sub-primary: #0863a0;
 $title-font: '';
-$theme-font: 'Ubuntu';
+$theme-font: 'Work Sans';
 $page-minimum-width: 803px;
+
+$buttonTransitionTime: 0.07s;
+
+%test {
+    position: absolute;
+    content: "";
+    transition: all $buttonTransitionTime;
+}
+
+.static-container {
+    margin-top: 55px;
+    background-color: white;
+    //border: 2px solid $primary;
+    border-radius: 4px;
+    height: 33vw;
+    width: 65%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    transform: translate(-2%, -2%);
+    font-family: "Abel";
+    text-decoration: none;
+    font-size: 1vw;
+    background-color: white;
+
+    &::before {
+        //bottom side
+        @extend %test;
+        bottom: -19px;
+        height: 17px;
+        width: 100%;
+        left: 10px;
+        transform: skewX(45deg);
+        background-color: darken(white, 15%);
+    }
+
+    &::after {
+        // right side
+        @extend %test;
+        right: -18px;
+        height: 100%;
+        width: 16px;
+        bottom: -9px;
+        transform: skewY(45deg);
+        background-color: darken(white, 25%);
+    }
+}
+
+.button {
+    display: inline-block;
+    font-family: $theme-font;
+    background-color: #ffffff;
+    transform: translate(-4%, -4%);
+    transition: all $buttonTransitionTime;
+    font-size: 0.5vw;
+    border: 3px solid white;
+    border-radius: 2px;
+    background-color: $primary;
+    border-width: 0px;
+    height: 100%;
+    width: 100%;
+
+    &::before {
+        //bottom side
+        @extend %test;
+        bottom: -15px;
+        height: 17px;
+        width: 100%;
+        left: 8px;
+        transform: skewX(45deg);
+        background-color: darken($primary, 20%);
+    }
+
+    &::after {
+        // right side
+        @extend %test;
+        right: -15px;
+        height: 99%;
+        width: 16px;
+        bottom: -7px;
+        transform: skewY(45deg);
+        background-color: darken($primary, 30%);
+    }
+
+    &:active {
+        margin-left: 10px;
+
+        &::before {
+            bottom: -5px;
+            height: 5px;
+            left: 3px;
+        }
+
+        &::after {
+            right: -5px;
+            width: 5px;
+            bottom: -3px;
+        }
+    }
+
+    .category-text {
+        margin-left: 5px;
+        margin-right: 5px;
+        color: white;
+    }
+}
 
 :export {
     darknavy: $primary;
