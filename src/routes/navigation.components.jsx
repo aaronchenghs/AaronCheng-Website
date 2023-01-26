@@ -9,29 +9,25 @@ import './navigation.styles.scss';
 
 const Navigation = () => {
   const [selectedNav, setSelectedNav] = useState('home');
-  const setSelectedHome = () => setSelectedNav("home");
-  const setSelectedPortfolio = () => setSelectedNav("portfolio");
-  const setSelectedContact = () => setSelectedNav("contact");
-  const setSelectedFeedback = () => setSelectedNav("feedback");
 
   return (
     <Fragment>
       <div className='navigation'>
 
-        <Link className='home-box' onClick={setSelectedHome} to='/'>
+        <Link className='home-box' onClick={()=>setSelectedNav('home')} to='/'>
           (AC)
         </Link>
 
         <div className='nav-container'>
           {
             selectedNav === 'home' ?
-              <div className='selected-box' onClick={setSelectedHome}>
+              <div className='selected-box'>
                 <Link className='logo-container' to='/'>
                   <Home className='logo' />
                   <div className='logo-title'>Home</div>
                 </Link>
               </div> :
-              <div className='box' onClick={setSelectedHome}>
+              <div className='box' onClick={()=>setSelectedNav('home')}>
                 <Link className='logo-container' to='/'>
                   <Home className='logo' />
                   <div className='logo-title'>Home</div>
@@ -40,13 +36,13 @@ const Navigation = () => {
           }
           {
             selectedNav === 'portfolio' ?
-              <div className='selected-box' onClick={setSelectedPortfolio}>
+              <div className='selected-box'>
                 <Link className='logo-container' to='/portfolio'>
                   <Portfolio className='logo' />
                   <div className='logo-title'>Portfolio</div>
                 </Link>
               </div> :
-              <div className='box' onClick={setSelectedPortfolio}>
+              <div className='box' onClick={()=>setSelectedNav('portfolio')}>
                 <Link className='logo-container' to='/portfolio'>
                   <Portfolio className='logo' />
                   <div className='logo-title'>Portfolio</div>
@@ -55,13 +51,13 @@ const Navigation = () => {
           }
           {
             selectedNav === 'contact' ?
-              <div className='selected-box' onClick={setSelectedContact}>
+              <div className='selected-box'>
                 <Link className='logo-container' to='/contactme'>
                   <Contact className='logo' />
                   <div className='logo-title'>Contact Me</div>
                 </Link>
               </div> :
-              <div className='box' onClick={setSelectedContact}>
+              <div className='box' onClick={()=>setSelectedNav('contact')}>
                 <Link className='logo-container' to='/contactme'>
                   <Contact className='logo' />
                   <div className='logo-title'>Contact Me</div>
@@ -70,13 +66,13 @@ const Navigation = () => {
           }
           {
             selectedNav === 'feedback' ?
-              <div className='selected-box' onClick={setSelectedFeedback}>
+              <div className='selected-box'>
                 <Link className='logo-container' to='/feedback'>
                   <Feedback className='logo' />
                   <div className='logo-title'>Feedback</div>
                 </Link>
               </div> :
-              <div className='box' onClick={setSelectedFeedback}>
+              <div className='box' onClick={()=>setSelectedNav('feedback')}>
                 <Link className='logo-container' to='/feedback'>
                   <Feedback className='logo' />
                   <div className='logo-title'>Feedback</div>

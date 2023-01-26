@@ -12,13 +12,13 @@ const Home = () => {
       <body className="RealHome-Page">
 
         <div className="intro-container">
-          <Introduction></Introduction>
+          <Introduction/>
         </div>
         <div className="button-container">
-          <VentureButton></VentureButton>
+          <VentureButton/>
         </div>
         <div className="stats-container">
-          <Stats></Stats>
+          <Stats/>
         </div>
       </body>
     </Fragment>

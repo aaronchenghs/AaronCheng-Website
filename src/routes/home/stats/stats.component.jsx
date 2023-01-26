@@ -6,16 +6,11 @@ import { homecategories } from '../../../globals/plaintext.jsx';
 
 export const Stats = () => {
   const [CategorySelection, SetCategorySelection] = useState("Education");
-  const openEducation = () => SetCategorySelection("Education");
-  const openToolbox = () => SetCategorySelection("ToolBox");
-  const openExperience = () => SetCategorySelection("Experience");
-  const openOrigins = () => SetCategorySelection("Origins");
-
   let categoryDisplay = homecategories[CategorySelection];
 
   return (
     <Fragment>
-      <body className="Home-Page">
+      <div className="Home-Page">
         <div className="portrait">
           <img/>
         </div>
@@ -23,21 +18,21 @@ export const Stats = () => {
           <div className="category-info">{categoryDisplay}</div>
           <div className="categories-container">
 
-            <button className="categoryButton" onClick={openEducation}>
-              <text className="category-text">Summary</text>
+            <button className="categoryButton" onClick={()=>SetCategorySelection('Education')}>
+              <div className="category-text">Summary</div>
             </button>
-            <button className="categoryButton" onClick={openToolbox}>
-              <text className="category-text">Skills</text>
+            <button className="categoryButton" onClick={()=>SetCategorySelection('ToolBox')}>
+              <div className="category-text">Skills</div>
             </button>
-            <button className="categoryButton" onClick={openExperience}>
-              <text className="category-text">Experience</text>
+            <button className="categoryButton" onClick={()=>SetCategorySelection('Experience')}>
+              <div className="category-text">Experience</div>
             </button>
-            <button className="categoryButton" onClick={openOrigins}>
-              <text className="category-text">Story</text>
+            <button className="categoryButton" onClick={()=>SetCategorySelection('Origins')}>
+              <div className="category-text">Story</div>
             </button>
           </div>
         </div>
-      </body>
+      </div>
     </Fragment>
   );
 };

@@ -10,7 +10,7 @@
   justify-content: left;
   align-content: space-between;
   align-items: center;
-  border-radius: 5px;
+  border-radius: 17px;
   margin-bottom: 40px;
   background-color: white;
   box-shadow: 6px 7px 4px rgb(209, 209, 209);
@@ -49,7 +49,7 @@
   }
 
   .logo-container {
-    height: 90%;
+    height: 100%;
     width: 100%;
     text-decoration: none;
     display: flex;
@@ -87,7 +87,7 @@
     max-width: 180px;
     -moz-osx-font-smoothing: grayscale;
     transition: transform 0.1s;
-    box-shadow: 3px 3px 4px inset rgb(148, 148, 148);
+    box-shadow: 3px 3px 4px inset rgb(209, 209, 209);
   }
 
 }
