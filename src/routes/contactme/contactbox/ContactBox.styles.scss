@@ -51,6 +51,8 @@ $contact-sidesgap: 2.5rem;
 .Contact-Container:hover {
     transition: all .4s;
     margin-left: -120px;
+    //margin-bottom: 50px;
+    height: 15vh;
     box-shadow: 20px 10px 10px rgb(222, 222, 222);
 
     &::before {
@@ -65,7 +67,7 @@ $contact-sidesgap: 2.5rem;
         right: -28px;
         width: 28px;
         bottom: -5px;
-        height: 98%;
+        height: 96%;
         box-shadow: 25px 10px 15px rgb(222, 222, 222);
     }
 }

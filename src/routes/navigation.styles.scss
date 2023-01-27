@@ -1,13 +1,13 @@
-@import '../globals/theme.scss';
+@import "../globals/theme.scss";
 
 .navigation {
-  height: 6.5rem;
+  height: 5.5vw;
   width: 65%;
   margin-top: 20px;
   min-width: 771px;
 
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-content: space-between;
   align-items: center;
   border-radius: 17px;
@@ -18,34 +18,60 @@
   .nav-container {
     display: flex;
     flex-direction: row;
-    flex: 1;
     justify-content: flex-end;
-    padding-right: 35px;
+    padding-right: 1.5vw;
+    height: 70%;
   }
 
   .home-box {
     color: $primary;
     font-family: $theme-font;
-    width: 30%;
+
     min-width: 230px;
 
-    font-size: 40px;
-    padding-left: 45px;
+    font-size: 1.5vw;
+    min-width: 300px;
+    padding-left: 2vw;
     text-decoration: none;
-    transition: transform 0.15s ease-out;
+    transition: transform 0.25s ease-out;
+
+    @media screen and (max-width: 1460px){
+      font-size: 22px;
+    }
   }
 
   .home-box:hover {
-    transform: scale(1.10);
+    transform: scale(1.05);
   }
 
+  $box-leftmargin: 8px;
+  $box-paddingtop: 4px;
+  $box-width: 8vw;
+  $box-radius: 4px;
+  $box-minwidth: 98px;
+  $box-maxwidth: 180px;
+
   .box {
-    padding-top: 4px;
-    width: 11%;
-    min-width: 125px;
-    max-width: 180px;
+    padding-top: $box-leftmargin;
+    margin-left: $box-paddingtop;
+    width: $box-width;
+    min-width: $box-minwidth;
+    max-width: $box-maxwidth;
+    border-radius: $box-radius;
     -moz-osx-font-smoothing: grayscale;
     transition: transform 0.25s ease-out;
+  }
+
+  .selected-box {
+    padding-top: $box-leftmargin;
+    margin-left: $box-paddingtop;
+    width: $box-width;
+    min-width: $box-minwidth;
+    border-radius: $box-radius;
+    max-width: $box-maxwidth;
+    -moz-osx-font-smoothing: grayscale;
+    transition: transform 0.1s;
+    box-shadow: 3px 3px 3px inset rgb(173, 173, 173);
   }
 
   .logo-container {
@@ -59,15 +85,15 @@
   }
 
   .logo {
-    max-width: 40px;
-    max-height: 40px;
+    width: 40px;
+    max-height: 45px;
     transition: transform 0.25s ease-out;
   }
 
   .logo-title {
     font-family: $theme-font;
     color: $primary;
-    font-size: 1.1vw;
+    font-size: 0.7vw;
   }
 
   .box:hover {
@@ -76,18 +102,7 @@
     transition: transform 0.25s ease-out;
 
     .logo {
-      transform: scale(1.10);
+      transform: scale(1.1);
     }
   }
-
-  .selected-box {
-    padding-top: 4px;
-    width: 11%;
-    min-width: 125px;
-    max-width: 180px;
-    -moz-osx-font-smoothing: grayscale;
-    transition: transform 0.1s;
-    box-shadow: 3px 3px 4px inset rgb(209, 209, 209);
-  }
-
 }

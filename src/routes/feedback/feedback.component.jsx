@@ -6,7 +6,7 @@ const Feedback = () => {
   return (
     <Fragment>
       <div className='Page-Header'>
-        <text className='Header-Text'>Feedback</text>
+        <div className='Header-Text'>Feedback</div>
       </div>
     </Fragment>
   )

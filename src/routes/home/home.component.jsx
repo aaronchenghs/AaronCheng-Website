@@ -9,7 +9,7 @@ import "./home.styles.scss";
 const Home = () => {
   return (
     <Fragment>
-      <body className="RealHome-Page">
+      <div className="RealHome-Page">
 
         <div className="intro-container">
           <Introduction/>
@@ -20,7 +20,7 @@ const Home = () => {
         <div className="stats-container">
           <Stats/>
         </div>
-      </body>
+      </div>
     </Fragment>
   );
 };
