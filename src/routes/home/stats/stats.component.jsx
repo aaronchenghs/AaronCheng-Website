@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 import "./stats.styles.scss";
-import { homecategories } from "../../../globals/plaintext.jsx";
+import { homecategories } from "./plaintext.jsx";
+import { statsCategories } from "./categories";
 
 export const Stats = () => {
-  const [CategorySelection, SetCategorySelection] = useState("Education");
-  let categoryDisplay = homecategories[CategorySelection];
+  const [CategorySelection, SetCategorySelection] = useState("summary");
+  let categoryDisplay = <div className='categoryDisplay'>{homecategories[CategorySelection]}</div>;
 
   return (
     <div className="Home-Page">
@@ -15,30 +16,16 @@ export const Stats = () => {
       <div className="bio">
         <div className="category-info">{categoryDisplay}</div>
         <div className="categories-container">
-          <button
-            className="categoryButton"
-            onClick={() => SetCategorySelection("Education")}
-          >
-            <div className="category-text">Summary</div>
-          </button>
-          <button
-            className="categoryButton"
-            onClick={() => SetCategorySelection("ToolBox")}
-          >
-            <div className="category-text">Skills</div>
-          </button>
-          <button
-            className="categoryButton"
-            onClick={() => SetCategorySelection("Experience")}
-          >
-            <div className="category-text">Experience</div>
-          </button>
-          <button
-            className="categoryButton"
-            onClick={() => SetCategorySelection("Origins")}
-          >
-            <div className="category-text">Story</div>
-          </button>
+          {
+            statsCategories.map((category) => {
+              return (<button
+                className="categoryButton"
+                onClick={() => SetCategorySelection(category.state)}
+              >
+                <div className="category-text">{category.title}</div>
+              </button>);
+            })
+          }
         </div>
       </div>
     </div>
