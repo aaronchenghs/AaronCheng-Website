@@ -1,5 +1,5 @@
 @import '../../../globals/theme.scss';
-$buttonTransitionTime: 0.07s;
+$buttonTransitionTime: 0.1s;
 $borderRadius: 4px;
 %test {
   position: absolute;
@@ -22,7 +22,7 @@ $borderRadius: 4px;
     &::before {
       //bottom side
       @extend %test;
-      bottom: -15px;
+      bottom: -16px;
       height: 17px;
       width: 99.4%;
       left: 8px;
@@ -35,7 +35,7 @@ $borderRadius: 4px;
       @extend %test;
       right: -15px;
       height: 100%;
-      width: 15px;
+      width: 16px;
       bottom: -8px;
       transform: skewY(45deg);
       background-color: darken($primary, 30%);
@@ -55,5 +55,9 @@ $borderRadius: 4px;
         width: 5px;
         bottom: -3px;
       }
+    }
+
+    &:hover{
+      background-color: $sub-primary;
     }
   }

@@ -18,7 +18,12 @@ export const Stats = () => {
         <div className="categories-container">
           {
             statsCategories.map((category) => {
-              return (<button
+              return CategorySelection === category.state ? (<button
+                className="categoryButtonSelected"
+                onClick={() => SetCategorySelection(category.state)}
+              >
+                <div className="category-text">{category.title}</div>
+              </button>) : (<button
                 className="categoryButton"
                 onClick={() => SetCategorySelection(category.state)}
               >

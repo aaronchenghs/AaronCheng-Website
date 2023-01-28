@@ -31,6 +31,7 @@
     flex-direction: row;
     border: 1.5px solid rgba(51, 51, 51, 0.384);
     border-radius: 5px;
+    border-right-width: 0px;
 
     margin-top: $bioSideMargin;
     margin-bottom: $bioSideMargin;
@@ -56,6 +57,7 @@
   .categories-container {
     display: flex;
     flex-direction: column;
+    gap: 2px;
     height: 100%;
   }
 
@@ -70,7 +72,6 @@
   .categoryButton {
     display: inline-block;
     font-family: $theme-font;
-    background-color: #ffffff;
     transform: translate(-4%, -4%);
     transition: all $buttonTransitionTime;
     font-size: 0.5vw;
@@ -79,7 +80,7 @@
     background-color: $primary;
     border-width: 0px;
     height: 100%;
-    width: 100%;
+    width: 3.8vw;
 
     &::before {
       //bottom side
@@ -105,10 +106,11 @@
 
     &:active {
       margin-left: 10px;
+      transform: translate(1%, 1%);
 
       &::before {
         bottom: -5px;
-        height: 5px;
+        height: 6px;
         left: 3px;
       }
 
@@ -117,6 +119,63 @@
         width: 5px;
         bottom: -3px;
       }
+    }
+
+    &:hover{
+      background-color: lighten($primary, 10%);
+    }
+
+    .category-text {
+      margin-left: 5px;
+      margin-right: 5px;
+      color: white;
+    }
+  }
+
+  .categoryButtonSelected {
+    display: inline-block;
+    font-family: $theme-font;
+    background-color: #ffffff;
+    transform: translate(1%, 1%);
+    transition: all $buttonTransitionTime;
+    font-size: 0.5vw;
+    border: 3px solid white;
+    border-radius: 2px;
+    background-color: $primary;
+    border-width: 0px;
+    height: 100%;
+    width: 3.8vw;
+
+    margin-left: 10px;
+
+    &::before {
+      //bottom side
+      @extend %test;
+      bottom: -15px;
+      height: 17px;
+      width: 100%;
+      left: 8px;
+      transform: skewX(45deg);
+      background-color: darken($primary, 20%);
+
+      bottom: -5px;
+      height: 6px;
+      left: 3px;
+    }
+
+    &::after {
+      // right side
+      @extend %test;
+      right: -15px;
+      height: 100%;
+      width: 16px;
+      bottom: -7px;
+      transform: skewY(45deg);
+      background-color: darken($primary, 30%);
+
+      right: -5px;
+      width: 6px;
+      bottom: -1px;
     }
 
     .category-text {
