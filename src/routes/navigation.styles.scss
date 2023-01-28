@@ -46,25 +46,26 @@
 
   $box-leftmargin: 8px;
   $box-paddingtop: 4px;
-  $box-width: 8vw;
+  $box-width: 7vw;
   $box-radius: 4px;
   $box-minwidth: 98px;
   $box-maxwidth: 180px;
 
   .box {
-    padding-top: $box-leftmargin;
-    margin-left: $box-paddingtop;
+    margin-left: $box-leftmargin;
+    padding-top: $box-paddingtop;
     width: $box-width;
     min-width: $box-minwidth;
     max-width: $box-maxwidth;
     border-radius: $box-radius;
+    
     -moz-osx-font-smoothing: grayscale;
     transition: transform 0.25s ease-out;
   }
 
   .selected-box {
-    padding-top: $box-leftmargin;
-    margin-left: $box-paddingtop;
+    margin-left: $box-leftmargin;
+    padding-top: $box-paddingtop;
     width: $box-width;
     min-width: $box-minwidth;
     border-radius: $box-radius;
@@ -85,7 +86,7 @@
   }
 
   .logo {
-    max-width: 40px;
+    max-width: 45px;
     max-height: 45px;
     transition: transform 0.25s ease-out;
   }
@@ -93,7 +94,7 @@
   .logo-title {
     font-family: $theme-font;
     color: $primary;
-    font-size: 0.85vw;
+    font-size: 0.9vw;
   }
 
   .box:hover {

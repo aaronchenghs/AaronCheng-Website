@@ -1,6 +1,5 @@
 import React from "react";
 import { Fragment } from "react";
-import Stats from "./stats/stats.component";
 import VentureButton from "./explore_button/venturebutton.component.jsx";
 import Introduction from "./introduction/introduction.component.jsx";
 
@@ -16,9 +15,6 @@ const Home = () => {
         </div>
         <div className="button-container">
           <VentureButton/>
-        </div>
-        <div className="stats-container">
-          <Stats/>
         </div>
       </div>
     </Fragment>
