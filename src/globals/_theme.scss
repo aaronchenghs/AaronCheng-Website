@@ -1,0 +1,22 @@
+$primary: #062940;
+$sub-primary: #0863a0;
+$title-font: "";
+$theme-font: "Work Sans";
+$page-minimum-width: 803px;
+
+$background-center: white;
+$background-sides: #f5f4ec;
+
+// $primary: #031d2c;
+// $sub-primary: #07446c;
+
+// $background-center: #063b5f;
+// $background-sides: #02141e;
+
+:export {
+  darknavy: $primary;
+  titleFont: $title-font;
+  themefont: $theme-font;
+  pageminwidth: $page-minimum-width;
+  subprimary: $sub-primary;
+}

@@ -1,7 +1,7 @@
-import { ReactComponent as Portfolio } from "../assets/portfolio.svg";
-import { ReactComponent as Contact } from "../assets/contact.svg";
-import { ReactComponent as Feedback } from "../assets/feedback.svg";
-import { ReactComponent as Vita } from "../assets/Vita.svg";
+import { ReactComponent as Portfolio } from "../assets/nav-logos/portfolio.svg";
+import { ReactComponent as Contact } from "../assets/nav-logos/contact.svg";
+import { ReactComponent as Feedback } from "../assets/nav-logos/feedback.svg";
+import { ReactComponent as Vita } from "../assets/nav-logos/Vita.svg";
 
 export const websiteTitle = "AaronChengヽ(゜▽゜　)－";
 export const categories = [

@@ -1,5 +1,5 @@
-import { ReactComponent as LinkedInLogo } from "../../../assets/lin.svg";
-import { ReactComponent as GitHubLogo } from "../../../assets/github.svg";
+import { ReactComponent as LinkedInLogo } from "../../../assets/bottombar-logos/lin.svg";
+import { ReactComponent as GitHubLogo } from "../../../assets/bottombar-logos/github.svg";
 import React from "react";
 import { Fragment } from "react";
 import "./externallinks.styles.scss";

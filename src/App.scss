@@ -1,7 +1,12 @@
 @import "./globals/theme.scss";
 
 .website {
-  background: linear-gradient(90deg, #f5f4ec -10%, white 50%, #f5f4ec 110%);
+  background: linear-gradient(
+    90deg,
+    $background-sides -10%,
+    $background-center 50%,
+    $background-sides 110%
+  );
   display: flex;
   align-items: center;
   flex-direction: column;
