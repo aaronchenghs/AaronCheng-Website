@@ -1,27 +1,24 @@
-@import './globals/theme.scss';
+@import "./globals/theme.scss";
 
 .website {
-    background: linear-gradient(90deg,
-            #f5f4ec -10%,
-            white 50%,
-            #f5f4ec 110%);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    min-width: $page-minimum-width;
+  background: linear-gradient(90deg, #f5f4ec -10%, white 50%, #f5f4ec 110%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-width: $page-minimum-width;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f5f4ec;
-    border-radius: 2px;
+  background: #f5f4ec;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: $primary;
-    border-radius: 2px;
+  background: $primary;
+  border-radius: 2px;
 }

@@ -1,11 +1,8 @@
-import { Fragment} from "react";
+import { Fragment } from "react";
 
-import './navigation.styles.scss';
+import "./navigation.styles.scss";
 
-const NavLink = () =>
-{
-  return(
-    <div></div>
-  )
-}
+const NavLink = () => {
+  return <div></div>;
+};
 export default NavLink;

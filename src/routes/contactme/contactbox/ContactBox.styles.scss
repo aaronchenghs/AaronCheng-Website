@@ -1,123 +1,123 @@
-@import '../../../globals/theme.scss';
+@import "../../../globals/theme.scss";
 $buttonTransitionTime: 0.07s;
 $borderRadius: 4px;
 
 %test {
-    position: absolute;
-    content: "";
-    transition: all 0.5s;
+  position: absolute;
+  content: "";
+  transition: all 0.5s;
 }
 
 $contact-sidesgap: 2.5rem;
 
 .Contact-Container {
-    width: 50vw;
-    height: 13vh;
-    margin-bottom: 9px;
-    margin-top: 10px;
-    transform: translate(-2%, -2%);
-    background-color: white;
-    font-family: $theme-font;
-    min-width: 710px;
-    transition: all 1.6s;
+  width: 50vw;
+  height: 13vh;
+  margin-bottom: 9px;
+  margin-top: 10px;
+  transform: translate(-2%, -2%);
+  background-color: white;
+  font-family: $theme-font;
+  min-width: 710px;
+  transition: all 1.6s;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    &::before {
-        //bottom side
-        @extend %test;
-        bottom: -19px;
-        height: 17px;
-        width: 100%;
-        left: 9px;
-        transform: skewX(45deg);
-        background-color: darken(white, 15%);
-    }
+  &::before {
+    //bottom side
+    @extend %test;
+    bottom: -19px;
+    height: 17px;
+    width: 100%;
+    left: 9px;
+    transform: skewX(45deg);
+    background-color: darken(white, 15%);
+  }
 
-    &::after {
-        // right side
-        @extend %test;
-        right: -17px;
-        height: 100%;
-        width: 16px;
-        bottom: -10px;
-        transform: skewY(45deg);
-        background-color: darken(white, 25%);
-    }
+  &::after {
+    // right side
+    @extend %test;
+    right: -17px;
+    height: 100%;
+    width: 16px;
+    bottom: -10px;
+    transform: skewY(45deg);
+    background-color: darken(white, 25%);
+  }
 }
 
 .Contact-Container:hover {
-    transition: all .4s;
-    margin-left: -120px;
-    //margin-bottom: 50px;
-    height: 15vh;
-    box-shadow: 20px 10px 10px rgb(222, 222, 222);
+  transition: all 0.4s;
+  margin-left: -120px;
+  //margin-bottom: 50px;
+  height: 15vh;
+  box-shadow: 20px 10px 10px rgb(222, 222, 222);
 
-    &::before {
-        //bottom
-        height: 29px;
-        left: 14px;
-        box-shadow: -15px 25px 15px rgb(222, 222, 222);
-    }
+  &::before {
+    //bottom
+    height: 29px;
+    left: 14px;
+    box-shadow: -15px 25px 15px rgb(222, 222, 222);
+  }
 
-    &::after {
-        //right
-        right: -28px;
-        width: 28px;
-        bottom: -5px;
-        height: 96%;
-        box-shadow: 25px 10px 15px rgb(222, 222, 222);
-    }
+  &::after {
+    //right
+    right: -28px;
+    width: 28px;
+    bottom: -5px;
+    height: 96%;
+    box-shadow: 25px 10px 15px rgb(222, 222, 222);
+  }
 }
 
 .contact-thumb {
-    height: 100%;
-    width: 20%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: row;
-    text-decoration: none;
-    margin-right: calc($contact-sidesgap/3);
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  text-decoration: none;
+  margin-right: calc($contact-sidesgap/3);
 
-    .contact-icon {
-        margin-left: $contact-sidesgap;
-        margin-right: calc($contact-sidesgap/2.5);
-        height: 5vmin;
-    }
+  .contact-icon {
+    margin-left: $contact-sidesgap;
+    margin-right: calc($contact-sidesgap/2.5);
+    height: 5vmin;
+  }
 
-    .icon-text {
-        font-size: 1.3vw;
-        color: $primary;
-    }
+  .icon-text {
+    font-size: 1.3vw;
+    color: $primary;
+  }
 }
 
 .contact-thumb:hover {
-    .icon-text {
-        font-size: 3vmin;
-    }
+  .icon-text {
+    font-size: 3vmin;
+  }
 }
 
 .contact-thumb:visited {
-    color: $primary;
+  color: $primary;
 }
 
 .tag {
-    color: $sub-primary;
-    text-decoration: none;
+  color: $sub-primary;
+  text-decoration: none;
 }
 
 .tag:visited {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .contact-description-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 75%;
-    font-size: 1vw;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 75%;
+  font-size: 1vw;
+  text-align: center;
 }

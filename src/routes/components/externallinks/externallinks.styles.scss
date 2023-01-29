@@ -1,27 +1,22 @@
-.ext-box-container
-{
+.ext-box-container {
   display: flex;
   padding-right: 5px;
   padding-top: 5px;
   padding-right: 20px;
 }
-.ext-box
-{ 
+.ext-box {
   -moz-osx-font-smoothing: grayscale;
   transition: transform 0.25s ease-out;
   padding-left: 1px;
 }
-.ext-box:hover
-{
+.ext-box:hover {
   transform: scale(1.05);
 }
-.ext-link
-{
+.ext-link {
   padding: 2px 2px;
   cursor: pointer;
 }
-.logo
-{
+.logo {
   height: 60px;
   width: 60px;
 }

@@ -9,12 +9,11 @@ const Home = () => {
   return (
     <Fragment>
       <div className="RealHome-Page">
-
         <div className="intro-container">
-          <Introduction/>
+          <Introduction />
         </div>
         <div className="button-container">
-          <VentureButton/>
+          <VentureButton />
         </div>
       </div>
     </Fragment>

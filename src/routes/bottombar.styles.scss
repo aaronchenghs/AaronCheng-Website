@@ -1,4 +1,4 @@
-@import '../globals/theme.scss';
+@import "../globals/theme.scss";
 
 .bottombar {
   height: 7rem;
@@ -15,7 +15,6 @@
   background-color: white;
   box-shadow: 6px 7px 4px rgb(209, 209, 209);
 
-
   .extlinks-container {
     width: 25%;
     height: 100%;
@@ -25,5 +24,4 @@
     bottom: 2px;
     justify-content: flex-end;
   }
-
 }

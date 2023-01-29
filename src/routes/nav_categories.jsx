@@ -3,7 +3,7 @@ import { ReactComponent as Contact } from "../assets/contact.svg";
 import { ReactComponent as Feedback } from "../assets/feedback.svg";
 import { ReactComponent as Vita } from "../assets/Vita.svg";
 
-export const websiteTitle = 'AaronChengヽ(゜▽゜　)－';
+export const websiteTitle = "AaronChengヽ(゜▽゜　)－";
 export const categories = [
   {
     title: "Vita",

@@ -1,51 +1,51 @@
-@import '../../globals/theme.scss';
+@import "../../globals/theme.scss";
 
 .ContactMe-Page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+
+  .Contacts-Header-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .Contacts-Header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $primary;
+      width: 45%;
+      height: 5vmax;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 5px solid black;
+      text-align: center;
+      transition: background-color 0.3s;
+
+      .text {
+        font-size: 1.7vw;
+        color: white;
+        font-family: $theme-font;
+      }
+    }
+    .Contacts-Header:hover {
+      background-color: $sub-primary;
+    }
+  }
+
+  .Contacts-Container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-
-    .Contacts-Header-Container {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-
-        .Contacts-Header {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: $primary;
-            width: 45%;
-            height: 5vmax;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            border: 5px solid black;
-            text-align: center;
-            transition: background-color 0.3s;
-
-            .text {
-                font-size: 1.7vw;
-                color: white;
-                font-family: $theme-font;
-            }
-        }
-        .Contacts-Header:hover{
-            background-color: $sub-primary;
-        }
-    }
-
-    .Contacts-Container {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  }
 }

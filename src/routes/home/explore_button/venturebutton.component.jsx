@@ -6,7 +6,7 @@ import "./venturebutton.styles.scss";
 const VentureButton = () => {
   return (
     <Fragment>
-        <button className="toVenturesButton">Explore</button>
+      <button className="toVenturesButton">Explore</button>
     </Fragment>
   );
 };

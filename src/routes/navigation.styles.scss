@@ -35,7 +35,7 @@
     text-decoration: none;
     transition: transform 0.25s ease-out;
 
-    @media screen and (max-width: 1460px){
+    @media screen and (max-width: 1460px) {
       font-size: 22px;
     }
   }
@@ -58,7 +58,7 @@
     min-width: $box-minwidth;
     max-width: $box-maxwidth;
     border-radius: $box-radius;
-    
+
     -moz-osx-font-smoothing: grayscale;
     transition: transform 0.25s ease-out;
   }
