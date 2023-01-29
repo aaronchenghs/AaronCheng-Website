@@ -5,8 +5,12 @@ import "./feedback.styles.scss";
 const Feedback = () => {
   return (
     <Fragment>
-      <div className="Page-Header">
-        <div className="Header-Text">Feedback</div>
+      <div className="Feedback-Page">
+        <div className="Feedback-Header-Container">
+          <div className="Feedback-Header">
+            <div className="text">Feedback</div>
+          </div>
+        </div>
       </div>
     </Fragment>
   );
