@@ -13,7 +13,7 @@ export const Stats = () => {
   return (
     <div className="Home-Page">
       <div className="portrait">
-        <img />
+        <img alt="skins" />
       </div>
       <div className="bio">
         <div className="category-info">{categoryDisplay}</div>
