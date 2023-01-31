@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import PageHeader from "../components/pageHeader/pageheader.component";
 
 import "./feedback.styles.scss";
 
@@ -6,11 +7,7 @@ const Feedback = () => {
   return (
     <Fragment>
       <div className="Feedback-Page">
-        <div className="Feedback-Header-Container">
-          <div className="Feedback-Header">
-            <div className="text">Feedback</div>
-          </div>
-        </div>
+        <PageHeader text={"Feedback Header"} />
       </div>
     </Fragment>
   );

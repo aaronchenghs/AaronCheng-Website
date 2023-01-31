@@ -1,16 +1,13 @@
 import React, { Fragment } from "react";
 import { projects } from "./categories";
 import "./portfolio.styles.scss";
+import PageHeader from "../components/pageHeader/pageheader.component";
 
 const Portfolio = () => {
   return (
     <Fragment>
       <div className="Portfolio-Page">
-        <div className="Portfolio-Header-Container">
-          <div className="Portfolio-Header">
-            <div className="text">Portfolio_HeaderText</div>
-          </div>
-        </div>
+        <PageHeader text={"Portfolio Header"} />
         <div className="cards-container">
           {projects.map((project) => {
             return (
