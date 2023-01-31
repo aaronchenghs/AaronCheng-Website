@@ -1,7 +1,47 @@
-.stats-container {
-  height: 39vw;
-  min-height: 800px;
-  width: 90%;
+@import "../../globals/theme";
+.Vita-Page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .Vita-Header-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .Vita-Header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $primary;
+      width: 45%;
+      height: 5vmax;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 5px solid black;
+      text-align: center;
+      transition: background-color 0.3s;
+
+      .text {
+        font-size: 1.7vw;
+        color: white;
+        font-family: $theme-font;
+      }
+    }
+    .Vita-Header:hover {
+      background-color: $sub-primary;
+    }
+  }
+  .stats-container {
+    height: 39vw;
+    min-height: 800px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+  }
 }
