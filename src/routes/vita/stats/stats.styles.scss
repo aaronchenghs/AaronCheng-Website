@@ -77,10 +77,14 @@
     font-size: 0.5vw;
     border: 3px solid white;
     border-radius: 2px;
-    background-color: $primary;
+
     border-width: 0px;
     height: 100%;
     width: 3.8vw;
+
+    @include themed() {
+      background-color: t($primary);
+    }
 
     &::before {
       //bottom side
@@ -90,7 +94,9 @@
       width: 100%;
       left: 8px;
       transform: skewX(45deg);
-      background-color: darken($primary, 20%);
+      @include themed() {
+        background-color: darken(t($primary), 20%);
+      }
     }
 
     &::after {
@@ -101,7 +107,9 @@
       width: 16px;
       bottom: -7px;
       transform: skewY(45deg);
-      background-color: darken($primary, 30%);
+      @include themed() {
+        background-color: darken(t($primary), 30%);
+      }
     }
 
     &:active {
@@ -122,7 +130,9 @@
     }
 
     &:hover {
-      background-color: lighten($primary, 10%);
+      @include themed() {
+        background-color: lighten(t($primary), 10%);
+      }
     }
 
     .category-text {
@@ -141,12 +151,16 @@
     font-size: 0.5vw;
     border: 3px solid white;
     border-radius: 2px;
-    background-color: $primary;
+
     border-width: 0px;
     height: 100%;
     width: 3.8vw;
 
     margin-left: 10px;
+
+    @include themed() {
+      background-color: t($primary);
+    }
 
     &::before {
       //bottom side
@@ -156,11 +170,14 @@
       width: 100%;
       left: 8px;
       transform: skewX(45deg);
-      background-color: darken($primary, 20%);
 
       bottom: -5px;
       height: 6px;
       left: 3px;
+
+      @include themed() {
+        background-color: darken(t($primary), 20%);
+      }
     }
 
     &::after {
@@ -171,11 +188,14 @@
       width: 16px;
       bottom: -7px;
       transform: skewY(45deg);
-      background-color: darken($primary, 30%);
 
       right: -5px;
       width: 6px;
       bottom: -1px;
+
+      @include themed() {
+        background-color: darken(t($primary), 30%);
+      }
     }
 
     .category-text {

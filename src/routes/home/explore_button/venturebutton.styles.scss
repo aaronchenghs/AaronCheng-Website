@@ -16,9 +16,11 @@ $borderRadius: 4px;
   text-decoration: none;
   font-size: 1.5vw;
   transition: all $buttonTransitionTime;
-  background-color: $primary;
   border-width: 0px;
 
+  @include themed() {
+    background-color: t($primary);
+  }
   &::before {
     //bottom side
     @extend %test;
@@ -27,7 +29,9 @@ $borderRadius: 4px;
     width: 99.4%;
     left: 8px;
     transform: skewX(45deg);
-    background-color: darken($primary, 10%);
+    @include themed() {
+      background-color: darken(t($primary), 10%);
+    }
   }
 
   &::after {
@@ -38,7 +42,9 @@ $borderRadius: 4px;
     width: 16px;
     bottom: -8px;
     transform: skewY(45deg);
-    background-color: darken($primary, 30%);
+    @include themed() {
+      background-color: darken(t($primary), 30%);
+    }
   }
 
   &:active {
@@ -58,6 +64,8 @@ $borderRadius: 4px;
   }
 
   &:hover {
-    background-color: $sub-primary;
+    @include themed() {
+      background-color: t($sub-primary);
+    }
   }
 }

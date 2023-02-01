@@ -24,9 +24,10 @@
   }
 
   .home-box {
-    color: $primary;
+    @include themed() {
+      color: t($primary);
+    }
     font-family: $theme-font;
-
     min-width: 230px;
 
     font-size: 1.5vw;
@@ -38,6 +39,10 @@
     @media screen and (max-width: 1460px) {
       font-size: 22px;
     }
+  }
+
+  .home-box:visited {
+    text-decoration: none;
   }
 
   .home-box:hover {
@@ -103,8 +108,11 @@
   }
 
   .logo-title {
-    font-family: $theme-font;
-    color: $primary;
+    @include themed() {
+      font-family: $theme-font;
+      color: t($primary);
+    }
+
     font-size: 0.9vw;
   }
 

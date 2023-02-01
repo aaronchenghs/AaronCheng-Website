@@ -1,22 +1,46 @@
-$primary: #062940;
-$sub-primary: #0863a0;
 $title-font: "";
 $theme-font: "Work Sans";
 $page-minimum-width: 803px;
 
-$background-center: white;
-$background-sides: #f5f4ec;
+$primary: "primary";
+$sub-primary: "sub-primary";
+$background-center: "background-center";
+$background-sides: "background-sides";
 
-// $primary: #031d2c;
-// $sub-primary: #07446c;
+$themes: (
+  light: (
+    primary: #062940,
+    sub-primary: #0863a0,
+    background-center: white,
+    background-sides: #f5f4ec,
+  ),
+  dark: (
+    primary: #008fe2,
+    sub-primary: #d4eeff,
+    background-center: #063b5f,
+    background-sides: #02141e,
+  ),
+);
 
-// $background-center: #063b5f;
-// $background-sides: #02141e;
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
 
-:export {
-  darknavy: $primary;
-  titleFont: $title-font;
-  themefont: $theme-font;
-  pageminwidth: $page-minimum-width;
-  subprimary: $sub-primary;
+@function t($key) {
+  @return map-get($theme-map, $key);
 }

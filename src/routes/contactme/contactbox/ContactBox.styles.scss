@@ -90,7 +90,9 @@ $contact-sidesgap: 2.5rem;
 
   .icon-text {
     font-size: 1.3vw;
-    color: $primary;
+    @include themed() {
+      color: t($primary);
+    }
   }
 }
 
@@ -101,11 +103,16 @@ $contact-sidesgap: 2.5rem;
 }
 
 .contact-thumb:visited {
-  color: $primary;
+  @include themed() {
+    color: t($primary);
+  }
 }
 
 .tag {
-  color: $sub-primary;
+  @include themed() {
+    color: t($sub-primary);
+  }
+
   text-decoration: none;
 }
 

@@ -7,11 +7,13 @@
   align-items: center;
   width: 100%;
   .Header {
+    @include themed() {
+      background-color: t($primary);
+    }
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $primary;
     width: 55%;
     height: 5vmax;
     border-radius: 10px;
@@ -27,6 +29,8 @@
     }
   }
   .Header:hover {
-    background-color: darken($sub-primary, 10%);
+    @include themed() {
+      background-color: darken(t($sub-primary), 10%);
+    }
   }
 }

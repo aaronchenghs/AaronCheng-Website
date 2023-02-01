@@ -1,12 +1,15 @@
 @import "./globals/theme.scss";
 
 .website {
-  background: linear-gradient(
-    90deg,
-    $background-sides -10%,
-    $background-center 50%,
-    $background-sides 110%
-  );
+  @include themed() {
+    background: linear-gradient(
+      90deg,
+      t($background-sides) -10%,
+      t($background-center) 50%,
+      t($background-sides) 110%
+    );
+  }
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -23,5 +26,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $primary;
+  @include themed() {
+    background: t($primary);
+  }
 }
