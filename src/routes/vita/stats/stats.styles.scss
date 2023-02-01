@@ -6,19 +6,27 @@
   align-items: center;
   flex: 1;
   width: 95%;
+  transition: all $theme-transition;
 
   .portrait {
     height: 39vw;
     min-height: 800px;
     width: 25%;
-    background-color: whitesmoke;
+    transition: all $theme-transition;
+    @include themed() {
+      background-color: t($container-color);
+    }
   }
 
   .breast-container {
     width: 99%;
     margin: 0 auto;
-    background: rgb(255, 255, 255);
+    transition: all $theme-transition;
+
     display: flex;
+    @include themed() {
+      background: t($container-color);
+    }
   }
 
   $bioSideMargin: 40px;
@@ -29,7 +37,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    border: 1.5px solid rgba(51, 51, 51, 0.384);
     border-radius: 5px;
     border-right-width: 0px;
 
@@ -38,6 +45,7 @@
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
     justify-content: right;
+    transition: background-color $theme-transition;
   }
 
   .categoryDisplay {
@@ -52,6 +60,7 @@
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 10px;
+    transition: background-color $theme-transition;
   }
 
   .categories-container {
@@ -59,6 +68,7 @@
     flex-direction: column;
     gap: 2px;
     height: 100%;
+    transition: background-color $theme-transition;
   }
 
   $buttonTransitionTime: 0.1s;
@@ -73,9 +83,8 @@
     display: inline-block;
     font-family: $theme-font;
     transform: translate(-4%, -4%);
-    transition: all $buttonTransitionTime;
+    transition: all $buttonTransitionTime, background-color $theme-transition;
     font-size: 0.5vw;
-    border: 3px solid white;
     border-radius: 2px;
 
     border-width: 0px;
@@ -132,6 +141,7 @@
     &:hover {
       @include themed() {
         background-color: lighten(t($primary), 10%);
+        transition: background-color 0.5s;
       }
     }
 
@@ -145,11 +155,9 @@
   .categoryButtonSelected {
     display: inline-block;
     font-family: $theme-font;
-    background-color: #ffffff;
     transform: translate(1%, 1%);
-    transition: all $buttonTransitionTime;
+    transition: all $buttonTransitionTime, background-color $theme-transition;
     font-size: 0.5vw;
-    border: 3px solid white;
     border-radius: 2px;
 
     border-width: 0px;

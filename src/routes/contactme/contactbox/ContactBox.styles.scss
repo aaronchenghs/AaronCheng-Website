@@ -16,7 +16,7 @@ $contact-sidesgap: 2.5rem;
   margin-bottom: 9px;
   margin-top: 10px;
   transform: translate(-2%, -2%);
-  background-color: white;
+
   font-family: $theme-font;
   min-width: 710px;
   transition: all 1.6s;
@@ -24,6 +24,10 @@ $contact-sidesgap: 2.5rem;
   display: flex;
   flex-direction: row;
   align-items: center;
+  @include themed() {
+    background-color: t($container-color);
+    color: t($text-color);
+  }
 
   &::before {
     //bottom side
@@ -33,7 +37,9 @@ $contact-sidesgap: 2.5rem;
     width: 100%;
     left: 9px;
     transform: skewX(45deg);
-    background-color: darken(white, 15%);
+    @include themed() {
+      background-color: darken(t($container-color), 15%);
+    }
   }
 
   &::after {
@@ -44,7 +50,9 @@ $contact-sidesgap: 2.5rem;
     width: 16px;
     bottom: -10px;
     transform: skewY(45deg);
-    background-color: darken(white, 25%);
+    @include themed() {
+      background-color: darken(t($container-color), 25%);
+    }
   }
 }
 
@@ -53,13 +61,17 @@ $contact-sidesgap: 2.5rem;
   margin-left: -120px;
   //margin-bottom: 50px;
   height: 15vh;
-  box-shadow: 20px 10px 10px rgb(222, 222, 222);
+  @include themed() {
+    box-shadow: 20px 10px 10px t($shadow-color);
+  }
 
   &::before {
     //bottom
     height: 29px;
     left: 14px;
-    box-shadow: -15px 25px 15px rgb(222, 222, 222);
+    @include themed() {
+      box-shadow: -15px 25px 15px t($shadow-color);
+    }
   }
 
   &::after {
@@ -68,7 +80,9 @@ $contact-sidesgap: 2.5rem;
     width: 28px;
     bottom: -5px;
     height: 96%;
-    box-shadow: 25px 10px 15px rgb(222, 222, 222);
+    @include themed() {
+      box-shadow: 25px 10px 15px t($shadow-color);
+    }
   }
 }
 
@@ -91,7 +105,7 @@ $contact-sidesgap: 2.5rem;
   .icon-text {
     font-size: 1.3vw;
     @include themed() {
-      color: t($primary);
+      color: lighten(t($primary), 15%);
     }
   }
 }
@@ -110,7 +124,7 @@ $contact-sidesgap: 2.5rem;
 
 .tag {
   @include themed() {
-    color: t($sub-primary);
+    color: lighten(t($primary), 20%);
   }
 
   text-decoration: none;

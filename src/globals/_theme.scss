@@ -6,6 +6,10 @@ $primary: "primary";
 $sub-primary: "sub-primary";
 $background-center: "background-center";
 $background-sides: "background-sides";
+$text-color: "text-color";
+$border-color: "border-color";
+$container-color: "container-color";
+$shadow-color: "shadow-color";
 
 $themes: (
   light: (
@@ -13,12 +17,20 @@ $themes: (
     sub-primary: #0863a0,
     background-center: white,
     background-sides: #f5f4ec,
+    text-color: #062940,
+    border-color: black,
+    container-color: white,
+    shadow-color: rgb(209, 209, 209),
   ),
   dark: (
-    primary: #008fe2,
+    primary: #005180,
     sub-primary: #d4eeff,
     background-center: #063b5f,
     background-sides: #02141e,
+    text-color: #d8ddf5,
+    border-color: #f5f4ec,
+    container-color: #02141e,
+    shadow-color: rgb(0, 0, 0),
   ),
 );
 
@@ -43,4 +55,9 @@ $themes: (
 
 @function t($key) {
   @return map-get($theme-map, $key);
+}
+
+$theme-transition: 1.5s;
+:export {
+  theme-transition: $theme-transition;
 }

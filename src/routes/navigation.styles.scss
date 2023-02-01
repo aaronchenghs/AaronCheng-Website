@@ -12,8 +12,12 @@
   align-items: center;
   border-radius: 17px;
   margin-bottom: 40px;
-  background-color: white;
-  box-shadow: 6px 7px 4px rgb(209, 209, 209);
+  transition: all 1.6s;
+
+  @include themed() {
+    background-color: t($container-color);
+    box-shadow: 6px 7px 4px t($shadow-color);
+  }
 
   .nav-container {
     display: flex;
@@ -25,7 +29,7 @@
 
   .home-box {
     @include themed() {
-      color: t($primary);
+      color: t($text-color);
     }
     font-family: $theme-font;
     min-width: 230px;
@@ -77,7 +81,10 @@
     max-width: $box-maxwidth;
     -moz-osx-font-smoothing: grayscale;
     transition: transform 0.1s;
-    box-shadow: 3px 3px 3px inset rgb(173, 173, 173);
+
+    @include themed() {
+      box-shadow: 3px 3px 3px inset t($shadow-color);
+    }
 
     .logo-container {
       height: 100%;
@@ -110,7 +117,7 @@
   .logo-title {
     @include themed() {
       font-family: $theme-font;
-      color: t($primary);
+      color: t($text-color);
     }
 
     font-size: 0.9vw;
@@ -118,8 +125,11 @@
 
   .box:hover {
     transition: transform 0.1s;
-    box-shadow: 2px 1px 4px inset rgb(183, 183, 183);
     transition: transform 0.25s ease-out;
+
+    @include themed() {
+      box-shadow: 2px 1px 4px inset t($shadow-color);
+    }
 
     .logo {
       transform: scale(1.1);

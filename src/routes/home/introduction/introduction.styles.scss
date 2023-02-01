@@ -20,6 +20,7 @@ $borderRadius: 4px;
   padding: 20px 0px;
   transform: translate(-10%, -10%);
   font-size: 1vw;
+  transition: all $theme-transition;
 }
 
 .text-container {
@@ -35,26 +36,29 @@ $borderRadius: 4px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: all $theme-transition;
 }
 
 .text {
   @include themed() {
-    color: t($primary);
+    color: t($text-color);
   }
 
   font-family: $theme-font;
   text-decoration: none;
   font-size: 1.4vw;
   text-align: left;
+  transition: all $theme-transition;
 }
 
 .name-text {
   @include themed() {
-    color: t($primary);
+    color: t($text-color);
   }
   font-family: $theme-font;
   text-decoration: none;
   font-size: 1.4vw;
   text-align: left;
   margin-bottom: 5px;
+  transition: all $theme-transition;
 }

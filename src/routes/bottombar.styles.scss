@@ -11,9 +11,12 @@
   margin-top: 50px;
   min-width: $page-minimum-width;
   min-width: 771px;
+  transition: all $theme-transition;
 
-  background-color: white;
-  box-shadow: 6px 7px 4px rgb(209, 209, 209);
+  @include themed() {
+    background-color: t($container-color);
+    box-shadow: 6px 7px 4px t($shadow-color);
+  }
 
   .switchContainer {
     margin-left: 20px;

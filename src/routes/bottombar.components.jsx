@@ -17,7 +17,6 @@ const BottomBar = () => {
             dark={toggledLight}
             onClick={() => {
               dispatch(toggle);
-              console.log(toggledLight);
             }}
           />
         </div>

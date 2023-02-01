@@ -22,11 +22,11 @@ $borderRadius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all $theme-transition;
 }
 
 .intro-container {
   margin-top: 55px;
-  background-color: white;
   height: 26vw;
   width: 55%;
 
@@ -39,7 +39,11 @@ $borderRadius: 4px;
   font-family: $theme-font;
   text-decoration: none;
   font-size: 1vw;
-  background-color: white;
+  transition: all $theme-transition;
+
+  @include themed() {
+    background-color: t($container-color);
+  }
 
   &::before {
     //bottom side
@@ -49,17 +53,24 @@ $borderRadius: 4px;
     width: 100%;
     left: 10px;
     transform: skewX(45deg);
-    background-color: darken(white, 15%);
+    transition: all $theme-transition;
+
+    @include themed() {
+      background-color: darken(t($container-color), 15%);
+    }
   }
 
   &::after {
-    // right side
+    //right side
     @extend %test;
     right: -18px;
     height: 100%;
     width: 16px;
     bottom: -9px;
     transform: skewY(45deg);
-    background-color: darken(white, 25%);
+    transition: all $theme-transition;
+    @include themed() {
+      background-color: darken(t($container-color), 25%);
+    }
   }
 }
