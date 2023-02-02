@@ -1,12 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
 import { Fragment, useState } from "react";
 import { categories, websiteTitle } from "./nav_categories";
+import { useSelector } from "react-redux";
 
 import "./navigation.styles.scss";
 
 const Navigation = () => {
   const [selectedNav, setSelectedNav] = useState("home");
-
+  const darkMode = useSelector((state) => state.toggleLight);
   return (
     <Fragment>
       <div className="navigation">
@@ -23,7 +24,11 @@ const Navigation = () => {
             return selectedNav === category.state ? (
               <div className="selected-box" key={category.title}>
                 <Link className="logo-container" to={category.to}>
-                  <category.component className="logo" />
+                  {darkMode ? (
+                    <category.darkcomponent className="logo" />
+                  ) : (
+                    <category.component className="logo" />
+                  )}
                   <div className="logo-title">{category.title}</div>
                 </Link>
               </div>
@@ -34,7 +39,11 @@ const Navigation = () => {
                 onClick={() => setSelectedNav(category.state)}
               >
                 <Link className="logo-container" to={category.to}>
-                  <category.component className="logo" />
+                  {darkMode ? (
+                    <category.darkcomponent className="logo" />
+                  ) : (
+                    <category.component className="logo" />
+                  )}
                   <div className="logo-title">{category.title}</div>
                 </Link>
               </div>

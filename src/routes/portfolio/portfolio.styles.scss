@@ -6,10 +6,11 @@
   align-items: center;
   width: 100%;
   .cards-container {
-    width: 100%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 10px;
   }
 
   .card-container {
@@ -21,10 +22,13 @@
     justify-content: center;
     margin: 0 7.5px 15px;
     overflow: hidden;
-
     @include themed() {
-      border: 1px solid t($border-color);
+      background-color: t($container-color);
+      box-shadow: 6px 7px 4px t($shadow-color);
+      border: 1px solid t($primary);
     }
+    transition: background-color $theme-transition, border $theme-transition,
+      box-shadow $theme-transition;
 
     &:hover {
       cursor: pointer;
@@ -67,22 +71,31 @@
       justify-content: center;
       opacity: 0.7;
       position: absolute;
+      transition: background-color $theme-transition, border $theme-transition;
 
       @include themed() {
-        border: 1px solid t($border-color);
+        //border: 1px solid t($primary);
         background-color: t($container-color);
       }
 
-      h2 {
+      .card-title {
+        font-family: $theme-font;
         font-weight: bold;
         margin: 0 6px 0;
         font-size: 22px;
-        color: #4a4a4a;
+        transition: color $theme-transition;
+        @include themed() {
+          color: t($text-color);
+        }
       }
 
-      p {
+      .card-description {
         font-weight: lighter;
         font-size: 16px;
+        transition: color $theme-transition;
+        @include themed() {
+          color: t($text-color);
+        }
       }
     }
   }

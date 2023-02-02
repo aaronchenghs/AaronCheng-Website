@@ -1,4 +1,4 @@
-@import "../../../globals/theme.scss";
+@import "../../../globals/_theme.scss";
 $buttonTransitionTime: 0.1s;
 $borderRadius: 4px;
 %test {
@@ -67,8 +67,8 @@ $borderRadius: 4px;
 
   &:hover {
     @include themed() {
-      background-color: t($sub-primary);
+      background-color: darken(t($primary), 5%);
     }
-    transition: all $buttonTransitionTime, background-color 0.3s;
+    transition: all $buttonTransitionTime, background-color 0.1s;
   }
 }

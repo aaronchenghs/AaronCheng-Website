@@ -18,7 +18,7 @@
     height: 5vmax;
     border-radius: 10px;
     margin-bottom: 20px;
-    transition: all $theme-transition;
+    transition: background-color $theme-transition;
     text-align: center;
     @include themed() {
       border: 5px solid darken(t($primary), 25%);
@@ -32,7 +32,7 @@
   }
   .Header:hover {
     @include themed() {
-      background-color: darken(t($sub-primary), 10%);
+      background-color: darken(t($primary), 15%);
     }
   }
 }
