@@ -29,6 +29,6 @@ export const projects = [
     title: "Test - This Website!",
     href: "",
     imgPath: SampleHred,
-    description: "Click this to view this site's source code",
+    description: "Click here to view this site's source code",
   },
 ];

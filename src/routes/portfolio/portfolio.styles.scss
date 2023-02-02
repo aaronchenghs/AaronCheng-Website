@@ -1,4 +1,4 @@
-@import "../../globals/theme";
+@import "../../globals/_theme";
 .Portfolio-Page {
   display: flex;
   flex-direction: column;
@@ -10,18 +10,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
   }
 
   .card-container {
-    min-width: 30%;
-    height: 240px;
+    width: 35%;
+    height: 45vh;
     flex: 1 1 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 7.5px 15px;
-    overflow: hidden;
     @include themed() {
       background-color: t($container-color);
       box-shadow: 6px 7px 4px t($shadow-color);
@@ -30,72 +29,40 @@
     transition: background-color $theme-transition, border $theme-transition,
       box-shadow $theme-transition;
 
-    &:hover {
-      cursor: pointer;
-
-      & .background-image {
-        transform: scale(1.1);
-        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-      }
-
-      & .card-body-container {
-        opacity: 0.9;
-      }
-    }
-
-    &.large {
-      height: 380px;
-    }
-
-    &:first-child {
-      margin-right: 7.5px;
-    }
-
-    &:last-child {
-      margin-left: 7.5px;
-    }
-
-    .card-image {
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-body-container {
-      height: 90px;
-      padding: 0 25px;
-      display: flex;
-      flex-direction: column;
+    .card-image-container {
       align-items: center;
       justify-content: center;
-      opacity: 0.7;
-      position: absolute;
-      transition: background-color $theme-transition, border $theme-transition;
+      background: wheat;
+      width: 100%;
+      height: 80%;
+      .card-image {
+      }
+    }
 
+    .card-title-container {
+      display: flex;
+      flex-direction: column;
       @include themed() {
-        //border: 1px solid t($primary);
-        background-color: t($container-color);
+        background-color: linear-gradient(
+          90deg,
+          t($container-color) -10%,
+          t($background-center) 50%,
+          t($container-color) 110%
+        );
       }
-
+      width: 100%;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      @include themed() {
+        border: 2px solid darken(t($primary), 20%);
+      }
       .card-title {
+        @include themed() {
+          color: t($text-color);
+        }
         font-family: $theme-font;
-        font-weight: bold;
-        margin: 0 6px 0;
-        font-size: 22px;
-        transition: color $theme-transition;
-        @include themed() {
-          color: t($text-color);
-        }
-      }
-
-      .card-description {
-        font-weight: lighter;
-        font-size: 16px;
-        transition: color $theme-transition;
-        @include themed() {
-          color: t($text-color);
-        }
+        height: 80%;
       }
     }
   }
