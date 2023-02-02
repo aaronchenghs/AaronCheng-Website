@@ -6,13 +6,11 @@
   align-items: center;
   flex: 1;
   width: 95%;
-  transition: all $theme-transition;
 
   .portrait {
     height: 39vw;
     min-height: 800px;
     width: 25%;
-    transition: all $theme-transition;
     @include themed() {
       background-color: t($container-color);
     }
@@ -21,12 +19,12 @@
   .breast-container {
     width: 99%;
     margin: 0 auto;
-    transition: all $theme-transition;
 
     display: flex;
     @include themed() {
       background: t($container-color);
     }
+    transition: all $theme-transition;
   }
 
   $bioSideMargin: 40px;
@@ -45,7 +43,7 @@
     -moz-osx-font-smoothing: grayscale;
     backface-visibility: hidden;
     justify-content: right;
-    transition: background-color $theme-transition;
+    transition: all $theme-transition;
   }
 
   .categoryDisplay {
@@ -60,7 +58,6 @@
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 10px;
-    transition: background-color $theme-transition;
   }
 
   .categories-container {
@@ -68,7 +65,6 @@
     flex-direction: column;
     gap: 2px;
     height: 100%;
-    transition: background-color $theme-transition;
   }
 
   $buttonTransitionTime: 0.1s;
@@ -76,14 +72,14 @@
   %test {
     position: absolute;
     content: "";
-    transition: all $buttonTransitionTime;
+    transition: all $buttonTransitionTime, background-color $theme-transition;
   }
 
   .categoryButton {
     display: inline-block;
     font-family: $theme-font;
     transform: translate(-4%, -4%);
-    transition: all $buttonTransitionTime, background-color $theme-transition;
+    transition: all $buttonTransitionTime;
     font-size: 0.5vw;
     border-radius: 2px;
 
@@ -94,6 +90,7 @@
     @include themed() {
       background-color: t($primary);
     }
+    transition: all $buttonTransitionTime, background-color $theme-transition;
 
     &::before {
       //bottom side
