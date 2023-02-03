@@ -79,7 +79,6 @@
     display: inline-block;
     font-family: $theme-font;
     transform: translate(-4%, -4%);
-    transition: all $buttonTransitionTime;
     font-size: 0.5vw;
     border-radius: 2px;
 
@@ -90,7 +89,7 @@
     @include themed() {
       background-color: t($primary);
     }
-    transition: all $buttonTransitionTime, background-color $theme-transition;
+    transition: all $buttonTransitionTime, background-color 0.2s;
 
     &::before {
       //bottom side
@@ -138,7 +137,6 @@
     &:hover {
       @include themed() {
         background-color: lighten(t($primary), 10%);
-        transition: background-color 0.5s;
       }
     }
 

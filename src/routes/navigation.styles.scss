@@ -1,7 +1,7 @@
 @import "../globals/theme.scss";
 
 .navigation {
-  height: 5.5vw;
+  height: 13vh;
   width: 65%;
   margin-top: 20px;
   min-width: 771px;
@@ -81,7 +81,7 @@
     border-radius: $box-radius;
     max-width: $box-maxwidth;
     -moz-osx-font-smoothing: grayscale;
-    transition: transform 0.1s;
+    transition: box-shadow $theme-transition;
 
     @include themed() {
       box-shadow: 3px 3px 3px inset t($shadow-color);

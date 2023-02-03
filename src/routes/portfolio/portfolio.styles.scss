@@ -24,8 +24,11 @@
     @include themed() {
       background-color: t($container-color);
       box-shadow: 6px 7px 4px t($shadow-color);
-      border: 1px solid t($primary);
     }
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+
     transition: background-color $theme-transition, border $theme-transition,
       box-shadow $theme-transition;
 
@@ -34,7 +37,7 @@
       justify-content: center;
       background: wheat;
       width: 100%;
-      height: 80%;
+      height: 85%;
       .card-image {
       }
     }
@@ -43,26 +46,24 @@
       display: flex;
       flex-direction: column;
       @include themed() {
-        background-color: linear-gradient(
+        background: linear-gradient(
           90deg,
-          t($container-color) -10%,
-          t($background-center) 50%,
-          t($container-color) 110%
+          t($background-center) -10%,
+          t($container-color) 50%,
+          t($background-center) 110%
         );
       }
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
       width: 100%;
       flex: 1;
       justify-content: center;
       align-items: center;
-      @include themed() {
-        border: 2px solid darken(t($primary), 20%);
-      }
       .card-title {
         @include themed() {
           color: t($text-color);
         }
         font-family: $theme-font;
-        height: 80%;
       }
     }
   }

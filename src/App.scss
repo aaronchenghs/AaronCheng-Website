@@ -6,14 +6,18 @@
   flex-direction: column;
   justify-content: center;
   min-width: $page-minimum-width;
+  // @include themed() {
+  //   background: linear-gradient(
+  //     90deg,
+  //     t($background-sides) -10%,
+  //     t($background-center) 50%,
+  //     t($background-sides) 110%
+  //   );
+  // }
   @include themed() {
-    background: linear-gradient(
-      90deg,
-      t($background-sides) -10%,
-      t($background-center) 50%,
-      t($background-sides) 110%
-    );
+    background-color: darken(t($background-sides), 1%);
   }
+  transition: background-color $theme-transition;
 }
 
 ::-webkit-scrollbar {
