@@ -10,6 +10,7 @@ $text-color: "text-color";
 $border-color: "border-color";
 $container-color: "container-color";
 $shadow-color: "shadow-color";
+$background: "background";
 
 $themes: (
   light: (
@@ -17,6 +18,7 @@ $themes: (
     sub-primary: #0863a0,
     background-center: white,
     background-sides: #f5f4ec,
+    background: #f5f4ec,
     text-color: #062940,
     border-color: black,
     container-color: white,
@@ -27,6 +29,7 @@ $themes: (
     sub-primary: #d4eeff,
     background-center: #063b5f,
     background-sides: #02141e,
+    background: rgb(10, 25, 41),
     text-color: #d8ddf5,
     border-color: #f5f4ec,
     container-color: #02141e,

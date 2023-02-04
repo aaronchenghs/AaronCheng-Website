@@ -1,14 +1,15 @@
 @import "../globals/_theme.scss";
 
 .bottombar {
-  height: 13vh;
+  height: 12vh;
+  max-height: 170px;
   width: 65%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 1vh;
   border-radius: 17px;
-  margin-top: 50px;
+  margin-top: 4vh;
   min-width: $page-minimum-width;
   min-width: 771px;
   transition: background-color $theme-transition, box-shadow $theme-transition;

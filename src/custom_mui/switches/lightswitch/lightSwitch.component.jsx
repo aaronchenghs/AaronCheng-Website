@@ -2,9 +2,9 @@ import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
 
 export const LightSwitch = styled(Switch)(({ dark }) => ({
-  width: 62,
-  height: 34,
-  padding: 7,
+  width: 64,
+  height: 39,
+  padding: 7.5,
 
   "& .MuiSwitch-switchBase": {
     margin: 1,
@@ -26,8 +26,8 @@ export const LightSwitch = styled(Switch)(({ dark }) => ({
   },
   "& .MuiSwitch-thumb": {
     backgroundColor: dark === true ? "#001e3c" : "orange",
-    width: 32,
-    height: 32,
+    width: 36,
+    height: 36,
     "&:before": {
       content: "''",
       position: "absolute",

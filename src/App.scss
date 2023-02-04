@@ -15,7 +15,7 @@
   //   );
   // }
   @include themed() {
-    background-color: darken(t($background-sides), 1%);
+    background-color: darken(t($background), 1%);
   }
   transition: background-color $theme-transition;
 }
