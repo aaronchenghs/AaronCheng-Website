@@ -55,6 +55,10 @@
     transform: scale(1.05);
   }
 
+  .home-box:active {
+    transform: scale(1.15);
+  }
+
   $box-leftmargin: 8px;
   $box-paddingtop: 4px;
   $box-width: 7vw;

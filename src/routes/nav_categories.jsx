@@ -8,7 +8,7 @@ import { ReactComponent as PortfolioDark } from "../assets/nav-logos/portfolio-d
 import { ReactComponent as FeedbackDark } from "../assets/nav-logos/feedback-dark.svg";
 import { ReactComponent as ContactDark } from "../assets/nav-logos/contact-dark.svg";
 
-export const websiteTitle = "AaronChengヽ(゜▽゜　)－";
+export const websiteTitle = "AaronCheng";
 export const categories = [
   {
     title: "Vita",
