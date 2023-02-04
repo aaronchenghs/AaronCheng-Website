@@ -1,13 +1,17 @@
 import React, { Fragment } from "react";
 import PageHeader from "../components/pageHeader/pageheader.component";
 import { TextField } from "@mui/material";
-import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
+import {
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+} from "../../utils/firebase/firebase.utils";
 
 import "./feedback.styles.scss";
 
 const Feedback = () => {
   const logGoogleUser = async () => {
-    const response = await signInWithGooglePopup();
+    const { user } = await signInWithGooglePopup();
+    const userDocRef = await createUserDocumentFromAuth(user);
   };
   return (
     <Fragment>
