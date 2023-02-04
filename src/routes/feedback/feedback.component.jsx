@@ -10,9 +10,15 @@ import "./feedback.styles.scss";
 
 const Feedback = () => {
   const logGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = await createUserDocumentFromAuth(user);
+    try {
+      const { user } = await signInWithGooglePopup();
+      const userDocRef = await createUserDocumentFromAuth(user);
+      //Re-render this
+    } catch (error) {
+      console.log("Sign in cancelled");
+    }
   };
+
   return (
     <Fragment>
       <div className="Feedback-Page">
