@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import PageHeader from "../components/pageHeader/pageheader.component";
-import { TextField } from "@mui/material";
+import FeedbackInput from "./feedbackinput/feedbackinput.component";
+import { useSelector, useDispatch } from "react-redux";
+import { signin_action } from "../../redux_manager/actions/auth.action";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -9,11 +11,14 @@ import {
 import "./feedback.styles.scss";
 
 const Feedback = () => {
+  const signedIn = useSelector((state) => state.signIn);
+  const dispatch = useDispatch();
+
   const logGoogleUser = async () => {
     try {
       const { user } = await signInWithGooglePopup();
       const userDocRef = await createUserDocumentFromAuth(user);
-      //Re-render this
+      dispatch(signin_action);
     } catch (error) {
       console.log("Sign in cancelled");
     }
@@ -24,11 +29,13 @@ const Feedback = () => {
       <div className="Feedback-Page">
         <PageHeader text={"Feedback Header"} />
         <div className="give-feedback-container">
-          <button onClick={logGoogleUser}>
-            Sign in with google to leave feedback
-          </button>
-          {/* <TextField />
-          other stuff */}
+          {signedIn ? (
+            <FeedbackInput />
+          ) : (
+            <button className="sign-in-button" onClick={logGoogleUser}>
+              Sign in with Google to leave feedback
+            </button>
+          )}
         </div>
         <div className="feedbacks-container"></div>
       </div>

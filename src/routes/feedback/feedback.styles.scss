@@ -1,5 +1,11 @@
-@import "../../globals/theme.scss";
-
+@import "../../globals/_theme.scss";
+$buttonTransitionTime: 0.05s;
+$borderRadius: 4px;
+%test {
+  position: absolute;
+  content: "";
+  transition: all $buttonTransitionTime;
+}
 .Feedback-Page {
   display: flex;
   flex-direction: column;
@@ -13,6 +19,7 @@
     justify-content: center;
     align-items: center;
     width: 60%;
+    height: 20vh;
     @include themed() {
       background-color: t($sub-primary);
     }
@@ -21,5 +28,71 @@
     transition: background-color $theme-transition, border $theme-transition;
     margin: 5px;
     gap: 10px;
+  }
+
+  .sign-in-button {
+    display: inline-block;
+    padding: 20px 40px;
+    color: white;
+    transform: translate(-5%, -5%);
+    font-family: $theme-font;
+    text-decoration: none;
+    font-size: 2vh;
+    transition: all $buttonTransitionTime, background-color 0.5;
+    border-width: 0px;
+
+    @include themed() {
+      background-color: t($primary);
+    }
+    &::before {
+      //bottom side
+      @extend %test;
+      bottom: -16px;
+      height: 17px;
+      width: 100%;
+      left: 8px;
+      transform: skewX(45deg);
+      transition: all $buttonTransitionTime, background-color $theme-transition;
+      @include themed() {
+        background-color: darken(t($primary), 7%);
+      }
+    }
+
+    &::after {
+      // right side
+      @extend %test;
+      right: -15px;
+      height: 100%;
+      width: 16px;
+      bottom: -8px;
+      transform: skewY(45deg);
+      @include themed() {
+        background-color: darken(t($primary), 30%);
+      }
+      transition: all $buttonTransitionTime, background-color $theme-transition;
+    }
+
+    &:active {
+      margin-left: 10px;
+      margin-top: 10px;
+      &::before {
+        bottom: -5px;
+        height: 5px;
+        left: 3px;
+      }
+
+      &::after {
+        right: -5px;
+        width: 5px;
+        bottom: -3px;
+      }
+    }
+
+    &:hover {
+      @include themed() {
+        background-color: darken(t($primary), 5%);
+      }
+      transition: all $buttonTransitionTime, background-color 0.1s;
+    }
   }
 }

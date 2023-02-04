@@ -45,6 +45,6 @@ export const LightSwitch = styled(Switch)(({ dark }) => ({
   "& .MuiSwitch-track": {
     opacity: 1,
     backgroundColor: dark === true ? "#8796A5" : "#aab4be",
-    borderRadius: 20 / 2,
+    borderRadius: 20 / 1.5,
   },
 }));
