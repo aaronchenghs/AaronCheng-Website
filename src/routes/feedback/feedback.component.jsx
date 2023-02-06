@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import PageHeader from "../components/pageHeader/pageheader.component";
+import FeedbackEntry from "./feedbackentry/feedbackentry.component";
 import FeedbackInput from "./feedbackinput/feedbackinput.component";
 import { useSelector, useDispatch } from "react-redux";
 import { signin_action } from "../../redux_manager/actions/auth.action";
@@ -27,7 +28,7 @@ const Feedback = () => {
   return (
     <Fragment>
       <div className="Feedback-Page">
-        <PageHeader text={"Feedback Header"} />
+        <PageHeader text={"Love Me? Hate Me...? Post a Note 🖋"} />
         <div className="give-feedback-container">
           {signedIn ? (
             <FeedbackInput />
@@ -36,6 +37,11 @@ const Feedback = () => {
               Sign in with Google to leave feedback
             </button>
           )}
+        </div>
+        <div className="feedback-entries-container">
+          <FeedbackEntry />
+          <FeedbackEntry />
+          <FeedbackEntry />
         </div>
         <div className="feedbacks-container"></div>
       </div>

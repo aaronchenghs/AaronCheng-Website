@@ -7,7 +7,7 @@ const Portfolio = () => {
   return (
     <Fragment>
       <div className="Portfolio-Page">
-        <PageHeader text={"Portfolio Header"} />
+        <PageHeader text={"Take a Gander at My Projects 📦"} />
         <div className="cards-container">
           {projects.map((project) => {
             return (

@@ -1,0 +1,85 @@
+@import "../../../globals/_theme.scss";
+$buttonTransitionTime: 0.05s;
+$borderRadius: 4px;
+%test {
+  position: absolute;
+  content: "";
+  transition: all 0.5s;
+}
+
+.feedback-entry {
+  width: 50vw;
+  height: 13vh;
+  margin-bottom: 9px;
+  margin-top: 10px;
+  transform: translate(-2%, -2%);
+
+  font-family: $theme-font;
+  min-width: 710px;
+  transition: all $theme-transition;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include themed() {
+    background-color: t($container-color);
+    color: t($text-color);
+  }
+
+  &::before {
+    //bottom side
+    @extend %test;
+    bottom: -18px;
+    height: 17px;
+    width: 100%;
+    left: 9px;
+    transform: skewX(45deg);
+    @include themed() {
+      background-color: darken(t($container-color), 15%);
+    }
+  }
+
+  &::after {
+    // right side
+    @extend %test;
+    right: -17px;
+    height: 100%;
+    width: 16px;
+    bottom: -10px;
+    transform: skewY(45deg);
+    @include themed() {
+      background-color: darken(t($container-color), 25%);
+    }
+  }
+}
+.feedback-entry:hover {
+  transition: all 0.5s;
+  margin-left: -120px;
+  //margin-bottom: 50px;
+  height: 15vh;
+  @include themed() {
+    box-shadow: 20px 10px 10px t($shadow-color);
+  }
+
+  &::before {
+    //bottom
+    height: 25px;
+    left: 12px;
+    bottom: -25px;
+    width: 101%;
+    @include themed() {
+      box-shadow: -15px 25px 15px t($shadow-color);
+    }
+  }
+
+  &::after {
+    //right
+    right: -24px;
+    width: 24px;
+    bottom: -10px;
+    height: 96%;
+    @include themed() {
+      box-shadow: 25px 10px 15px t($shadow-color);
+    }
+  }
+}

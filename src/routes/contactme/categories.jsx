@@ -1,4 +1,4 @@
-export const Contact_HeaderText = "Places you can connect with me 🔗";
+export const Contact_HeaderText = "Places You Can Connect With Me 🔗";
 
 export const iconInfos = [
   {

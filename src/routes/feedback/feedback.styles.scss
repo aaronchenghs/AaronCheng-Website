@@ -13,32 +13,46 @@ $borderRadius: 4px;
   align-items: center;
   width: 100%;
 
-  .give-feedback-container {
+  .feedback-entries-container {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
     justify-content: center;
     align-items: center;
-    width: 60%;
-    height: 20vh;
+    width: 100%;
+  }
+  .give-feedback-container {
+    width: 35vw;
+    min-width: 600px;
+    padding: 4vmin;
+    margin-bottom: 9px;
+    margin-top: 10px;
+    border-radius: 25px;
+
+    transform: translate(-2%, -2%);
+    font-family: $theme-font;
+    transition: all $theme-transition;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     @include themed() {
-      background-color: t($sub-primary);
+      background-color: lighten(t($container-color), 75%);
+      color: t($text-color);
     }
-    border: 3px solid grey;
-    border-radius: 4px;
-    transition: background-color $theme-transition, border $theme-transition;
-    margin: 5px;
-    gap: 10px;
   }
 
   .sign-in-button {
     display: inline-block;
     padding: 20px 40px;
     color: white;
-    transform: translate(-5%, -5%);
+    transform: translate(-5%, -15%);
     font-family: $theme-font;
     text-decoration: none;
-    font-size: 2vh;
-    transition: all $buttonTransitionTime, background-color 0.5;
+    font-size: 2vmin;
+    transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
 
     @include themed() {
@@ -47,10 +61,10 @@ $borderRadius: 4px;
     &::before {
       //bottom side
       @extend %test;
-      bottom: -16px;
-      height: 17px;
+      bottom: -11px;
+      height: 11px;
       width: 100%;
-      left: 8px;
+      left: 6px;
       transform: skewX(45deg);
       transition: all $buttonTransitionTime, background-color $theme-transition;
       @include themed() {
@@ -61,10 +75,10 @@ $borderRadius: 4px;
     &::after {
       // right side
       @extend %test;
-      right: -15px;
+      right: -10px;
       height: 100%;
-      width: 16px;
-      bottom: -8px;
+      width: 10px;
+      bottom: -5px;
       transform: skewY(45deg);
       @include themed() {
         background-color: darken(t($primary), 30%);
