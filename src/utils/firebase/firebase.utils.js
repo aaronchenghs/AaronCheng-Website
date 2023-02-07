@@ -23,6 +23,8 @@ export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const database = getFirestore();
+
+//userdoc
 export const createUserDocumentFromAuth = async (userAuth) => {
   const userDocRef = doc(database, "users", userAuth.uid);
 
@@ -43,3 +45,7 @@ export const createUserDocumentFromAuth = async (userAuth) => {
   }
   return userDocRef;
 };
+//feedbackdoc
+//const feedbackDocRef = database.collection("feedback");
+
+export const createFeedbackDocument = async (FeedbackDTO) => {};

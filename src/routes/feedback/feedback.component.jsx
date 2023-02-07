@@ -4,6 +4,7 @@ import FeedbackEntry from "./feedbackentry/feedbackentry.component";
 import FeedbackInput from "./feedbackinput/feedbackinput.component";
 import { useSelector, useDispatch } from "react-redux";
 import { signin_action } from "../../redux_manager/actions/auth.action";
+import { getAllFeedback } from "../../utils/firebase/firebase.utils";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
