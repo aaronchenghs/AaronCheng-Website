@@ -83,12 +83,23 @@ export const getFeedbackStream = async () => {
   const querySnapshot = await getDocs(q);
 
   const dataArray = [];
-  const feedbackMap = querySnapshot.docs.forEach((docSnapshot) => {
-    dataArray.push(docSnapshot.data());
-    // const { FeedbackName, names } = docSnapshot.data();
-    // acc[FeedbackName] = names;
-    // return acc;
+  const feedbackMap = querySnapshot.docs.map((docSnapshot) => {
+    dataArray.push(
+      new feedbackDTO(
+        docSnapshot.data().FeedbackName,
+        docSnapshot.data().FeedbackMessage,
+        docSnapshot.data().createdAt
+      )
+    );
   }, {});
 
   return dataArray;
 };
+
+class feedbackDTO {
+  constructor(name, message, date) {
+    this.name = name;
+    this.message = message;
+    this.date = date;
+  }
+}

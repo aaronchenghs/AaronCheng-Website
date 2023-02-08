@@ -9,11 +9,13 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 import { getFeedbackStream } from "../../utils/firebase/firebase.utils";
+import { useState } from "react";
 
 import "./feedback.styles.scss";
 
 const Feedback = () => {
   const signedIn = useSelector((state) => state.signIn);
+  const [feedbackMap, setFeedbackMap] = useState({});
   const dispatch = useDispatch();
 
   const logGoogleUser = async () => {
@@ -31,7 +33,7 @@ const Feedback = () => {
   useEffect(() => {
     const getFeedbackMap = async () => {
       const feedbackMap = await getFeedbackStream();
-      console.log(feedbackMap[0].FeedbackMessage);
+      setFeedbackMap(feedbackMap);
     };
     getFeedbackMap();
   }, []);
@@ -56,9 +58,16 @@ const Feedback = () => {
           )}
         </div>
         <div className="feedback-entries-container">
-          <FeedbackEntry name="name :" message="message" />
+          {Object.keys(feedbackMap).map((position) => {
+            return (
+              <FeedbackEntry
+                key={feedbackMap[position].name}
+                name={feedbackMap[position].name}
+                message={feedbackMap[position].message}
+              />
+            );
+          })}
         </div>
-        <div className="feedbacks-container"></div>
       </div>
     </Fragment>
   );
