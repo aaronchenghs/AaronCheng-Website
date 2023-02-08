@@ -1,6 +1,10 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "./feedbackentry.styles.scss";
-const FeedbackEntry = () => {
-  return <div className="feedback-entry"></div>;
+const FeedbackEntry = ({ name, message }) => {
+  return (
+    <div className="feedback-entry">
+      {name} + {message}
+    </div>
+  );
 };
 export default FeedbackEntry;

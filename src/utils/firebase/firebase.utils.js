@@ -1,6 +1,15 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  getDoc,
+  setDoc,
+  collection,
+  query,
+  getDocs,
+} from "firebase/firestore";
+import { uuidv4 } from "@firebase/util";
 
 const firebaseConfig = {
   apiKey: "AIzaSyALwWzbaZgeh762wvQ7SMbnKfxopuIVf58",
@@ -24,7 +33,7 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const database = getFirestore();
 
-//userdoc
+//userdoc CREATE
 export const createUserDocumentFromAuth = async (userAuth) => {
   const userDocRef = doc(database, "users", userAuth.uid);
 
@@ -45,7 +54,41 @@ export const createUserDocumentFromAuth = async (userAuth) => {
   }
   return userDocRef;
 };
-//feedbackdoc
-//const feedbackDocRef = database.collection("feedback");
+//feedbackdoc CREATE
+export const createFeedbackDocument = async (FeedbackName, FeedbackMessage) => {
+  const feedbackDocRef = doc(database, "feedback", uuidv4());
 
-export const createFeedbackDocument = async (FeedbackDTO) => {};
+  const feedbackSnapshot = await getDoc(feedbackDocRef);
+  if (!feedbackSnapshot.exists()) {
+    const createdAt = new Date();
+
+    try {
+      await setDoc(feedbackDocRef, {
+        FeedbackName,
+        FeedbackMessage,
+        createdAt,
+      });
+    } catch (error) {
+      console.log("error creating the feedback", error.message);
+    }
+  }
+  return feedbackDocRef;
+};
+
+//feedbackdoc GET
+export const getFeedbackStream = async () => {
+  const collectionRef = collection(database, "feedback");
+
+  const q = query(collectionRef);
+  const querySnapshot = await getDocs(q);
+
+  const dataArray = [];
+  const feedbackMap = querySnapshot.docs.forEach((docSnapshot) => {
+    dataArray.push(docSnapshot.data());
+    // const { FeedbackName, names } = docSnapshot.data();
+    // acc[FeedbackName] = names;
+    // return acc;
+  }, {});
+
+  return dataArray;
+};

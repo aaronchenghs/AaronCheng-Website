@@ -109,4 +109,11 @@ $borderRadius: 4px;
       transition: all $buttonTransitionTime, background-color 0.1s;
     }
   }
+
+  .post-submit-message {
+    font-family: $theme-font;
+    @include themed() {
+      color: darken(t($text-color), 20%);
+    }
+  }
 }
