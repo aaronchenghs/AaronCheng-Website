@@ -9,7 +9,8 @@ $borderRadius: 4px;
 
 .feedback-entry {
   width: 50vw;
-  height: 13vh;
+  min-height: 13vh;
+  max-height: 23vh;
   margin-bottom: 9px;
   margin-top: 10px;
   transform: translate(-2%, -2%);
@@ -66,16 +67,18 @@ $borderRadius: 4px;
     width: 97.7%;
     height: 100%;
     padding: 10px;
-    @include themed() {
-      background-color: darken(t($background), 8%);
-    }
+    overflow-y: hidden;
+    // @include themed() {
+    //   background-color: darken(t($background), 8%);
+    // }
   }
 }
 .feedback-entry:hover {
   transition: all 0.5s;
   margin-left: -120px;
+  min-height: 13vh;
+  max-height: none;
   //margin-bottom: 50px;
-  height: 15vh;
   @include themed() {
     box-shadow: 20px 10px 10px t($shadow-color);
   }
