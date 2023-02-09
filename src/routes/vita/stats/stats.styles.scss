@@ -2,7 +2,7 @@
 
 .Home-Page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   flex: 1;
   width: 95%;
@@ -62,9 +62,15 @@
 
   .categories-container {
     display: flex;
-    flex-direction: column;
-    gap: 2px;
-    height: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 5px;
+    width: 60vw;
+    height: 12vh !important;
+
+    padding-top: 10px;
+    position: sticky;
+    top: 0;
   }
 
   $buttonTransitionTime: 0.1s;
@@ -75,16 +81,23 @@
     transition: all $buttonTransitionTime, background-color $theme-transition;
   }
 
+  $button-height: 100%;
+  $button-width: 15vw;
+  $button-font-size: 1vw;
+  $button-transform: translate(0%, 5%);
+  $button-left-margin: 5px;
+  $button-border-radius: 2px;
+  $button-border-width: 0px;
   .categoryButton {
     display: inline-block;
     font-family: $theme-font;
     transform: translate(-4%, -4%);
-    font-size: 0.5vw;
-    border-radius: 2px;
+    font-size: $button-font-size;
+    border-radius: $button-border-radius;
 
-    border-width: 0px;
-    height: 100%;
-    width: 3.8vw;
+    border-width: $button-border-width;
+    height: $button-height;
+    width: $button-width;
 
     @include themed() {
       background-color: t($primary);
@@ -94,8 +107,8 @@
     &::before {
       //bottom side
       @extend %test;
-      bottom: -15px;
-      height: 17px;
+      bottom: -14px;
+      height: 15px;
       width: 100%;
       left: 8px;
       transform: skewX(45deg);
@@ -107,9 +120,9 @@
     &::after {
       // right side
       @extend %test;
-      right: -15px;
-      height: 99%;
-      width: 16px;
+      right: -17px;
+      height: 98%;
+      width: 17px;
       bottom: -7px;
       transform: skewY(45deg);
       @include themed() {
@@ -118,19 +131,43 @@
     }
 
     &:active {
-      margin-left: 10px;
-      transform: translate(1%, 1%);
+      margin-left: $button-left-margin;
+      transform: $button-transform;
 
       &::before {
+        //bottom side
+        @extend %test;
+        bottom: -15px;
+        height: 17px;
+        width: 100%;
+        left: 8px;
+        transform: skewX(45deg);
+
         bottom: -5px;
         height: 6px;
         left: 3px;
+
+        @include themed() {
+          background-color: darken(t($primary), 20%);
+        }
       }
 
       &::after {
+        // right side
+        @extend %test;
+        right: -15px;
+        height: 100%;
+        width: 16px;
+        bottom: -7px;
+        transform: skewY(45deg);
+
         right: -5px;
-        width: 5px;
-        bottom: -3px;
+        width: 6px;
+        bottom: -1px;
+
+        @include themed() {
+          background-color: darken(t($primary), 30%);
+        }
       }
     }
 
@@ -150,16 +187,16 @@
   .categoryButtonSelected {
     display: inline-block;
     font-family: $theme-font;
-    transform: translate(1%, 1%);
     transition: all $buttonTransitionTime, background-color $theme-transition;
-    font-size: 0.5vw;
-    border-radius: 2px;
+    font-size: $button-font-size;
+    border-radius: $button-border-radius;
 
-    border-width: 0px;
-    height: 100%;
-    width: 3.8vw;
+    border-width: $button-border-width;
+    height: $button-height;
+    width: $button-width;
 
-    margin-left: 10px;
+    margin-left: $button-left-margin;
+    transform: $button-transform;
 
     @include themed() {
       background-color: t($primary);

@@ -14,21 +14,11 @@ import { useState } from "react";
 import "./feedback.styles.scss";
 
 const Feedback = () => {
-  const signedIn = useSelector((state) => state.signIn);
-  const [feedbackMap, setFeedbackMap] = useState({});
   const dispatch = useDispatch();
 
-  const logGoogleUser = async () => {
-    try {
-      const { user } = await signInWithGooglePopup();
-      const userDocRef = await createUserDocumentFromAuth(user);
-      dispatch(signin_action);
-    } catch (error) {
-      console.log("Sign in cancelled");
-    }
-  };
-
+  const signedIn = useSelector((state) => state.signIn);
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
+  const [feedbackMap, setFeedbackMap] = useState({});
 
   useEffect(() => {
     const getFeedbackMap = async () => {
@@ -38,13 +28,23 @@ const Feedback = () => {
     getFeedbackMap();
   }, [feedbackMap]);
 
+  const logGoogleUser = async () => {
+    try {
+      const { user } = await signInWithGooglePopup();
+      const userDocRef = await createUserDocumentFromAuth(user);
+      dispatch(signin_action);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const feedbackContainerStyle = signedIn
     ? "give-feedback-container"
     : "button-container";
   return (
     <Fragment>
       <div className="Feedback-Page">
-        <PageHeader text={"Love Me? Hate Me...? Post a Note 🖋"} />
+        <PageHeader text={"Love Me, Hate Me, Post a Note ✏️"} />
         <div className={feedbackContainerStyle}>
           {!messageGiven ? (
             signedIn ? (

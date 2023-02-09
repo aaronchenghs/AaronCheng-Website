@@ -12,30 +12,28 @@ export const Stats = () => {
 
   return (
     <div className="Home-Page">
-      <div className="portrait">
-        <img alt="skins" />
+      <div className="categories-container">
+        {statsCategories.map((category) => {
+          return (
+            <button
+              key={category.title}
+              className={
+                CategorySelection === category.state
+                  ? "categoryButtonSelected"
+                  : "categoryButton"
+              }
+              onClick={() => SetCategorySelection(category.state)}
+            >
+              <div className="category-text">{category.title}</div>
+            </button>
+          );
+        })}
       </div>
+      {/* <div className="portrait">
+        <img alt="skins" />
+      </div> */}
       <div className="bio">
         <div className="category-info">{categoryDisplay}</div>
-        <div className="categories-container">
-          {statsCategories.map((category) => {
-            return CategorySelection === category.state ? (
-              <button
-                className="categoryButtonSelected"
-                onClick={() => SetCategorySelection(category.state)}
-              >
-                <div className="category-text">{category.title}</div>
-              </button>
-            ) : (
-              <button
-                className="categoryButton"
-                onClick={() => SetCategorySelection(category.state)}
-              >
-                <div className="category-text">{category.title}</div>
-              </button>
-            );
-          })}
-        </div>
       </div>
     </div>
   );
