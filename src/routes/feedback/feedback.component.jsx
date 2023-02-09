@@ -26,7 +26,7 @@ const Feedback = () => {
       setFeedbackMap(feedbackMap);
     };
     getFeedbackMap();
-  }, [feedbackMap]);
+  }, []); //TODO: Find a new way to re-render
 
   const logGoogleUser = async () => {
     try {
