@@ -12,6 +12,7 @@ $borderRadius: 4px;
   justify-content: center;
   align-items: center;
   width: 100%;
+  min-height: 70vh;
 
   .feedback-entries-container {
     display: flex;
@@ -26,9 +27,9 @@ $borderRadius: 4px;
     width: 35vw;
     min-width: 600px;
     padding: 4vmin;
-    margin-bottom: 9px;
+    margin-bottom: 0.7vmin;
     margin-top: 10px;
-    border-radius: 25px;
+    border-radius: 20px;
 
     transform: translate(-2%, -2%);
     font-family: $theme-font;
@@ -42,6 +43,11 @@ $borderRadius: 4px;
       background-color: lighten(t($container-color), 75%);
       color: t($text-color);
     }
+  }
+
+  .button-container {
+    height: 1vmin;
+    margin-bottom: 2vmin;
   }
 
   .sign-in-button {

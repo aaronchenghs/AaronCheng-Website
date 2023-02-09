@@ -36,13 +36,16 @@ const Feedback = () => {
       setFeedbackMap(feedbackMap);
     };
     getFeedbackMap();
-  }, []);
+  }, [feedbackMap]);
 
+  const feedbackContainerStyle = signedIn
+    ? "give-feedback-container"
+    : "button-container";
   return (
     <Fragment>
       <div className="Feedback-Page">
         <PageHeader text={"Love Me? Hate Me...? Post a Note 🖋"} />
-        <div className="give-feedback-container">
+        <div className={feedbackContainerStyle}>
           {!messageGiven ? (
             signedIn ? (
               <FeedbackInput />

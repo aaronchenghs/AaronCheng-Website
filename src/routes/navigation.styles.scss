@@ -1,9 +1,9 @@
 @import "../globals/theme.scss";
 
 .navigation {
-  height: 12vh;
+  height: 11vh;
   max-height: 170px;
-  width: 65%;
+  width: 70%;
   margin-top: 1vh;
   min-width: 771px;
 
@@ -12,7 +12,7 @@
   align-content: space-between;
   align-items: center;
   border-radius: 17px;
-  margin-bottom: 4vh;
+  margin-bottom: 2.5vh;
   transition: all $theme-transition;
 
   @include themed() {

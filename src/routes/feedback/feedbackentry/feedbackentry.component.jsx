@@ -4,7 +4,7 @@ const FeedbackEntry = ({ name, message }) => {
   return (
     <div className="feedback-entry">
       <label className="name-container">{name}</label>
-      <p className="message-container">{message}</p>
+      <div className="message-container">{message}</div>
     </div>
   );
 };
