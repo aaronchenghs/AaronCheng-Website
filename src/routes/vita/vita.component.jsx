@@ -7,8 +7,7 @@ const Vita = () => {
   return (
     <Fragment>
       <div className="Vita-Page">
-        <PageHeader text={"What's Up With Me ✔"} />
-
+        <PageHeader text={"The Guide to Aaron Cheng ✔"} />
         <div className="stats-container">
           <Stats />
         </div>

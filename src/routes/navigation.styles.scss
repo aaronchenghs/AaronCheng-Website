@@ -86,7 +86,6 @@
     border-radius: $box-radius;
     max-width: $box-maxwidth;
     -moz-osx-font-smoothing: grayscale;
-    transition: box-shadow $theme-transition;
 
     @include themed() {
       box-shadow: 3px 3px 3px inset t($shadow-color);
@@ -130,8 +129,7 @@
   }
 
   .box:hover {
-    transition: transform 0.1s;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.3s ease-out;
 
     @include themed() {
       box-shadow: 2px 1px 4px inset t($shadow-color);

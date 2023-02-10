@@ -8,12 +8,20 @@ import { ReactComponent as PortfolioDark } from "../assets/nav-logos/portfolio-d
 import { ReactComponent as FeedbackDark } from "../assets/nav-logos/feedback-dark.svg";
 import { ReactComponent as ContactDark } from "../assets/nav-logos/contact-dark.svg";
 
+import {
+  vita,
+  portfolio,
+  contactme,
+  feedback,
+} from "../redux_manager/actions/nav.action";
+
 export const websiteTitle = "AaronCheng";
 export const categories = [
   {
     title: "Vita",
     state: "vita",
     to: "/vita",
+    action: vita,
     component: Vita,
     darkcomponent: VitaDark,
   },
@@ -21,6 +29,7 @@ export const categories = [
     title: "Portfolio",
     state: "portfolio",
     to: "/portfolio",
+    action: portfolio,
     component: Portfolio,
     darkcomponent: PortfolioDark,
   },
@@ -28,6 +37,7 @@ export const categories = [
     title: "Contact Me",
     state: "contactme",
     to: "/contactme",
+    action: contactme,
     component: Contact,
     darkcomponent: ContactDark,
   },
@@ -35,6 +45,7 @@ export const categories = [
     title: "Feedback",
     state: "feedback",
     to: "/feedback",
+    action: feedback,
     component: Feedback,
     darkcomponent: FeedbackDark,
   },
