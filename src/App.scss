@@ -1,4 +1,4 @@
-@import "./globals/theme.scss";
+@import "./globals/_theme.scss";
 
 .website {
   display: flex;
@@ -6,28 +6,22 @@
   flex-direction: column;
   justify-content: center;
   min-width: $page-minimum-width;
-  // @include themed() {
-  //   background: linear-gradient(
-  //     90deg,
-  //     t($background-sides) -10%,
-  //     t($background-center) 50%,
-  //     t($background-sides) 110%
-  //   );
-  // }
   @include themed() {
-    background-color: darken(t($background), 1%);
+    background-color: t($background);
   }
   transition: background-color $theme-transition;
+  overflow: overlay;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f4ec;
+  background-color: #0a1929;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #02141e;
+  background: darken(#0a1929, 5%);
+  border-radius: 3px;
 }

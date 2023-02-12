@@ -77,20 +77,19 @@ export const createFeedbackDocument = async (FeedbackName, FeedbackMessage) => {
 
 //feedbackdoc GET
 export const getFeedbackStream = async () => {
-  const collectionRef = collection(database, "feedback");
-
-  const q = query(collectionRef);
-  const querySnapshot = await getDocs(q);
+  const q = query(collection(database, "feedback"));
+  const queryCollection = await getDocs(q);
 
   const dataArray = [];
-  const feedbackMap = querySnapshot.docs.map((docSnapshot) => {
+  queryCollection.docs.map((doc) => {
     dataArray.push(
       new feedbackDTO(
-        docSnapshot.data().FeedbackName,
-        docSnapshot.data().FeedbackMessage,
-        docSnapshot.data().createdAt
+        doc.data().FeedbackName,
+        doc.data().FeedbackMessage,
+        doc.data().createdAt
       )
     );
+    return true;
   }, {});
 
   return dataArray;

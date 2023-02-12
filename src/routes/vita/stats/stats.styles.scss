@@ -1,60 +1,26 @@
 @import "../../../globals/theme.scss";
 
-.Home-Page {
+$bioSideMargin: 30px;
+$border-color: #ffffff56;
+$border-width: 3px;
+
+.bio {
+  width: 97%;
+
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex: 1;
-  width: 95%;
 
-  .portrait {
-    height: 39vw;
-    min-height: 800px;
-    width: 25%;
-    @include themed() {
-      background-color: t($container-color);
-    }
-  }
+  margin-top: $bioSideMargin;
+  margin-bottom: $bioSideMargin;
+  justify-content: center;
+  transition: all $theme-transition;
 
-  .breast-container {
-    width: 99%;
-    margin: 0 auto;
-
-    display: flex;
-    @include themed() {
-      background: t($container-color);
-    }
-    transition: all $theme-transition;
-  }
-
-  $bioSideMargin: 30px;
-
-  .bio {
-    width: 97%;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-
-    margin-top: $bioSideMargin;
-    margin-bottom: $bioSideMargin;
-    -moz-osx-font-smoothing: grayscale;
-    backface-visibility: hidden;
-    justify-content: right;
-    transition: all $theme-transition;
-  }
-
-  .categoryDisplay {
-    margin-left: 3px;
-  }
-
-  .category-info {
-    flex: 1;
-    background-color: #ffffff3a;
-    font-family: $theme-font;
-    text-align: center;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-top: 10px;
-  }
+  border-right: $border-width solid $border-color;
+  border-left: $border-width solid $border-color;
+  font-family: $theme-font;
+  text-align: center;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-top: 4vh;
 }

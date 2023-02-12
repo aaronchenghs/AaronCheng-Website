@@ -13,7 +13,7 @@ import "./feedbackinput.styles.scss";
 const FeedbackInput = () => {
   const dispatch = useDispatch();
 
-  //checkbox state
+  //inputs states
   const [anon, toggleAnon] = useState(false);
 
   const [nameValue, setNameValue] = useState("");
@@ -24,12 +24,16 @@ const FeedbackInput = () => {
   const handleMessageChange = (event) => {
     setMessageValue(event.target.value);
   };
+  //
 
   //on submit button click
   const submit = async () => {
+    //check anon checkbox
     anon
       ? await createFeedbackDocument(" ", messageValue)
       : await createFeedbackDocument(nameValue, messageValue);
+
+    //reload feedback map
     dispatch(messageGiven);
   };
 

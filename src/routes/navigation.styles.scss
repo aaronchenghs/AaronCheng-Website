@@ -2,7 +2,7 @@
 
 .navigation {
   height: 11vh;
-  max-height: 170px;
+  max-height: 150px;
   width: 70%;
   margin-top: 1vh;
   min-width: 771px;
@@ -86,6 +86,7 @@
     border-radius: $box-radius;
     max-width: $box-maxwidth;
     -moz-osx-font-smoothing: grayscale;
+    transition: box-shadow $theme-transition;
 
     @include themed() {
       box-shadow: 3px 3px 3px inset t($shadow-color);

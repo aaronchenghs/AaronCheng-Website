@@ -1,5 +1,5 @@
 @import "../../../globals/_theme.scss";
-$buttonTransitionTime: 0.05s;
+$buttonTransitionTime: 0.5s;
 $borderRadius: 4px;
 %test {
   position: absolute;
@@ -10,7 +10,7 @@ $borderRadius: 4px;
 .feedback-entry {
   width: 50vw;
   min-height: 13vh;
-  max-height: 23vh;
+  max-height: 20vh;
   margin-bottom: 9px;
   margin-top: 10px;
   transform: translate(-2%, -2%);
@@ -75,7 +75,7 @@ $borderRadius: 4px;
   }
 }
 .feedback-entry:hover {
-  transition: all $theme-transition;
+  transition: all $buttonTransitionTime;
   margin-left: -120px;
   min-height: 13vh;
   max-height: none;

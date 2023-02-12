@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import PageHeader from "../components/pageHeader/pageheader.component";
 import FeedbackEntry from "./feedbackentry/feedbackentry.component";
 import FeedbackInput from "./feedbackinput/feedbackinput.component";
@@ -8,8 +8,6 @@ import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
-import { getFeedbackStream } from "../../utils/firebase/firebase.utils";
-import { useState } from "react";
 
 import "./feedback.styles.scss";
 
@@ -18,26 +16,17 @@ const Feedback = () => {
 
   const signedIn = useSelector((state) => state.signIn);
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
-  const [feedbackMap, setFeedbackMap] = useState({});
-
-  useEffect(() => {
-    const getFeedbackMap = async () => {
-      const feedbackMap = await getFeedbackStream();
-      setFeedbackMap(feedbackMap);
-    };
-    getFeedbackMap();
-  }, []); //TODO: Find a new way to re-render
+  const feedbackMap = useSelector((state) => state.feedbackLoadReducer);
 
   const logGoogleUser = async () => {
     try {
       const { user } = await signInWithGooglePopup();
-      const userDocRef = await createUserDocumentFromAuth(user);
+      await createUserDocumentFromAuth(user);
       dispatch(signin_action);
     } catch (error) {
       console.log(error);
     }
   };
-
   const feedbackContainerStyle = signedIn
     ? "give-feedback-container"
     : "button-container";
@@ -56,7 +45,7 @@ const Feedback = () => {
             )
           ) : (
             <label className="post-submit-message">
-              Thanks you for providing feedback!
+              Thank you for providing feedback!
             </label>
           )}
         </div>
@@ -64,7 +53,7 @@ const Feedback = () => {
           {Object.keys(feedbackMap).map((position) => {
             return (
               <FeedbackEntry
-                key={feedbackMap[position].name}
+                key={position}
                 name={feedbackMap[position].name}
                 message={feedbackMap[position].message}
               />

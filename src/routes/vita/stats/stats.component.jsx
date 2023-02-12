@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 
 import "./stats.styles.scss";
 import { statsCategories } from "./categories";
@@ -8,7 +8,7 @@ export const Stats = () => {
   let categoryDisplay = <div className="categoryDisplay">placeholder</div>;
 
   return (
-    <div className="Home-Page">
+    <Fragment>
       <div className="categories-container">
         {statsCategories.map((category) => {
           return (
@@ -26,10 +26,8 @@ export const Stats = () => {
           );
         })}
       </div>
-      <div className="bio">
-        <div className="category-info">{categoryDisplay}</div>
-      </div>
-    </div>
+      <div className="bio">{categoryDisplay}</div>
+    </Fragment>
   );
 };
 export default Stats;
