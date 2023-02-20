@@ -4,8 +4,12 @@ import "./stats.styles.scss";
 import { statsCategories } from "./categories";
 
 export const Stats = () => {
+  //Button state
   const [CategorySelection, SetCategorySelection] = useState("summary");
-  let categoryDisplay = <div className="categoryDisplay">placeholder</div>;
+  //Select categry display
+  const categoryDisplay = statsCategories.find(
+    (category) => category.state === CategorySelection
+  ).component;
 
   return (
     <Fragment>
