@@ -22,7 +22,7 @@ $borderRadius: 4px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
+  gap: 4px;
   padding: 1vh;
   @include themed() {
     background-color: t($container-color);
@@ -57,21 +57,25 @@ $borderRadius: 4px;
 
   .name-container {
     transition: all $theme-transition;
-    font-weight: 500;
+    font-weight: 400;
     @include themed() {
       color: t($text-color);
-      border-bottom: 2px solid t($text-color);
+      border-bottom: 1px solid t($text-color);
+    }
+  }
+  .date-container {
+    font-size: 14px;
+    @include themed() {
+      color: darken(t($text-color), 15%);
     }
   }
   .message-container {
     width: 97.7%;
     height: 100%;
-    padding: 10px;
+    padding-left: 10px;
+    padding-top: 2px;
     overflow-y: hidden;
     transition: all $theme-transition;
-    // @include themed() {
-    //   background-color: darken(t($background), 8%);
-    // }
   }
 }
 .feedback-entry:hover {
@@ -79,7 +83,6 @@ $borderRadius: 4px;
   margin-left: -120px;
   min-height: 13vh;
   max-height: none;
-  //margin-bottom: 50px;
   @include themed() {
     box-shadow: 20px 10px 10px t($shadow-color);
   }

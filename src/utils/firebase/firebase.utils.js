@@ -21,7 +21,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const firebaseApp = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({
@@ -60,13 +60,18 @@ export const createFeedbackDocument = async (FeedbackName, FeedbackMessage) => {
 
   const feedbackSnapshot = await getDoc(feedbackDocRef);
   if (!feedbackSnapshot.exists()) {
-    const createdAt = new Date();
+    //store date as string
+    const dateObj = new Date();
+    const year = dateObj.getFullYear();
+    const month = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const day = String(dateObj.getDate()).padStart(2, "0");
+    const date = `${year}/${month}/${day}`;
 
     try {
       await setDoc(feedbackDocRef, {
         FeedbackName,
         FeedbackMessage,
-        createdAt,
+        date,
       });
     } catch (error) {
       console.log("error creating the feedback", error.message);
@@ -86,7 +91,7 @@ export const getFeedbackStream = async () => {
       new feedbackDTO(
         doc.data().FeedbackName,
         doc.data().FeedbackMessage,
-        doc.data().createdAt
+        doc.data().date
       )
     );
     return true;

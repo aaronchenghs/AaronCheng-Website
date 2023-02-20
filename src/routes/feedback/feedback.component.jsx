@@ -56,6 +56,7 @@ const Feedback = () => {
                 key={position}
                 name={feedbackMap[position].name}
                 message={feedbackMap[position].message}
+                date={feedbackMap[position].date}
               />
             );
           })}
