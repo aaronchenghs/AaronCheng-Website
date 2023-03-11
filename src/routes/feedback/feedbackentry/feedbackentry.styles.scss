@@ -65,6 +65,7 @@ $borderRadius: 4px;
   }
   .date-container {
     font-size: 14px;
+    transition: all $theme-transition;
     @include themed() {
       color: darken(t($text-color), 15%);
     }

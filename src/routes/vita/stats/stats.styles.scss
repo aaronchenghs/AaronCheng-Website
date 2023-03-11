@@ -4,13 +4,11 @@ $bioSideMargin: 30px;
 $border-width: 3px;
 
 .bio {
-  width: 97%;
-
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 
-  margin-top: $bioSideMargin;
   margin-bottom: $bioSideMargin;
   justify-content: center;
   transition: all $theme-transition;

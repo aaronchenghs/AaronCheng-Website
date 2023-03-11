@@ -1,14 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { skill_svgs } from "./svgs/skills.svgs";
 
 import "./skills.styles.scss";
 
 export const Skills = () => {
   return (
-    <Fragment>
-      <div className="content-container">
-        Aight this will be the easiest to do
-      </div>
-    </Fragment>
+    <div className="content-container">
+      <div className=""></div>
+    </div>
   );
 };
 export default Skills;

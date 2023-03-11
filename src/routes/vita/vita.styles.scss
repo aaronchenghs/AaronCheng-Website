@@ -8,7 +8,7 @@
   transition: all $theme-transition;
 
   .stats-container {
-    min-height: 60vh;
+    min-height: 57.8vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -24,10 +24,9 @@
     width: 50vw;
     height: 10vh !important;
     max-height: 100px;
-
     padding-top: 10px;
-    position: sticky;
-    top: 0;
+    top: 0 !important;
+    position: sticky !important;
   }
 
   $buttonTransitionTime: 0.15s;

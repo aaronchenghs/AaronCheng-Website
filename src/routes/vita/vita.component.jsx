@@ -5,14 +5,12 @@ import PageHeader from "../components/pageHeader/pageheader.component";
 
 const Vita = () => {
   return (
-    <Fragment>
-      <div className="Vita-Page">
-        <PageHeader text={"The Guide to Aaron Cheng ✔"} />
-        <div className="stats-container">
-          <Stats />
-        </div>
+    <div className="Vita-Page">
+      <PageHeader text={"The Guide to Aaron Cheng ✔"} />
+      <div className="stats-container">
+        <Stats />
       </div>
-    </Fragment>
+    </div>
   );
 };
 export default Vita;

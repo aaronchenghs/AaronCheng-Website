@@ -67,10 +67,10 @@ $contact-sidesgap: 2.5rem;
 
   &::before {
     //bottom
-    height: 25px;
+    height: 23px;
     left: 12px;
-    bottom: -25px;
-    width: 101%;
+    bottom: -21px;
+    width: 100%;
     @include themed() {
       box-shadow: -15px 25px 15px t($shadow-color);
     }
