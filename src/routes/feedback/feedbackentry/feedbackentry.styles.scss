@@ -24,6 +24,7 @@ $borderRadius: 4px;
   align-items: flex-start;
   gap: 4px;
   padding: 1vh;
+  box-shadow: 10px 0px 30px -3px #000;
   @include themed() {
     background-color: t($container-color);
     color: t($text-color);
@@ -38,7 +39,7 @@ $borderRadius: 4px;
     left: 9px;
     transform: skewX(45deg);
     @include themed() {
-      background-color: darken(t($container-color), 15%);
+      background-color: darken(t($primary), 18%);
     }
   }
 
@@ -51,7 +52,7 @@ $borderRadius: 4px;
     bottom: -10px;
     transform: skewY(45deg);
     @include themed() {
-      background-color: darken(t($container-color), 25%);
+      background-color: darken(t($primary), 25%);
     }
   }
 

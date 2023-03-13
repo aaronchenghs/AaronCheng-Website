@@ -27,7 +27,9 @@
     .text {
       font-size: 1.7vw;
       font-family: $theme-font;
-      color: white;
+      @include themed() {
+        color: t($text-color);
+      }
     }
   }
   .Header:hover {

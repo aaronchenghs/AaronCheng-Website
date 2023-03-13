@@ -1,13 +1,14 @@
-import { ReactComponent as Sample } from "../../assets/sample.svg";
 const SampleHred =
   "https://img.icons8.com/external-bearicons-blue-bearicons/64/null/external-SVG-file-extension-bearicons-blue-bearicons.png";
+const ElapsedBackground = "https://i.ibb.co/tx3tPMQ/Elapsed-BGImage.png";
 
 export const projects = [
   {
     id: 1,
     title: "Elapsed",
-    href: "",
-    imgPath: SampleHred,
+    href: "https://github.com/pfranz1/swim_timer",
+    imgPath: ElapsedBackground,
+    alt: "Elapsed-BGImage",
     description: "This describes Elapsed",
   },
   {

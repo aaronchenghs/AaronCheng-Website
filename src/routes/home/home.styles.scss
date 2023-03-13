@@ -49,29 +49,29 @@ $borderRadius: 4px;
   &::before {
     //bottom side
     @extend %test;
-    bottom: -19px;
+    bottom: -18px;
     height: 17px;
     width: 100%;
-    left: 10px;
+    left: 8px;
     transform: skewX(45deg);
     transition: all $theme-transition;
 
     @include themed() {
-      background-color: darken(t($container-color), 15%);
+      background-color: darken(t($primary), 18%);
     }
   }
 
   &::after {
     //right side
     @extend %test;
-    right: -18px;
-    height: 100%;
-    width: 16px;
-    bottom: -9px;
+    right: -17px;
+    height: 100.1%;
+    width: 17px;
+    bottom: -10px;
     transform: skewY(45deg);
     transition: all $theme-transition;
     @include themed() {
-      background-color: darken(t($container-color), 25%);
+      background-color: darken(t($primary), 25%);
     }
   }
 }

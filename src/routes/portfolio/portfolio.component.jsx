@@ -12,7 +12,13 @@ const Portfolio = () => {
           {projects.map((project) => {
             return (
               <div className="card-container" key={project.id}>
-                <div className="project-image"></div>
+                <div className="project-image">
+                  <img
+                    className="bgImage"
+                    src={project.imgPath}
+                    alt={project.alt}
+                  />
+                </div>
                 <div className="project-title">
                   <label>{project.title}</label>
                 </div>

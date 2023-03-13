@@ -53,7 +53,6 @@ $borderRadius: 4px;
   .sign-in-button {
     display: inline-block;
     padding: 20px 40px;
-    color: white;
     transform: translate(-5%, -15%);
     font-family: $theme-font;
     text-decoration: none;
@@ -63,6 +62,7 @@ $borderRadius: 4px;
 
     @include themed() {
       background-color: t($primary);
+      color: t($text-color);
     }
     &::before {
       //bottom side
