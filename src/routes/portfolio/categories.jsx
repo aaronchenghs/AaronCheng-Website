@@ -25,9 +25,9 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Test - This Website!",
+    title: "ARC - This Website!",
     href: "",
-    //imgPath: SampleHred,
+    imgPath: "https://github.com/aaronchenghs/AaronCheng-Website",
     description: "Click here to view this site's source code",
   },
 ];
