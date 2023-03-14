@@ -60,7 +60,6 @@ $contact-sidesgap: 2.5rem;
 .Contact-Container:hover {
   transition: all 0.5s;
   margin-left: -120px;
-  //margin-bottom: 50px;
   height: 15vh;
   @include themed() {
     box-shadow: 20px 10px 10px t($shadow-color);
