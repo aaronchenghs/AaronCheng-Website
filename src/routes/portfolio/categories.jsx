@@ -1,5 +1,3 @@
-const SampleHred =
-  "https://img.icons8.com/external-bearicons-blue-bearicons/64/null/external-SVG-file-extension-bearicons-blue-bearicons.png";
 const ElapsedBackground = "https://i.ibb.co/tx3tPMQ/Elapsed-BGImage.png";
 
 export const projects = [

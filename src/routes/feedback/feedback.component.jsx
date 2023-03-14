@@ -4,6 +4,7 @@ import FeedbackEntry from "./feedbackentry/feedbackentry.component";
 import FeedbackInput from "./feedbackinput/feedbackinput.component";
 import { useSelector, useDispatch } from "react-redux";
 import { signin_action } from "../../redux_manager/actions/auth.action";
+import { feedbackDTO } from "../../utils/firebase/firebase.utils";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -50,16 +51,18 @@ const Feedback = () => {
           )}
         </div>
         <div className="feedback-entries-container">
-          {Object.keys(feedbackMap).map((position) => {
-            return (
-              <FeedbackEntry
-                key={position}
-                name={feedbackMap[position].name}
-                message={feedbackMap[position].message}
-                date={feedbackMap[position].date}
-              />
-            );
-          })}
+          {Object.keys(feedbackMap)
+            .sort((a, b) => feedbackMap[b].date[3] - feedbackMap[a].date[3])
+            .map((position) => {
+              return (
+                <FeedbackEntry
+                  key={position}
+                  name={feedbackMap[position].name}
+                  message={feedbackMap[position].message}
+                  date={feedbackDTO.formatDate(feedbackMap[position].date)}
+                />
+              );
+            })}
         </div>
       </div>
     </Fragment>

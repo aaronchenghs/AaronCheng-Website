@@ -65,7 +65,8 @@ export const createFeedbackDocument = async (FeedbackName, FeedbackMessage) => {
     const year = dateObj.getFullYear();
     const month = String(dateObj.getMonth() + 1).padStart(2, "0");
     const day = String(dateObj.getDate()).padStart(2, "0");
-    const date = `${year}/${month}/${day}`;
+    const epoch = dateObj.getTime();
+    const date = [year, month, day, epoch];
 
     try {
       await setDoc(feedbackDocRef, {
@@ -91,7 +92,7 @@ export const getFeedbackStream = async () => {
       new feedbackDTO(
         doc.data().FeedbackName,
         doc.data().FeedbackMessage,
-        doc.data().date
+        doc.data().date,
       )
     );
     return true;
@@ -100,10 +101,14 @@ export const getFeedbackStream = async () => {
   return dataArray;
 };
 
-class feedbackDTO {
+export class feedbackDTO {
   constructor(name, message, date) {
     this.name = name;
     this.message = message;
     this.date = date;
+  }
+
+  static formatDate(dateArray){
+    return `${dateArray[0]}/${dateArray[1]}/${dateArray[2]}`;
   }
 }

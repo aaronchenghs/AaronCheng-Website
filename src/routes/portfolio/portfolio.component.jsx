@@ -1,29 +1,17 @@
 import React, { Fragment } from "react";
 import { projects } from "./categories";
-import "./portfolio.styles.scss";
+import Project from "./project-card/project.component";
 import PageHeader from "../components/pageHeader/pageheader.component";
 
+import "./portfolio.styles.scss";
 const Portfolio = () => {
   return (
     <Fragment>
       <div className="Portfolio-Page">
-        <PageHeader text={"Take a Gander at My Projects 📦"} />
+        <PageHeader text={"My Projects 📦"} />
         <div className="cards-container">
           {projects.map((project) => {
-            return (
-              <div className="card-container" key={project.id}>
-                <div className="project-image">
-                  <img
-                    className="bgImage"
-                    src={project.imgPath}
-                    alt={project.alt}
-                  />
-                </div>
-                <div className="project-title">
-                  <label>{project.title}</label>
-                </div>
-              </div>
-            );
+            return <Project project={project} />;
           })}
         </div>
       </div>

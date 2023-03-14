@@ -96,7 +96,7 @@ $borderRadius: 4px;
     bottom: -25px;
     width: 101%;
     @include themed() {
-      box-shadow: -15px 25px 15px t($shadow-color);
+      box-shadow: -10px 10px 15px t($shadow-color);
     }
   }
 
@@ -107,7 +107,7 @@ $borderRadius: 4px;
     bottom: -10px;
     height: 96%;
     @include themed() {
-      box-shadow: 25px 10px 15px t($shadow-color);
+      box-shadow: 20px 5px 15px t($shadow-color);
     }
   }
 }
