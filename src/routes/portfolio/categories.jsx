@@ -48,16 +48,6 @@ export const projects = [
   },
   {
     id: 4,
-    title: "Task Remote",
-    href: "https://github.com/Andrivite/CSC-3380-Project/tree/main",
-    //imgPath: SampleHred,
-    description: `Task Remote is an Android application that acted as my first school project for Object 
-      Oriented Programming. It is a functional prototype of an app designed to assist parents in 
-      monitoring chores and activities for their family. Click this title bar to view it's source code.`,
-    icons: [techLogos.KOTLIN, techLogos.JAVA, techLogos.ANDROID],
-  },
-  {
-    id: 5,
     title: "Akon",
     href: "https://github.com/Andrivite/CSC-3380-Project/tree/main",
     //imgPath: SampleHred,

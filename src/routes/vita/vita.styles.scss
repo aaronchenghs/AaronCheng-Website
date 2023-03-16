@@ -27,6 +27,9 @@
     padding-top: 10px;
     top: 0 !important;
     position: sticky !important;
+    @include themed() {
+      box-shadow: 15px 20px 15px t($shadow-color);
+    }
   }
 
   $buttonTransitionTime: 0.15s;
@@ -39,11 +42,11 @@
 
   $button-height: 100%;
   $button-width: 12.5vw;
-  $button-font-size: 1vmax;
-  $button-transform: translate(0%, 5%);
-  $button-left-margin: 5px;
+  $button-font-size: 1.5em;
+  $button-transform: translate(0%, 4%);
   $button-border-radius: 2px;
   $button-border-width: 0px;
+
   .categoryButton {
     display: inline-block;
     font-family: $theme-font;
@@ -126,6 +129,7 @@
     }
 
     &:hover {
+      transition: all $buttonTransitionTime, background-color 0.1s;
       @include themed() {
         background-color: lighten(t($primary), 10%);
       }
@@ -146,12 +150,9 @@
     transition: all $buttonTransitionTime, background-color $theme-transition;
     font-size: $button-font-size;
     border-radius: $button-border-radius;
-
     border-width: $button-border-width;
     height: $button-height;
     width: $button-width;
-
-    margin-left: $button-left-margin;
     transform: $button-transform;
 
     @include themed() {

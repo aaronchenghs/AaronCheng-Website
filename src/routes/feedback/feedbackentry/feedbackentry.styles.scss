@@ -24,7 +24,6 @@ $borderRadius: 4px;
   align-items: flex-start;
   gap: 4px;
   padding: 1vh;
-  box-shadow: 10px 0px 30px -3px #000;
   @include themed() {
     background-color: t($container-color);
     color: t($text-color);
@@ -40,6 +39,7 @@ $borderRadius: 4px;
     transform: skewX(45deg);
     @include themed() {
       background-color: darken(t($primary), 18%);
+      box-shadow: 0px 10px 10px t($shadow-color);
     }
   }
 
@@ -53,6 +53,7 @@ $borderRadius: 4px;
     transform: skewY(45deg);
     @include themed() {
       background-color: darken(t($primary), 25%);
+      box-shadow: 10px 0px 10px t($shadow-color);
     }
   }
 
@@ -82,19 +83,19 @@ $borderRadius: 4px;
 }
 .feedback-entry:hover {
   transition: all $buttonTransitionTime;
-  margin-left: -120px;
   min-height: 13vh;
   max-height: none;
+  transform: translate(-7%, -7%);
   @include themed() {
     box-shadow: 20px 10px 10px t($shadow-color);
   }
 
   &::before {
     //bottom
-    height: 25px;
+    height: 23px;
     left: 12px;
-    bottom: -25px;
-    width: 101%;
+    bottom: -23px;
+    width: 100.1%;
     @include themed() {
       box-shadow: -10px 10px 15px t($shadow-color);
     }
@@ -104,8 +105,8 @@ $borderRadius: 4px;
     //right
     right: -24px;
     width: 24px;
-    bottom: -10px;
-    height: 96%;
+    bottom: -11px;
+    height: 100%;
     @include themed() {
       box-shadow: 20px 5px 15px t($shadow-color);
     }
