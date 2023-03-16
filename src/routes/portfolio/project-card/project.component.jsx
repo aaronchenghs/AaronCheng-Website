@@ -5,7 +5,15 @@ const Project = ({ project }) => {
   return (
     <div className="card-container" key={project.id}>
       <div className="project-image">
-        <div className="text-box">{project.description}</div>
+        <div className="text-box">
+          {project.description}
+          <div className="techs-box">
+            <strong>Utilities:</strong>
+            {project.icons.map((icon) => {
+              return <img className="tech-icon" src={icon} alt={"tech logo"} />;
+            })}
+          </div>
+        </div>
         <img className="bgImage" src={project.imgPath} alt={project.alt} />
       </div>
       <a

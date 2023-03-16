@@ -16,7 +16,7 @@
 
   @include themed() {
     background-color: t($container-color);
-    box-shadow: 6px 7px 4px t($shadow-color);
+    box-shadow: 6px 6px 3px t($shadow-color);
   }
 
   .switchContainer {

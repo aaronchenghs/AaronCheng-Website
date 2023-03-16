@@ -12,6 +12,7 @@ $buttonTransitionTime: 0.1s;
   transform: translate(-2%, -2%);
   font-family: $theme-font;
   text-decoration: none;
+  min-width: 355px;
   font-size: 3vh;
   transition: all 0.6s, background-color $theme-transition;
   border-width: 0px;
@@ -63,6 +64,7 @@ $buttonTransitionTime: 0.1s;
     z-index: 0;
 
     .bgImage {
+      object-fit: cover;
       transition: filter 0.2s ease-in-out;
       width: 100%;
       height: 100%;
@@ -77,14 +79,31 @@ $buttonTransitionTime: 0.1s;
       color: #dcdff1;
       display: none;
       position: absolute;
-      width: 99%;
-      height: 95%;
+      line-height: 1.35em;
+      font-size: 0.8em;
+      width: 97%;
+      height: 93%;
       margin: 10px;
       margin-top: 7px;
       z-index: 1;
       transition: opacity 0.3s ease-in-out;
       overflow-y: auto;
       overscroll-behavior: contain;
+
+      .techs-box {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        .tech-icon {
+          height: 1.6em;
+          width: 1.6em;
+        }
+      }
     }
 
     &:hover .text-box {
@@ -104,7 +123,7 @@ $buttonTransitionTime: 0.1s;
     z-index: 1;
     text-decoration: none;
     @include themed() {
-      box-shadow: -2px -4px 15px t($shadow-color);
+      box-shadow: 1px -4px 15px t($shadow-color);
       color: t($text-color);
     }
   }
