@@ -49,7 +49,7 @@ export const projects = [
   {
     id: 4,
     title: "Akon",
-    href: "https://github.com/Andrivite/CSC-3380-Project/tree/main",
+    href: "https://github.com/aaronchenghs/Akon",
     imgPath: "https://i.ibb.co/HDQ5xX1/Akon.png",
     description: `Akon is an awesome music-playing and utilities bot I designed one winter, based on my
     favorite Senegalese singer. Click this title bar to get it's source code!`,

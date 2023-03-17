@@ -57,7 +57,7 @@ $borderRadius: 4px;
     transition: all $theme-transition;
 
     @include themed() {
-      background-color: darken(t($primary), 18%);
+      background-color: darken(t($primary), 16%);
     }
   }
 

@@ -28,7 +28,7 @@
     top: 0 !important;
     position: sticky !important;
     @include themed() {
-      box-shadow: 15px 20px 15px t($shadow-color);
+      box-shadow: 15px 20px 25px t($shadow-color);
     }
   }
 
@@ -47,16 +47,19 @@
   $button-border-radius: 2px;
   $button-border-width: 0px;
 
-  .categoryButton {
-    display: inline-block;
-    font-family: $theme-font;
-    transform: translate(-4%, -4%);
+  .button-consistency {
     font-size: $button-font-size;
     border-radius: $button-border-radius;
-
     border-width: $button-border-width;
     height: $button-height;
     width: $button-width;
+  }
+
+  .categoryButton {
+    @extend .button-consistency;
+    display: inline-block;
+    font-family: $theme-font;
+    transform: translate(-4%, -4%);
 
     @include themed() {
       background-color: t($primary);
@@ -72,7 +75,7 @@
       left: 8px;
       transform: skewX(45deg);
       @include themed() {
-        background-color: darken(t($primary), 17%);
+        background-color: darken(t($primary), 14%);
       }
     }
 
@@ -145,14 +148,11 @@
   }
 
   .categoryButtonSelected {
+    @extend .button-consistency;
+
     display: inline-block;
     font-family: $theme-font;
     transition: all $buttonTransitionTime, background-color $theme-transition;
-    font-size: $button-font-size;
-    border-radius: $button-border-radius;
-    border-width: $button-border-width;
-    height: $button-height;
-    width: $button-width;
     transform: $button-transform;
 
     @include themed() {
@@ -167,13 +167,12 @@
       width: 100%;
       left: 8px;
       transform: skewX(45deg);
-
       bottom: -5px;
       height: 6px;
       left: 3px;
 
       @include themed() {
-        background-color: darken(t($primary), 17%);
+        background-color: darken(t($primary), 14%);
       }
     }
 

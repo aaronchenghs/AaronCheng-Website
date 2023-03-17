@@ -14,14 +14,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 55%;
+    width: 50%;
     height: 9vh;
     border-radius: 9px;
     margin-bottom: 2vh;
     transition: all $theme-transition;
     text-align: center;
     @include themed() {
-      border: 5px solid darken(t($primary), 25%);
+      border: 3px solid darken(t($primary), 25%);
     }
 
     .text {
