@@ -58,15 +58,21 @@ $borderRadius: 4px;
   }
 
   .name-container {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    justify-content: bottom;
     transition: all $theme-transition;
     font-weight: 400;
+    font-size: 1.1em;
+    padding-top: 3px;
+    padding-left: 8px;
     @include themed() {
       color: t($text-color);
-      border-bottom: 1px solid t($text-color);
     }
   }
   .date-container {
-    font-size: 14px;
+    font-size: 0.9em;
     transition: all $theme-transition;
     @include themed() {
       color: darken(t($text-color), 15%);
@@ -75,8 +81,9 @@ $borderRadius: 4px;
   .message-container {
     width: 97.7%;
     height: 100%;
-    padding-left: 10px;
-    padding-top: 2px;
+    padding-left: 8px;
+    padding-top: 4px;
+    font-size: 1.3em;
     overflow-y: hidden;
     transition: all $theme-transition;
   }
