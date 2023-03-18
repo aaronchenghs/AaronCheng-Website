@@ -53,13 +53,14 @@ const Feedback = () => {
         <div className="feedback-entries-container">
           {Object.keys(feedbackMap)
             .sort((a, b) => feedbackMap[b].date[3] - feedbackMap[a].date[3])
-            .map((position) => {
+            .map((position, index) => {
               return (
                 <FeedbackEntry
                   key={position}
                   name={feedbackMap[position].name}
                   message={feedbackMap[position].message}
                   date={feedbackDTO.formatDate(feedbackMap[position].date)}
+                  first={index === 0 && messageGiven ? true : false}
                 />
               );
             })}

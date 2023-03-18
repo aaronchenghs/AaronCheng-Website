@@ -26,12 +26,10 @@ $borderRadius: 4px;
   .give-feedback-container {
     width: 35vw;
     min-width: 600px;
-    padding: 4vmin;
-    margin-bottom: 0.7vmin;
+    padding: 2vmin;
+    margin-bottom: 1vmin;
     margin-top: 10px;
-    border-radius: 20px;
-
-    transform: translate(-2%, -2%);
+    border-radius: 10px;
     font-family: $theme-font;
     transition: all $theme-transition;
 
@@ -41,6 +39,7 @@ $borderRadius: 4px;
     justify-content: center;
     @include themed() {
       background-color: lighten(t($container-color), 75%);
+      border: solid 4px darken(t($container-color), 15%);
       color: t($text-color);
     }
   }

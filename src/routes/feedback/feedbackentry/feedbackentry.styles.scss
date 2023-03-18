@@ -87,35 +87,51 @@ $borderRadius: 4px;
     overflow-y: hidden;
     transition: all $theme-transition;
   }
+  &:hover {
+    transition: all $buttonTransitionTime;
+    min-height: 13vh;
+    max-height: none;
+    transform: translate(-7%, -7%);
+    @include themed() {
+      box-shadow: 20px 10px 10px t($shadow-color);
+    }
+
+    &::before {
+      //bottom
+      height: 23px;
+      left: 12px;
+      bottom: -23px;
+      width: 100.1%;
+      @include themed() {
+        box-shadow: -10px 10px 15px t($shadow-color);
+      }
+    }
+
+    &::after {
+      //right
+      right: -24px;
+      width: 24px;
+      bottom: -11px;
+      height: 100%;
+      @include themed() {
+        box-shadow: 20px 5px 15px t($shadow-color);
+      }
+    }
+  }
 }
-.feedback-entry:hover {
-  transition: all $buttonTransitionTime;
-  min-height: 13vh;
-  max-height: none;
-  transform: translate(-7%, -7%);
-  @include themed() {
-    box-shadow: 20px 10px 10px t($shadow-color);
-  }
 
-  &::before {
-    //bottom
-    height: 23px;
-    left: 12px;
-    bottom: -23px;
-    width: 100.1%;
-    @include themed() {
-      box-shadow: -10px 10px 15px t($shadow-color);
-    }
-  }
+.first-feedback-entry {
+  @extend .feedback-entry;
 
-  &::after {
-    //right
-    right: -24px;
-    width: 24px;
-    bottom: -11px;
-    height: 100%;
-    @include themed() {
-      box-shadow: 20px 5px 15px t($shadow-color);
-    }
+  animation: slide-in-left 1.3s ease-out;
+}
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-2%, -2%);
+    opacity: 1;
   }
 }

@@ -1,5 +1,6 @@
 import toggleLightReducer from "./toggleLightMode";
 import signIn from "./signIn";
+import homeFadeReducer from "./homeFadeReducer";
 import toggleMessageGiven from "./toggleMessageGiven";
 import navReducer from "./navReducer";
 import feedbackLoadReducer from "./feedbackRenderReducer";
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   toggleMessageGiven: toggleMessageGiven,
   navReducer: navReducer,
   feedbackLoadReducer: feedbackLoadReducer,
+  homeFadeReducer: homeFadeReducer,
 });
 
 export default rootReducer;
