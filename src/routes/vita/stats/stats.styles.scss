@@ -1,21 +1,78 @@
 @import "../../../globals/theme.scss";
 
-$bioSideMargin: 30px;
-$border-width: 3px;
+%block {
+  position: absolute;
+  content: "";
+}
 
+$bio-min-height: 45vh;
 .bio {
-  width: 100%;
-  margin: 0 auto;
+  min-height: $bio-min-height;
+  width: 90%;
+  margin-top: 5vh;
   display: flex;
-  flex-direction: column;
-
-  margin-bottom: $bioSideMargin;
+  flex-direction: row;
   justify-content: center;
-  transition: all $theme-transition;
-
+  align-items: center;
+  transform: translate(-2%, -2%);
   font-family: $theme-font;
-  text-align: center;
-  margin-right: 5px;
-  margin-left: 5px;
-  margin-top: 4vh;
+  text-decoration: none;
+  font-size: 1vw;
+  transition: all $theme-transition;
+  @include themed() {
+    background-color: t($container-color);
+    color: t($text-color);
+    box-shadow: 28px 28px 20px t($shadow-color);
+  }
+
+  &::before {
+    //bottom side
+    @extend %block;
+    bottom: -18px;
+    height: 17px;
+    width: 100%;
+    left: 8px;
+    transform: skewX(45deg);
+    transition: all $theme-transition;
+    @include themed() {
+      background-color: darken(t($primary), 16%);
+    }
+  }
+
+  &::after {
+    //right side
+    @extend %block;
+    right: -17px;
+    height: 100.1%;
+    width: 17px;
+    bottom: -10px;
+    transform: skewY(45deg);
+    transition: all $theme-transition;
+    @include themed() {
+      background-color: darken(t($primary), 25%);
+    }
+  }
+  /* Define squeeze animation */
+  &.squeeze {
+    animation-name: squeeze;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes squeeze {
+  0% {
+    min-height: 45vh;
+  }
+  50% {
+    min-height: 0;
+  }
+  100% {
+    min-height: 45vh;
+  }
+}
+
+.content-container {
+  margin: 2%;
 }

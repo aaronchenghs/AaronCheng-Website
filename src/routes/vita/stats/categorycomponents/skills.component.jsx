@@ -5,7 +5,7 @@ import "./skills.styles.scss";
 
 export const Skills = () => {
   return (
-    <div className="content-container">
+    <div className="skills-content-container">
       <div className="Skills-row">
         <img src={skill_svgs.Android.src} />
       </div>

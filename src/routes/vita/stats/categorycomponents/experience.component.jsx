@@ -4,9 +4,9 @@ import "./experience.styles.scss";
 
 export const Experience = () => {
   return (
-    <Fragment>
+    <div className="content-container">
       <div>Experience</div>
-    </Fragment>
+    </div>
   );
 };
 export default Experience;

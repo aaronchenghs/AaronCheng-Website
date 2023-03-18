@@ -6,10 +6,27 @@ import { statsCategories } from "./categories";
 export const Stats = () => {
   //Button state
   const [CategorySelection, SetCategorySelection] = useState("summary");
-  //Select categry display
+  //Select category display
   const categoryDisplay = statsCategories.find(
     (category) => category.state === CategorySelection
   ).component;
+
+  // CSS classes for the bio container
+  const [bioClasses, setBioClasses] = useState("bio");
+
+  // Update the bio classes when CategorySelection changes
+  const handleCategoryChange = (categoryState) => {
+    // Set the new CategorySelection state
+    SetCategorySelection(categoryState);
+
+    // Add the 'squeeze' class to the bio container
+    setBioClasses("bio squeeze");
+
+    // Wait 500ms and then remove the 'squeeze' class to trigger the animation
+    setTimeout(() => {
+      setBioClasses("bio");
+    }, 500);
+  };
 
   return (
     <Fragment>
@@ -23,14 +40,14 @@ export const Stats = () => {
                   ? "categoryButtonSelected"
                   : "categoryButton"
               }
-              onClick={() => SetCategorySelection(category.state)}
+              onClick={() => handleCategoryChange(category.state)}
             >
               <label className="category-text">{category.title}</label>
             </button>
           );
         })}
       </div>
-      <div className="bio">{categoryDisplay}</div>
+      <div className={bioClasses}>{categoryDisplay}</div>
     </Fragment>
   );
 };

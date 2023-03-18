@@ -1,12 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 
 import "./summary.styles.scss";
 
 export const Summary = () => {
-  return (
-    <Fragment>
-      <div>Summary</div>
-    </Fragment>
-  );
+  return <div className="content-container">Summary</div>;
 };
 export default Summary;
