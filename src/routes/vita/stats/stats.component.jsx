@@ -11,23 +11,6 @@ export const Stats = () => {
     (category) => category.state === CategorySelection
   ).component;
 
-  // CSS classes for the bio container
-  const [bioClasses, setBioClasses] = useState("bio");
-
-  // Update the bio classes when CategorySelection changes
-  const handleCategoryChange = (categoryState) => {
-    // Set the new CategorySelection state
-    SetCategorySelection(categoryState);
-
-    // Add the 'squeeze' class to the bio container
-    setBioClasses("bio squeeze");
-
-    // Wait 500ms and then remove the 'squeeze' class to trigger the animation
-    setTimeout(() => {
-      setBioClasses("bio");
-    }, 500);
-  };
-
   return (
     <Fragment>
       <div className="categories-container">
@@ -40,14 +23,14 @@ export const Stats = () => {
                   ? "categoryButtonSelected"
                   : "categoryButton"
               }
-              onClick={() => handleCategoryChange(category.state)}
+              onClick={() => SetCategorySelection(category.state)}
             >
               <label className="category-text">{category.title}</label>
             </button>
           );
         })}
       </div>
-      <div className={bioClasses}>{categoryDisplay}</div>
+      <div className={"bio"}>{categoryDisplay}</div>
     </Fragment>
   );
 };

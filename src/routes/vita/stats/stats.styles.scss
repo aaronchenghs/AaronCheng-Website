@@ -11,7 +11,7 @@ $bio-min-height: 45vh;
   width: 90%;
   margin-top: 5vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transform: translate(-2%, -2%);
@@ -51,25 +51,6 @@ $bio-min-height: 45vh;
     @include themed() {
       background-color: darken(t($primary), 25%);
     }
-  }
-  /* Define squeeze animation */
-  &.squeeze {
-    animation-name: squeeze;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-}
-
-@keyframes squeeze {
-  0% {
-    min-height: 45vh;
-  }
-  50% {
-    min-height: 0;
-  }
-  100% {
-    min-height: 45vh;
   }
 }
 
