@@ -7,19 +7,20 @@
 
 $bio-min-height: 35vh;
 .category-block {
-  padding: 1.5%;
+  padding: 1%;
   min-height: $bio-min-height;
   width: 85%;
   margin-top: 5vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   transform: translate(-2%, -2%);
   font-family: $theme-font;
   text-decoration: none;
-  font-size: 1vw;
   transition: all $theme-transition;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 1.2vw;
+
   @include themed() {
     background-color: t($container-color);
     color: t($text-color);

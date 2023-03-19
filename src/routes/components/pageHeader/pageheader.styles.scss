@@ -32,9 +32,4 @@
       }
     }
   }
-  .Header:hover {
-    @include themed() {
-      background-color: darken(t($primary), 15%);
-    }
-  }
 }

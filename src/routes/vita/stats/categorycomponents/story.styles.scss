@@ -1,0 +1,50 @@
+@import "../../../../globals/_theme";
+
+.story-logLine {
+  margin-bottom: 4vh;
+  margin-left: 0.5vw;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.2vw;
+  transition: border-color $theme-transition;
+  @include themed() {
+    border-bottom: 2px solid t($primary);
+  }
+}
+.timeline-container {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .timeline-line {
+    position: relative;
+    margin-left: 2vw;
+    margin-right: 3vw;
+  }
+
+  .timeline-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all $theme-transition;
+    @include themed() {
+      border-left: 5px solid t($primary);
+    }
+
+    height: 100%;
+  }
+
+  .geographic-origin-text-container {
+    .parents {
+      font-size: 1.2vmax;
+    }
+    font-size: 1.3em;
+    line-height: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
