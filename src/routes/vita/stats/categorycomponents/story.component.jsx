@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 
 import "./story.styles.scss";
 
 export const Story = () => {
-  return <div className="content-container">Story</div>;
+  return <Fragment>Story</Fragment>;
 };
 export default Story;

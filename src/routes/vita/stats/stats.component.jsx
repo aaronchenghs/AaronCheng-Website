@@ -30,7 +30,7 @@ export const Stats = () => {
           );
         })}
       </div>
-      <div className={"bio"}>{categoryDisplay}</div>
+      <div className={"category-block"}>{categoryDisplay}</div>
     </Fragment>
   );
 };

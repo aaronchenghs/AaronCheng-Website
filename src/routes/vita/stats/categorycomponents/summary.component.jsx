@@ -3,6 +3,6 @@ import React, { Fragment } from "react";
 import "./summary.styles.scss";
 
 export const Summary = () => {
-  return <div className="content-container">Summary</div>;
+  return <Fragment>Summary</Fragment>;
 };
 export default Summary;

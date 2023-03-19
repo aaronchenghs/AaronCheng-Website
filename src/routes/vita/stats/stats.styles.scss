@@ -5,10 +5,11 @@
   content: "";
 }
 
-$bio-min-height: 45vh;
-.bio {
+$bio-min-height: 35vh;
+.category-block {
+  padding: 1.5%;
   min-height: $bio-min-height;
-  width: 90%;
+  width: 85%;
   margin-top: 5vh;
   display: flex;
   flex-direction: column;
@@ -52,8 +53,4 @@ $bio-min-height: 45vh;
       background-color: darken(t($primary), 25%);
     }
   }
-}
-
-.content-container {
-  margin: 2%;
 }

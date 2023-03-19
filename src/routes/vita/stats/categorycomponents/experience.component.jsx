@@ -1,12 +1,12 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 
 import "./experience.styles.scss";
 
 export const Experience = () => {
   return (
-    <div className="content-container">
+    <Fragment>
       <div>Experience</div>
-    </div>
+    </Fragment>
   );
 };
 export default Experience;
