@@ -38,7 +38,7 @@
   }
 
   .geographic-origin-text-container {
-    .parents {
+    .geo-line {
       font-size: 1.2vmax;
     }
     font-size: 1.3em;
@@ -46,5 +46,7 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }

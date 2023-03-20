@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { skill_svgs } from "./svgs/skills.svgs";
+import { skill_svgs } from "./components/skills.svgs";
 
 import "./skills.styles.scss";
 
