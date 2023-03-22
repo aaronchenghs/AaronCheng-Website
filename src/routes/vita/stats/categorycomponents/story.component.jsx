@@ -31,6 +31,11 @@ export const Story = () => {
             img2={story_svgs.crawfish}
             text={story_text.louisiana}
           />
+          <GeoEntry
+            img1={story_svgs.CS}
+            img2={story_svgs.LSU}
+            text={story_text.college}
+          />
         </div>
       </div>
     </Fragment>

@@ -70,6 +70,20 @@ export const story_svgs = {
       style={food_style}
     />
   ),
+  LSU: (
+    <img
+      src="https://cdn.cdnlogo.com/logos/l/99/lsu-tigers.svg"
+      alt="LSU"
+      style={flag_style}
+    />
+  ),
+  CS: (
+    <img
+      src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/null/external-computer-science-computer-science-flaticons-lineal-color-flat-icons-3.png"
+      alt="CS"
+      style={flag_style}
+    />
+  ),
 };
 
 export const story_text = {
@@ -79,4 +93,5 @@ export const story_text = {
   born: `Then I was born in Ames, Iowa in 2002!`,
   moved: `We moved around a bit...`,
   louisiana: `Before settling in Louisiana where I've spent most of my life`,
+  college: `After graduating high school I went to Louisiana State for a Computer Science degree`,
 };
