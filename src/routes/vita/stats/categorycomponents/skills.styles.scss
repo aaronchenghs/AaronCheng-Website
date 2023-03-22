@@ -3,7 +3,13 @@
   flex-direction: column;
   width: 100%;
   min-height: 10vh;
-  background-color: aliceblue;
   margin-top: 2vh;
   margin-bottom: 2vh;
+  .skillTitle {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
 }
