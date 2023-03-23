@@ -6,7 +6,7 @@ import "./story.styles.scss";
 
 export const Story = () => {
   return (
-    <Fragment>
+    <div className="category-block">
       <div className="story-logLine">{story_text.log}</div>
       <div className="timeline-container">
         <div className="timeline-line" />
@@ -38,7 +38,7 @@ export const Story = () => {
           />
         </div>
       </div>
-    </Fragment>
+    </div>
   );
 };
 export default Story;
