@@ -1,3 +1,12 @@
+@import "../../../../globals/_theme.scss";
+$buttonTransitionTime: 0.05s;
+$borderRadius: 4px;
+%test {
+  position: absolute;
+  content: "";
+  transition: all $buttonTransitionTime;
+}
+
 .stack {
   display: flex;
   flex-direction: column;
@@ -12,8 +21,67 @@
     height: 7.5vh;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 8px;
     padding-left: 7px;
-    background-color: antiquewhite;
+    @include themed() {
+      color: t($text-color);
+    }
+    transform: translate(-5%, -15%);
+    font-family: $theme-font;
+    text-decoration: none;
+    font-size: 2.2vmin;
+    transition: all $buttonTransitionTime, background-color $theme-transition;
+    border-width: 0px;
+
+    &::before {
+      //bottom side
+      @extend %test;
+      bottom: -11px;
+      height: 11px;
+      width: 100%;
+      left: 6px;
+      transform: skewX(45deg);
+      transition: all $buttonTransitionTime, background-color $theme-transition;
+      @include themed() {
+        background-color: darken(t($primary), 7%);
+      }
+    }
+
+    &::after {
+      // right side
+      @extend %test;
+      right: -10px;
+      height: 100%;
+      width: 10px;
+      bottom: -5px;
+      transform: skewY(45deg);
+      @include themed() {
+        background-color: darken(t($primary), 30%);
+      }
+      transition: all $buttonTransitionTime, background-color $theme-transition;
+    }
+
+    &:active {
+      margin-left: 10px;
+      margin-top: 10px;
+      &::before {
+        bottom: -5px;
+        height: 5px;
+        left: 3px;
+      }
+
+      &::after {
+        right: -5px;
+        width: 5px;
+        bottom: -3px;
+      }
+    }
+
+    &:hover {
+      @include themed() {
+        background-color: darken(t($primary), 5%);
+      }
+      transition: all $buttonTransitionTime, background-color 0.1s;
+    }
   }
 }
