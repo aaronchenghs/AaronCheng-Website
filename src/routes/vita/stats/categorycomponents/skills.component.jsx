@@ -9,14 +9,18 @@ export const Skills = () => {
       <div className="stack">
         {prog_skills.map((skill) => {
           return (
-            <div className="skillTitle">
+            <div
+              className="skillTitle"
+              style={{
+                backgroundColor: skill.color,
+              }}
+            >
               <img src={skill.src} height={"60px"} width={"60px"} />
               <label>{skill.name}</label>
             </div>
           );
         })}
       </div>
-      <div className="stack"></div>
     </Fragment>
   );
 };
