@@ -20,12 +20,12 @@ export const LightSwitch = styled(Switch)(({ dark }) => ({
       },
       "& + .MuiSwitch-track": {
         opacity: 1,
-        backgroundColor: dark === true ? "#8796A5" : "#aab4be",
+        backgroundColor: dark === "true" ? "#8796A5" : "#aab4be",
       },
     },
   },
   "& .MuiSwitch-thumb": {
-    backgroundColor: dark === true ? "#001e3c" : "orange",
+    backgroundColor: dark === "true" ? "#001e3c" : "orange",
     width: 35,
     height: 35,
     "&:before": {
@@ -44,7 +44,7 @@ export const LightSwitch = styled(Switch)(({ dark }) => ({
   },
   "& .MuiSwitch-track": {
     opacity: 1,
-    backgroundColor: dark === true ? "#8796A5" : "#aab4be",
+    backgroundColor: dark === "true" ? "#8796A5" : "#aab4be",
     borderRadius: 20 / 1.6,
   },
 }));

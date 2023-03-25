@@ -17,16 +17,14 @@ $borderRadius: 4px;
   min-height: 10vh;
   margin-top: 4vh;
   margin-bottom: 2vh;
-  .skillTitle {
+  .skill-instance {
     width: 80%;
     height: 7.5vh;
     display: flex;
     align-items: center;
     gap: 8px;
-    padding-left: 20px;
-    @include themed() {
-      color: t($text-color);
-    }
+    padding-left: 15px;
+    color: whitesmoke;
     transform: translate(-3%, -3%);
     font-family: $theme-font;
     text-decoration: none;
@@ -37,13 +35,15 @@ $borderRadius: 4px;
     &::before {
       //bottom side
       @extend %test;
-      bottom: -11px;
-      height: 11px;
+      bottom: -10px;
+      height: 10px;
       width: 100%;
-      left: 6px;
+      left: 5px;
       transform: skewX(45deg);
       transition: all $buttonTransitionTime, background-color $theme-transition;
-      background-color: black;
+      @include themed() {
+        background-color: darken(t($primary), 20%);
+      }
     }
 
     &::after {
@@ -55,7 +55,7 @@ $borderRadius: 4px;
       bottom: -5px;
       transform: skewY(45deg);
       @include themed() {
-        background-color: darken(t($primary), 30%);
+        background-color: darken(t($primary), 20%);
       }
       transition: all $buttonTransitionTime, background-color $theme-transition;
     }
@@ -67,6 +67,21 @@ $borderRadius: 4px;
     &:hover {
       transform: translate(-2.5%, -2.5%);
       transition: all $buttonTransitionTime, background-color 0.1s;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .selected-skill {
+    height: 12vh;
+    align-items: flex-start;
+    padding-top: 0.6vh;
+    padding-left: 10px;
+    width: 85%;
+    &:hover {
+      transform: translate(-3%, -3%);
     }
   }
 }

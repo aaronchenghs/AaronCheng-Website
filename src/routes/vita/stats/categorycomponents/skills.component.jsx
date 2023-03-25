@@ -1,26 +1,37 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { prog_skills } from "./components/skills.svgs";
 
 import "./skills.styles.scss";
 
-export const Skills = () => {
-  const [selectedSkill, select] = useState("");
+const Skills = () => {
+  const [selectedSkill, selectskill] = useState("");
   return (
     <Fragment>
       <div className="stack">
         {prog_skills.map((skill) => {
           return (
             <div
-              className="skillTitle"
+              className={
+                `skill-instance` +
+                `${skill.name === selectedSkill ? " selected-skill" : ""}`
+              }
               style={{
                 backgroundColor: skill.color,
               }}
               onClick={() => {
-                select(skill.name);
+                selectskill(skill.name);
               }}
+              key={skill.name}
             >
-              <img src={skill.src} height={"60px"} width={"60px"} />
-              <label>{skill.name}</label>
+              <div className="title-container">
+                <img
+                  src={skill.src}
+                  height={"60px"}
+                  width={"60px"}
+                  alt={skill.name}
+                />
+                <label>{skill.name}</label>
+              </div>
             </div>
           );
         })}

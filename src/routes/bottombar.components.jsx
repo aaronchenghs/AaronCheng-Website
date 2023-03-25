@@ -14,7 +14,7 @@ const BottomBar = () => {
       <div className="bottombar">
         <div className="switchContainer">
           <LightSwitch
-            dark={toggledLight}
+            dark={toggledLight.toString()}
             onClick={() => {
               dispatch(toggle);
             }}

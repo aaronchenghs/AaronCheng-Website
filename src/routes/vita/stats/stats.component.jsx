@@ -1,15 +1,29 @@
 import React, { Fragment, useState } from "react";
 
 import "./stats.styles.scss";
-import { statsCategories } from "./categories";
+import Summary from "./categorycomponents/summary.component";
+import Skills from "./categorycomponents/skills.component";
+import Experience from "./categorycomponents/experience.component";
+import Story from "./categorycomponents/story.component";
 
 export const Stats = () => {
   //Button state
   const [CategorySelection, SetCategorySelection] = useState("summary");
   //Select category display
-  const categoryDisplay = statsCategories.find(
-    (category) => category.state === CategorySelection
-  ).component;
+  const renderSelection = (selection) => {
+    switch (selection) {
+      case "summary":
+        return <Summary />;
+      case "skills":
+        return <Skills />;
+      case "experience":
+        return <Experience />;
+      case "story":
+        return <Story />;
+      default:
+        return <div />;
+    }
+  };
 
   return (
     <Fragment>
@@ -30,8 +44,27 @@ export const Stats = () => {
           );
         })}
       </div>
-      {categoryDisplay}
+      {renderSelection(CategorySelection)}
     </Fragment>
   );
 };
 export default Stats;
+
+const statsCategories = [
+  {
+    title: "Summary",
+    state: "summary",
+  },
+  {
+    title: "Skills",
+    state: "skills",
+  },
+  {
+    title: "Experience",
+    state: "experience",
+  },
+  {
+    title: "Story",
+    state: "story",
+  },
+];
