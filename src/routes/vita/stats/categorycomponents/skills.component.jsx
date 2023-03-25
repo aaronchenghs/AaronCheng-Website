@@ -4,6 +4,7 @@ import { prog_skills } from "./components/skills.svgs";
 import "./skills.styles.scss";
 
 export const Skills = () => {
+  const [selectedSkill, select] = useState("");
   return (
     <Fragment>
       <div className="stack">
@@ -13,6 +14,9 @@ export const Skills = () => {
               className="skillTitle"
               style={{
                 backgroundColor: skill.color,
+              }}
+              onClick={() => {
+                select(skill.name);
               }}
             >
               <img src={skill.src} height={"60px"} width={"60px"} />
