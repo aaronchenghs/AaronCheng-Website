@@ -3,6 +3,29 @@ import { prog_skills } from "./components/skills.svgs";
 
 import "./skills.styles.scss";
 
+function createIconsImages(skill) {
+  let iconHeight = "100%";
+  let iconWidth = "60px";
+  return (
+    <Fragment>
+      <img
+        src={skill.src}
+        height={iconHeight}
+        width={iconWidth}
+        alt={skill.name}
+      />
+      {skill.extra && (
+        <img
+          src={skill.extra.src}
+          height={iconHeight}
+          width={iconWidth}
+          alt={skill.extra.name}
+        />
+      )}
+    </Fragment>
+  );
+}
+
 const Skills = () => {
   const [selectedSkill, selectskill] = useState("");
   return (
@@ -26,12 +49,7 @@ const Skills = () => {
               key={skill.name}
             >
               <div className="title-container">
-                <img
-                  src={skill.src}
-                  height={"100%"}
-                  width={"60px"}
-                  alt={skill.name}
-                />
+                {createIconsImages(skill)}
                 <label>{skill.name}</label>
               </div>
               {skill.name === selectedSkill && (
