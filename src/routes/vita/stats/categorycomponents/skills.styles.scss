@@ -1,5 +1,5 @@
 @import "../../../../globals/_theme.scss";
-$buttonTransitionTime: 0.05s;
+$buttonTransitionTime: 0.3s;
 $borderRadius: 4px;
 
 %test {
@@ -9,6 +9,8 @@ $borderRadius: 4px;
 }
 
 .stack {
+  @extend .fade-in;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +23,7 @@ $borderRadius: 4px;
     width: 80%;
     height: 7.5vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 8px;
     padding-left: 15px;
     color: whitesmoke;
@@ -31,6 +33,7 @@ $borderRadius: 4px;
     font-size: 2.2vmin;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
+    cursor: pointer;
 
     &::before {
       //bottom side
@@ -70,18 +73,27 @@ $borderRadius: 4px;
     }
 
     .title-container {
+      margin-top: 0.5%;
       display: flex;
       align-items: center;
     }
   }
   .selected-skill {
-    height: 12vh;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    height: 18vh;
     align-items: flex-start;
-    padding-top: 0.6vh;
+    flex-direction: column;
+    padding-top: 0.3vh;
     padding-left: 10px;
     width: 85%;
     &:hover {
       transform: translate(-3%, -3%);
+    }
+
+    .skill-content {
+      padding-top: 10px;
+      padding-left: 1%;
     }
   }
 }

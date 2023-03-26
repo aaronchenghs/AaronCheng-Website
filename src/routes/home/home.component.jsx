@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <Fragment>
-      <div className={`RealHome-Page ${homePageFadedIn ? "" : "fade-in"}`}>
+      <div className={`RealHome-Page ${homePageFadedIn ? "" : "home-fade-in"}`}>
         <div className="intro-container">
           <Introduction />
         </div>

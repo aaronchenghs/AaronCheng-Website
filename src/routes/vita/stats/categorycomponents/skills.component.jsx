@@ -19,19 +19,24 @@ const Skills = () => {
                 backgroundColor: skill.color,
               }}
               onClick={() => {
-                selectskill(skill.name);
+                skill.name === selectedSkill
+                  ? selectskill("")
+                  : selectskill(skill.name);
               }}
               key={skill.name}
             >
               <div className="title-container">
                 <img
                   src={skill.src}
-                  height={"60px"}
+                  height={"100%"}
                   width={"60px"}
                   alt={skill.name}
                 />
                 <label>{skill.name}</label>
               </div>
+              {skill.name === selectedSkill && (
+                <div className="skill-content">This is selected</div>
+              )}
             </div>
           );
         })}
