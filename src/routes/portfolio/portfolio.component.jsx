@@ -11,7 +11,7 @@ const Portfolio = () => {
         <PageHeader text={"My Projects 📦"} />
         <div className="cards-container">
           {projects.map((project) => {
-            return <Project project={project} />;
+            return <Project project={project} key={project.alt} />;
           })}
         </div>
       </div>

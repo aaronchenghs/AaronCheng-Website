@@ -50,7 +50,7 @@ const Skills = () => {
             >
               <div className="title-container">
                 {createIconsImages(skill)}
-                <label>{skill.name}</label>
+                <label style={{ paddingLeft: "10px" }}>{skill.name}</label>
               </div>
               {skill.name === selectedSkill && (
                 <div className="skill-content">This is selected</div>

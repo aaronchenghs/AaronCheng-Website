@@ -9,12 +9,24 @@ const Project = ({ project }) => {
           {project.description}
           <div className="techs-box">
             <strong>Utilities:</strong>
-            {project.icons.map((icon) => {
-              return <img className="tech-icon" src={icon} alt={"tech logo"} />;
+            {project.icons.map((icon, id) => {
+              return (
+                <img
+                  className="tech-icon"
+                  src={icon}
+                  alt={"tech logo"}
+                  key={id}
+                />
+              );
             })}
           </div>
         </div>
-        <img className="bgImage" src={project.imgPath} alt={project.alt} />
+        <img
+          className="bgImage"
+          src={project.imgPath}
+          alt={project.alt}
+          id={project.id}
+        />
       </div>
       <a
         className="project-title"
