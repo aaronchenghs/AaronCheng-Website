@@ -5,7 +5,7 @@ import "./skills.styles.scss";
 
 function createIconsImages(skill) {
   let iconHeight = "100%";
-  let iconWidth = "60px";
+  let iconWidth = "58px";
   return (
     <Fragment>
       <img
@@ -53,7 +53,14 @@ const Skills = () => {
                 <label style={{ paddingLeft: "10px" }}>{skill.name}</label>
               </div>
               {skill.name === selectedSkill && (
-                <div className="skill-content">This is selected</div>
+                <div className="skill-content">
+                  <div className="skill-description">{skill.description}</div>
+                  {skill.related && (
+                    <div className="skill-related">
+                      <strong>Related:</strong> {skill.related}
+                    </div>
+                  )}
+                </div>
               )}
             </div>
           );

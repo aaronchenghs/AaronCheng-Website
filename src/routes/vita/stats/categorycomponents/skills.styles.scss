@@ -21,7 +21,7 @@ $borderRadius: 4px;
   margin-bottom: 2vh;
   .skill-instance {
     width: 80%;
-    height: 7.5vh;
+    height: 70px;
     display: flex;
     align-items: flex-start;
     padding-left: 15px;
@@ -72,6 +72,7 @@ $borderRadius: 4px;
     }
 
     .title-container {
+      user-select: none;
       margin-top: 0.5%;
       display: flex;
       align-items: center;
@@ -91,7 +92,13 @@ $borderRadius: 4px;
     }
 
     .skill-content {
-      padding-top: 10px;
+      user-select: none;
+      height: 45%;
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-top: 1%;
       padding-left: 1%;
     }
   }
