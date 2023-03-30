@@ -5,7 +5,7 @@ import "./experience.styles.scss";
 export const Experience = () => {
   return (
     <Fragment>
-      <div>Experience</div>
+      <div className="Experience-Container"></div>
     </Fragment>
   );
 };
