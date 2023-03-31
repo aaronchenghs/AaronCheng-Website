@@ -9,7 +9,7 @@ $buttonTransitionTime: 0.15s;
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin-top: 6vh;
+  margin-top: 4vh;
   min-height: 15vh;
 
   .Time {
@@ -19,8 +19,9 @@ $buttonTransitionTime: 0.15s;
     padding-left: 10px;
     padding-top: 1vh;
     padding-bottom: 1vh;
+    margin-bottom: 1vh;
 
-    transform: translate(-2%, -2%);
+    transform: translate(-2.5%, -2.5%);
     font-family: $theme-font;
     text-decoration: none;
     transition: all $theme-transition;
@@ -28,6 +29,7 @@ $buttonTransitionTime: 0.15s;
     @include themed() {
       background-color: t($background-center);
       color: t($text-color);
+      box-shadow: 28px 28px 20px t($shadow-color);
     }
 
     &::before {
@@ -43,6 +45,18 @@ $buttonTransitionTime: 0.15s;
     }
   }
 
+  .College-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .College-Jobs {
+      display: flex;
+      flex-direction: column;
+      width: 49%;
+      transform: translate(-1%, -1%);
+    }
+  }
+
   .Experience-Block {
     display: flex;
     flex-direction: row;
@@ -50,7 +64,7 @@ $buttonTransitionTime: 0.15s;
     transform: translate(-2%, -2%);
     font-family: $theme-font;
     text-decoration: none;
-    transition: all $theme-transition;
+    transition: all $theme-transition, transform 0.4s;
     margin-top: 2vh;
 
     @include themed() {
@@ -70,9 +84,35 @@ $buttonTransitionTime: 0.15s;
       @extend %block;
       @extend .side;
     }
+
+    &:hover {
+      //right side
+      transform: translate(-4%, -4%);
+    }
+  }
+  .Experience-Block-LSU {
+    @extend .Experience-Block;
+    margin-right: 1%;
+    width: 49%;
+    justify-content: center;
+  }
+  .Experience-Block-HS {
+    @extend .Experience-Block-LSU;
   }
   .Image-Container {
-    background: white;
-    border-radius: 5px;
+    // @include themed() {
+    //   background-color: t($background-center);
+    // }
+  }
+  .ARA-Image {
+  }
+  .LSU-Image {
+    height: 100px;
+    width: 100%;
+  }
+  .Exodus-Image {
+  }
+  .Mini-Image {
+    height: 100%;
   }
 }
