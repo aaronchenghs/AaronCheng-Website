@@ -1,3 +1,4 @@
+$theme-map: null;
 $title-font: "";
 $theme-font: "Work Sans";
 $page-minimum-width: 803px;
@@ -76,8 +77,34 @@ $themes: (
     }
   }
 }
-
 $theme-transition: 1.5s;
+.block {
+  position: absolute;
+  content: "";
+  transition: all 0.15s, background-color $theme-transition;
+}
+.bottom {
+  bottom: -18px;
+  height: 17px;
+  width: 100%;
+  left: 8px;
+  transform: skewX(45deg);
+  transition: all $theme-transition;
+  @include themed() {
+    background-color: darken(t($primary), 16%);
+  }
+}
+.side {
+  right: -17px;
+  height: 100.1%;
+  width: 17px;
+  bottom: -10px;
+  transform: skewY(45deg);
+  transition: all $theme-transition;
+  @include themed() {
+    background-color: darken(t($primary), 25%);
+  }
+}
 :export {
   theme-transition: $theme-transition;
 }
