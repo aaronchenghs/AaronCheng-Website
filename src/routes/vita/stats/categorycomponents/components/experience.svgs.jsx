@@ -2,31 +2,23 @@ export const experience_svgs = {
   LSU: {
     image: (
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/LSU_Athletics_logo.svg/1024px-LSU_Athletics_logo.svg.png"
         alt="LSU symbol"
       />
     ),
   },
   BRMHS: {
     image: (
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
-        alt="BRMHS symbol"
-      />
+      <img src="https://i.ibb.co/jH74Mnr/bulldog.png" alt="BRMHS symbol" />
     ),
   },
   ARA: {
-    image: (
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
-        alt="ARA symbol"
-      />
-    ),
+    image: <img src="https://i.ibb.co/47vpDqn/ARALogo.png" alt="ARA symbol" />,
   },
   Exodus: {
     image: (
       <img
-        src="https://upload.wikimedia.org/wikipedia/commons/0/05/Flag_of_Brazil.svg"
+        src="https://i.ibb.co/tzPWrqw/Tight-Exodus-Only.png"
         alt="Exodus symbol"
       />
     ),

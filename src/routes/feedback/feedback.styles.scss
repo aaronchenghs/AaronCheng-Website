@@ -58,7 +58,7 @@ $borderRadius: 4px;
     font-size: 1.1em;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
-    margin-top: 1.6vh;
+    margin-top: 1vh;
 
     @include themed() {
       background-color: t($primary);
@@ -94,7 +94,7 @@ $borderRadius: 4px;
 
     &:active {
       margin-left: 10px;
-      margin-top: 10px;
+      margin-top: 2vh;
       &::before {
         bottom: -5px;
         height: 5px;
