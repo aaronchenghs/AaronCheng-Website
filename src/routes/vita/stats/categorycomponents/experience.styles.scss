@@ -66,6 +66,7 @@ $buttonTransitionTime: 0.15s;
     text-decoration: none;
     transition: all $theme-transition, transform 0.4s;
     margin-top: 2vh;
+    padding: 18px;
 
     @include themed() {
       background-color: t($container-color);
@@ -105,12 +106,17 @@ $buttonTransitionTime: 0.15s;
     // }
   }
   .ARA-Image {
+    height: 25vh;
   }
   .LSU-Image {
-    height: 100px;
+    height: 14vh;
     width: 100%;
   }
   .Exodus-Image {
+    width: 60%;
+  }
+  .BRMHS-Image {
+    height: 20vh;
   }
   .Mini-Image {
     height: 100%;
