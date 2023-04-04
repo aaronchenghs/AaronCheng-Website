@@ -150,7 +150,6 @@
 
   .categoryButtonSelected {
     @extend .button-consistency;
-
     display: inline-block;
     font-family: $theme-font;
     transition: all $buttonTransitionTime, background-color $theme-transition;
@@ -164,7 +163,7 @@
       //bottom side
       @extend %test;
       bottom: -15px;
-      height: 17px;
+      height: 14px;
       width: 100%;
       left: 8px;
       transform: skewX(45deg);

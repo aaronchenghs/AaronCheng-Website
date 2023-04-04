@@ -9,8 +9,8 @@ $borderRadius: 4px;
 
 .feedback-entry {
   width: 50vw;
-  min-height: 13vh;
-  max-height: 20vh;
+  min-height: 15vh;
+  max-height: 25vh;
   margin-bottom: 9px;
   margin-top: 10px;
   transform: translate(-2%, -2%);
@@ -83,13 +83,13 @@ $borderRadius: 4px;
     height: 100%;
     padding-left: 8px;
     padding-top: 4px;
-    font-size: 1.3em;
+    font-size: 1.1em;
     overflow-y: hidden;
     transition: all $theme-transition;
   }
   &:hover {
     transition: all $buttonTransitionTime;
-    min-height: 13vh;
+    min-height: 15vh;
     max-height: none;
     transform: translate(-7%, -7%);
     @include themed() {
@@ -98,9 +98,9 @@ $borderRadius: 4px;
 
     &::before {
       //bottom
-      height: 23px;
+      height: 17px;
       left: 12px;
-      bottom: -23px;
+      bottom: -18px;
       width: 100.1%;
       @include themed() {
         box-shadow: -10px 10px 15px t($shadow-color);
