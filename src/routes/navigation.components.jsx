@@ -22,9 +22,9 @@ const Navigation = () => {
           className="home-box"
           onClick={() => {
             dispatch(home);
-            kaomojiIndex + 1 > emotes.length - 1
-              ? incrementKaomoji(0)
-              : incrementKaomoji(kaomojiIndex + 1);
+            incrementKaomoji(
+              (kaomojiIndex - 1 + emotes.length) % emotes.length
+            );
           }}
           to="/"
         >

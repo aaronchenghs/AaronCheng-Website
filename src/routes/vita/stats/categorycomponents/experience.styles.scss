@@ -55,6 +55,10 @@ $buttonTransitionTime: 0.15s;
       width: 49%;
       transform: translate(-1%, -1%);
     }
+    .Highschool-Jobs {
+      @extend .College-Jobs;
+      justify-content: space-between;
+    }
   }
 
   .Experience-Block {
@@ -63,6 +67,8 @@ $buttonTransitionTime: 0.15s;
 
     transform: translate(-2%, -2%);
     font-family: $theme-font;
+    font-size: 1.3em;
+    text-align: center;
     text-decoration: none;
     transition: all $theme-transition, transform 0.4s;
     margin-top: 2vh;
@@ -93,12 +99,25 @@ $buttonTransitionTime: 0.15s;
   }
   .Experience-Block-LSU {
     @extend .Experience-Block;
-    margin-right: 1%;
+    margin-right: 0.5%;
     width: 49%;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .Experience-Block-Exodus {
+    @extend .Experience-Block;
+    justify-content: flex-start;
+    flex-direction: column;
   }
   .Experience-Block-HS {
     @extend .Experience-Block-LSU;
+    margin-right: 1%;
+    flex-direction: column;
+  }
+  .Experience-Block-ARA {
+    @extend .Experience-Block;
+    gap: 10px;
+    align-items: center;
   }
   .Image-Container {
     // @include themed() {
@@ -110,7 +129,7 @@ $buttonTransitionTime: 0.15s;
   }
   .LSU-Image {
     height: 14vh;
-    width: 100%;
+    width: 55%;
   }
   .Exodus-Image {
     width: 60%;

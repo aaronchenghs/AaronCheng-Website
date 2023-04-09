@@ -65,6 +65,7 @@ $borderRadius: 4px;
 
     @include themed() {
       background-color: darken(t($primary), 16%);
+      box-shadow: 0px 10px 10px t($shadow-color);
     }
   }
 
@@ -79,6 +80,7 @@ $borderRadius: 4px;
     transition: all $theme-transition;
     @include themed() {
       background-color: darken(t($primary), 25%);
+      box-shadow: 10px 0px 10px t($shadow-color);
     }
   }
 }

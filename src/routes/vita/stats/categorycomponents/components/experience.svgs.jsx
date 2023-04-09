@@ -7,6 +7,10 @@ export const experience_svgs = {
         alt="LSU symbol"
       />
     ),
+    title: "LSU",
+    description:
+      "Rolling over my interest in computer programming from high school, I pursued a software engineering degree from Louisiana State University.",
+    years: "2020-2024",
   },
   BRMHS: {
     image: (
@@ -16,6 +20,10 @@ export const experience_svgs = {
         alt="BRMHS symbol"
       />
     ),
+    title: "Baton Rouge Magnet High",
+    description:
+      "During high school I tended to my 3 main interests - orchestral performance, swim and track, and computer programming. I got to perform at Carnegie Hall and Chicago! I later took computer science with me to college.",
+    years: "2016-2020",
   },
   ARA: {
     image: (
@@ -25,6 +33,10 @@ export const experience_svgs = {
         alt="ARA symbol"
       />
     ),
+    title: "Applied Research Associates, inc.",
+    description:
+      "Junior year, I began an intership with a medium-sized engineering consultant - ARA. Here, I developed React and C++ applications with a professional team of software developers.",
+    years: "2023",
   },
   Exodus: {
     image: (
@@ -34,6 +46,10 @@ export const experience_svgs = {
         alt="Exodus symbol"
       />
     ),
+    title: "Exodus Foundation",
+    description:
+      "Sophomore year, I picked up my first internship with a small start-up in Louisiana functionalizing interfaces for a metaverse video game, Exodus. We gained top spots in the platform's popular activities - our work recieved a quarter million dollar grant for future development of our game.",
+    years: "2022-2023",
   },
   Sushi: {
     image: (
@@ -43,6 +59,10 @@ export const experience_svgs = {
         alt="Sushi symbol"
       />
     ),
+    title: "Sushi & Hibachi Cook",
+    description:
+      "Honing my skills in the kitchen, flavor knowledge, and sashimi-ing abilities - I worked a Japanese resturaunt for my first couple years of college.",
+    years: "2021-2022",
   },
   Grocery: {
     image: (
@@ -52,6 +72,10 @@ export const experience_svgs = {
         alt="Grocery symbol"
       />
     ),
+    title: "Grocery & Cafe Associate",
+    description:
+      "For a little cash during the peak of the pandemic, I kept myself busy working a coffee shop and tending to customers at the grocery store.",
+    years: "2020-2021",
   },
   Tea: {
     image: (
@@ -61,5 +85,9 @@ export const experience_svgs = {
         alt="Boba symbol"
       />
     ),
+    title: "Bobarista",
+    description:
+      "My first job as a teenager had me whipping up tea and hot snacks - and a boba addiction - at a local boba shop.",
+    years: "2018-2020",
   },
 };

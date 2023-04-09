@@ -3,8 +3,42 @@
   @extend .fade-in;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   margin-top: 6vh;
   min-height: 25vh;
-  background-color: whitesmoke;
+  border: 1px inset white;
+
+  .Primer-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5em;
+    @include themed() {
+      color: t($text-color);
+    }
+    transition: $theme-transition all;
+  }
+  .Left-Dialogue {
+    text-align: left;
+  }
+  .Right-Dialogue {
+    text-align: right;
+  }
+  .arrow {
+    height: 3vh;
+  }
+
+  .Skin-Selector {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    .Skin-Navigator {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 }
