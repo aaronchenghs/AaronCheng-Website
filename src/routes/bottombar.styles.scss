@@ -3,7 +3,7 @@
 .bottombar {
   height: 11vh;
   max-height: 150px;
-  width: 70%;
+  width: 75%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,10 +14,10 @@
   min-width: 771px;
   transition: background-color $theme-transition, box-shadow $theme-transition;
 
-  @include themed() {
-    background-color: t($container-color);
-    box-shadow: 6px 6px 3px t($shadow-color);
-  }
+  // @include themed() {
+  //   background-color: t($container-color);
+  //   box-shadow: 6px 6px 3px t($shadow-color);
+  // }
 
   .switchContainer {
     margin-left: 20px;

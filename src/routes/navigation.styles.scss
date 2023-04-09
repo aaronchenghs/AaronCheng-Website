@@ -3,7 +3,7 @@
 .navigation {
   height: 11vh;
   max-height: 150px;
-  width: 70%;
+  width: 75%;
   margin-top: 1vh;
   min-width: 771px;
 
@@ -15,10 +15,10 @@
   margin-bottom: 2.5vh;
   transition: all $theme-transition;
 
-  @include themed() {
-    background-color: t($container-color);
-    box-shadow: 6px 6px 3px t($shadow-color);
-  }
+  // @include themed() {
+  //   background-color: t($container-color);
+  //   box-shadow: 6px 6px 3px t($shadow-color);
+  // }
 
   .nav-container {
     display: flex;
