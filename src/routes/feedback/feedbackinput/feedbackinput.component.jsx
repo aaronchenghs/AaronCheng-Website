@@ -95,6 +95,7 @@ const FeedbackInput = () => {
           variant="contained"
           style={{ width: "13%", margin: "8px" }}
           onClick={submit}
+          disabled={messageValue === ""}
         >
           Post
         </Button>
