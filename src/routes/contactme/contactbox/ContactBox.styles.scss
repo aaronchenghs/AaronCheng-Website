@@ -103,7 +103,7 @@ $contact-sidesgap: 2.5rem;
   .icon-text {
     font-size: 1.3vw;
     @include themed() {
-      color: lighten(t($primary), 15%);
+      color: lighten(t($primary), 5%);
     }
   }
 }
@@ -122,7 +122,7 @@ $contact-sidesgap: 2.5rem;
 
 .tag {
   @include themed() {
-    color: lighten(t($primary), 20%);
+    color: lighten(t($primary), 5%);
   }
 
   text-decoration: none;

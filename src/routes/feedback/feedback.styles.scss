@@ -38,8 +38,8 @@ $borderRadius: 4px;
     align-items: center;
     justify-content: center;
     @include themed() {
-      background-color: lighten(t($container-color), 75%);
-      border: solid 4px darken(t($container-color), 15%);
+      background-color: t($container-color);
+      border: solid 4px t($primary);
       color: t($text-color);
     }
   }

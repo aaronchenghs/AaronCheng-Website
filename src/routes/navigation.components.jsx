@@ -15,6 +15,10 @@ const Navigation = () => {
   //embedded icon state
   const selectedNav = useSelector((state) => state.navReducer);
 
+  const iconSrc = darkMode
+    ? "https://i.ibb.co/QYg1k53/Aaron-Cheng-Icon-Dark.png"
+    : "https://i.ibb.co/WPQccQk/Aaron-Cheng-Icon.png";
+
   return (
     <Fragment>
       <div className="navigation">
@@ -28,7 +32,15 @@ const Navigation = () => {
           }}
           to="/"
         >
-          {websiteTitle + emotes[kaomojiIndex]}
+          <img
+            src={iconSrc}
+            alt="Aaron-Cheng-Icon"
+            border="0"
+            height="45px"
+            width="45px"
+          />
+          {websiteTitle}
+          {emotes[kaomojiIndex]}
         </Link>
 
         <div className="nav-container">

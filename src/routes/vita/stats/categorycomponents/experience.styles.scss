@@ -27,7 +27,7 @@ $buttonTransitionTime: 0.15s;
     transition: all $theme-transition;
     margin-top: 2vh;
     @include themed() {
-      background-color: t($background-center);
+      background-color: t($primary);
       color: t($text-color);
       box-shadow: 28px 28px 20px t($shadow-color);
     }
