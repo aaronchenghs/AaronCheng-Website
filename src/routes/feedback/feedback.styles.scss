@@ -39,7 +39,7 @@ $borderRadius: 4px;
     justify-content: center;
     @include themed() {
       background-color: t($container-color);
-      border: solid 4px t($primary);
+      border: solid 3px t($primary);
       color: t($text-color);
     }
   }

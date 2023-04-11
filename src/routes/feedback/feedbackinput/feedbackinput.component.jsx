@@ -74,7 +74,6 @@ const FeedbackInput = () => {
             onChange={() => toggleAnon(!anon)}
             style={{ color: "grey" }}
             sx={{
-              color: grey,
               margin: "-5px",
             }}
           />
@@ -95,7 +94,7 @@ const FeedbackInput = () => {
           variant="contained"
           style={{ width: "13%", margin: "8px" }}
           onClick={submit}
-          disabled={messageValue === ""}
+          disabled={messageValue === "" || (nameValue === "" && !anon)}
         >
           Post
         </Button>
