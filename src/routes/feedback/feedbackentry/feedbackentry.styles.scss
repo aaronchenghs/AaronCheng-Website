@@ -109,10 +109,10 @@ $borderRadius: 4px;
 
     &::after {
       //right
-      right: -24px;
-      width: 24px;
-      bottom: -11px;
-      height: 100%;
+      right: -20px;
+      width: 20px;
+      bottom: -8px;
+      height: 98%;
       @include themed() {
         box-shadow: 20px 5px 15px t($shadow-color);
       }

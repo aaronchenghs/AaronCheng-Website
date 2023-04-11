@@ -87,8 +87,8 @@ export const story_svgs = {
 };
 
 export const story_text = {
-  log: `Describing my background in-person is a 
-        tangled verbiage; here's my solution :-)`,
+  log: `If you want to ask where I'm from, 
+        this is for you :-)`,
   parents: `My parents immigrated from Brazil to the United States in the mid 90's`,
   born: `Then I was born in Ames, Iowa in 2002!`,
   moved: `We moved around a bit...`,

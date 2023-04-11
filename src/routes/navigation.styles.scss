@@ -89,7 +89,7 @@
     transition: box-shadow $theme-transition;
 
     @include themed() {
-      box-shadow: 3px 3px 3px inset t($shadow-color);
+      box-shadow: 3px 3px 6px inset t($shadow-color);
     }
 
     .logo-container {

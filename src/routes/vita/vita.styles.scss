@@ -48,6 +48,7 @@
   $button-transform: translate(0%, 4%);
   $button-border-radius: 2px;
   $button-border-width: 0px;
+  $selectedTransform: translate(2%, 12%);
 
   .button-consistency {
     font-size: $button-font-size;
@@ -94,7 +95,7 @@
     }
 
     &:active {
-      transform: $button-transform;
+      transform: $selectedTransform;
 
       &::before {
         //bottom side
@@ -149,15 +150,8 @@
   }
 
   .categoryButtonSelected {
-    @extend .button-consistency;
-    display: inline-block;
-    font-family: $theme-font;
-    transition: all $buttonTransitionTime, background-color $theme-transition;
-    transform: $button-transform;
-
-    @include themed() {
-      background-color: t($primary);
-    }
+    @extend .categoryButton;
+    transform: $selectedTransform;
 
     &::before {
       //bottom side

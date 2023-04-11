@@ -2,10 +2,11 @@
 
 .story-logLine {
   margin-bottom: 4vh;
-  margin-left: 0.5vw;
+  margin-left: 2vw;
   display: flex;
   flex-direction: row;
-  font-size: 1.2vw;
+  align-items: center;
+  font-size: 1.5em;
   transition: border-color $theme-transition;
   @include themed() {
     border-bottom: 2px solid t($primary);
@@ -39,7 +40,7 @@
 
   .geographic-origin-text-container {
     .geo-line {
-      font-size: 1.2vmax;
+      font-size: 0.9em;
     }
     font-size: 1.3em;
     line-height: 100px;
