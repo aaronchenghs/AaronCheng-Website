@@ -124,12 +124,11 @@ $borderRadius: 4px;
 
 .first-feedback-entry {
   @extend .feedback-entry;
-
   animation: slide-in-left 1.3s ease-out;
 }
 @keyframes slide-in-left {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
     opacity: 0;
   }
   to {

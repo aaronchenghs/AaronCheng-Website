@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { useState } from "react";
 import PageHeader from "../components/pageHeader/pageheader.component";
 import FeedbackEntry from "./feedbackentry/feedbackentry.component";
 import FeedbackInput from "./feedbackinput/feedbackinput.component";
@@ -20,6 +21,8 @@ const GoogleLogo = (
 );
 const Feedback = () => {
   const dispatch = useDispatch();
+
+  const [paginationIndex, changePagination] = useState(0);
 
   const signedIn = useSelector((state) => state.signIn);
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
@@ -57,21 +60,29 @@ const Feedback = () => {
             </label>
           )}
         </div>
+        <div className="Load-More-Container">
+          <div className="Load-More-Button">Load More Feedback</div>
+        </div>
         <div className="feedback-entries-container">
           {Object.keys(feedbackMap)
             .sort((a, b) => feedbackMap[b].date[3] - feedbackMap[a].date[3])
             .map((position, index) => {
               return (
-                <FeedbackEntry
-                  key={position}
-                  name={feedbackMap[position].name}
-                  message={feedbackMap[position].message}
-                  date={feedbackDTO.formatDate(feedbackMap[position].date)}
-                  first={index === 0 && messageGiven ? true : false}
-                />
+                index <= paginationIndex + 14 &&
+                index >= paginationIndex && (
+                  <FeedbackEntry
+                    key={position}
+                    name={feedbackMap[position].name}
+                    message={feedbackMap[position].message}
+                    date={feedbackDTO.formatDate(feedbackMap[position].date)}
+                    first={index === 0 && messageGiven ? true : false}
+                  />
+                )
               );
             })}
-          <button className="Load-More-Button">Load More Feedback</button>
+          <div className="Load-More-Container">
+            <div className="Load-More-Button">Load More Feedback</div>
+          </div>
         </div>
       </div>
     </Fragment>
