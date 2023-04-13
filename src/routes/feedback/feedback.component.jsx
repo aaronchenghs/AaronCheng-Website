@@ -40,7 +40,7 @@ const Feedback = () => {
   return (
     <Fragment>
       <div className="Feedback-Page">
-        <PageHeader text={"Love Me, Hate Me, Post a Note ✏️"} />
+        <PageHeader text={"Leave Me a Note ✏️"} />
         <div className={feedbackContainerStyle}>
           {!messageGiven ? (
             signedIn ? (
@@ -53,7 +53,7 @@ const Feedback = () => {
             )
           ) : (
             <label className="post-submit-message">
-              Thank you for providing feedback!
+              ✅Thank you for providing feedback✅
             </label>
           )}
         </div>
@@ -71,6 +71,7 @@ const Feedback = () => {
                 />
               );
             })}
+          <button className="Load-More-Button">Load More Feedback</button>
         </div>
       </div>
     </Fragment>

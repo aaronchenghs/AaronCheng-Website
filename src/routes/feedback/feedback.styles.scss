@@ -125,4 +125,70 @@ $borderRadius: 4px;
       color: darken(t($text-color), 20%);
     }
   }
+
+  .Load-More-Button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-2.5%, 0%);
+    margin-top: 15px;
+    margin-bottom: 8px;
+    height: 100%;
+    width: 15%;
+    height: 7vh;
+    @include themed() {
+      background-color: t($container-color);
+    }
+    transition: all $buttonTransitionTime;
+    border: none;
+
+    &::before {
+      //bottom side
+      @extend .block;
+      @extend .bottom;
+      bottom: -8px;
+      height: 8px;
+      width: 100%;
+      left: 4px;
+      @include themed() {
+        box-shadow: 0px 5px 5px t($shadow-color);
+      }
+      transition: all $buttonTransitionTime;
+    }
+
+    &::after {
+      //right side
+      @extend .block;
+      @extend .side;
+      right: -8px;
+      height: 100%;
+      width: 8px;
+      bottom: -4px;
+      @include themed() {
+        box-shadow: 5px 0px 5px t($shadow-color);
+      }
+      transition: all $buttonTransitionTime;
+    }
+
+    &:active {
+      margin-left: 10px;
+      margin-top: 2vh;
+      transform: translate(0%, -3%);
+      transition: all $buttonTransitionTime;
+      &::before {
+        bottom: -5px;
+        height: 5px;
+        left: 3px;
+        transition: all $buttonTransitionTime;
+      }
+
+      &::after {
+        right: -5px;
+        width: 5px;
+        bottom: -3px;
+        transition: all $buttonTransitionTime;
+      }
+    }
+  }
 }
