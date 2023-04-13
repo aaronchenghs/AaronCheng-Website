@@ -54,14 +54,13 @@ $borderRadius: 4px;
     flex-direction: row;
     align-items: center;
     gap: 8px;
-    padding: 15px 35px;
+    padding: 15px 28px;
     transform: translate(-5%, -13%);
     font-family: $theme-font;
     text-decoration: none;
     font-size: 1.25em;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
-    margin-top: 1vh;
 
     @include themed() {
       background-color: t($primary);

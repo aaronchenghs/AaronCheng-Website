@@ -14,14 +14,15 @@
 }
 
 ::-webkit-scrollbar {
+  display: none;
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
-  background-color: #0a1929;
-}
+// ::-webkit-scrollbar-track {
+//   display: none;
+// }
 
-::-webkit-scrollbar-thumb {
-  background: darken(#0a1929, 5%);
-  border-radius: 3px;
-}
+// ::-webkit-scrollbar-thumb {
+//   display: none;
+//   border-radius: 3px;
+// }
