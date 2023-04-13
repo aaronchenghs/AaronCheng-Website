@@ -1,5 +1,34 @@
-export const Left_Dialogue = `This is the left dialogue. wtf am i gonna say?`;
-export const Right_Dialogue = `This is the right dialogue. wtf am i gonna say?`;
+const cubes = (
+  <div className="cubes">
+    <img
+      src={"https://i.ibb.co/WPQccQk/Aaron-Cheng-Icon.png"}
+      width="30px"
+      height="30px"
+      alt="cubes"
+    />
+    Cubes
+  </div>
+);
+export const Left_Dialogue = (
+  <p>
+    I'm Aaron, a Brazilian-American student at Louisiana State University with a
+    passion for UX and {cubes} - interning at Applied Research Associates as a
+    front-end software developer. I aim to innovate UI/UX with my visionary
+    outlook and 6-sided geometric objects.
+  </p>
+);
+export const Right_Dialogue = (
+  <p>
+    This is the right dialogue. I might remove it but it'll be here for now :)
+  </p>
+);
+
+export const AFK_Dialogue = (
+  <p>
+    When I'm AFK, you can catch me whipping it up in the kitchen, trying to
+    build muscle, or playing one of my favorite retro RPG's
+  </p>
+);
 
 export const SkinsArray = [
   { name: "Skin1" },
@@ -8,6 +37,12 @@ export const SkinsArray = [
   { name: "Skin4" },
   { name: "Skin5" },
 ];
+
+export const AFKImages = {
+  WorkinIt: { name: "WorkinIt", src: "" },
+  CookinIt: { name: "CookinIt", src: "" },
+  PlayinIt: { name: "PlayinIt", src: "" },
+};
 
 export const navArraySvgs = {
   left_arrow_light: (
