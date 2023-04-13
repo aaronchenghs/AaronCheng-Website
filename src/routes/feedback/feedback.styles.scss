@@ -50,8 +50,11 @@ $borderRadius: 4px;
   }
 
   .sign-in-button {
-    display: inline-block;
-    padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 35px;
     transform: translate(-5%, -13%);
     font-family: $theme-font;
     text-decoration: none;
@@ -62,7 +65,7 @@ $borderRadius: 4px;
 
     @include themed() {
       background-color: t($primary);
-      color: t($text-color);
+      color: darken(t($text-color), 10%);
     }
     &::before {
       //bottom side
