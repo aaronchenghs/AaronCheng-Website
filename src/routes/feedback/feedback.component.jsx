@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import { useState } from "react";
 import PageHeader from "../components/pageHeader/pageheader.component";
 import FeedbackEntry from "./feedbackentry/feedbackentry.component";
@@ -6,12 +6,14 @@ import FeedbackInput from "./feedbackinput/feedbackinput.component";
 import { useSelector, useDispatch } from "react-redux";
 import { signin_action } from "../../redux_manager/actions/auth.action";
 import { feedbackDTO } from "../../utils/firebase/firebase.utils";
+import { navArraySvgs } from "../vita/stats/categorycomponents/components/summary.svgs";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 
 import "./feedback.styles.scss";
+//google logo
 const GoogleLogo = (
   <img
     width="30"
@@ -19,15 +21,44 @@ const GoogleLogo = (
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
   />
 );
+
+//scroll to top of page on nav
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+const feedbackPerPage = 10;
+
 const Feedback = () => {
   const dispatch = useDispatch();
 
+  //pagination state
   const [paginationIndex, changePagination] = useState(0);
 
+  //global state imports
   const signedIn = useSelector((state) => state.signIn);
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
   const feedbackMap = useSelector((state) => state.feedbackLoadReducer);
+  const darkMode = useSelector((state) => state.toggleLight);
 
+  //page navigation
+  const incrementPagination = () => {
+    if (paginationIndex + feedbackPerPage < feedbackMap.length) {
+      changePagination(paginationIndex + feedbackPerPage);
+      scrollToTop();
+    }
+  };
+  const decrementPagination = () => {
+    if (paginationIndex !== 0) {
+      changePagination(paginationIndex - feedbackPerPage);
+      scrollToTop();
+    }
+  };
+
+  //login
   const logGoogleUser = async () => {
     try {
       const { user } = await signInWithGooglePopup();
@@ -37,9 +68,35 @@ const Feedback = () => {
       console.log(error);
     }
   };
+
+  //send user back to first page if feedback is given
+  useEffect(() => {
+    changePagination(0);
+  }, [messageGiven]);
+
   const feedbackContainerStyle = signedIn
     ? "give-feedback-container"
     : "button-container";
+
+  const navFeedbackBar = (
+    <div className="Load-More-Container">
+      <div className="Load-More-Button">
+        <div className="Feeback-Arrow-Container" onClick={decrementPagination}>
+          {darkMode
+            ? navArraySvgs.left_arrow_dark
+            : navArraySvgs.left_arrow_light}
+        </div>
+        {paginationIndex / feedbackPerPage + 1}/
+        {Math.ceil(feedbackMap.length / feedbackPerPage)}
+        <div className="Feeback-Arrow-Container" onClick={incrementPagination}>
+          {darkMode
+            ? navArraySvgs.right_arrow_dark
+            : navArraySvgs.right_arrow_light}
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <Fragment>
       <div className="Feedback-Page">
@@ -60,15 +117,13 @@ const Feedback = () => {
             </label>
           )}
         </div>
-        <div className="Load-More-Container">
-          <div className="Load-More-Button">Load More Feedback</div>
-        </div>
+        {navFeedbackBar}
         <div className="feedback-entries-container">
           {Object.keys(feedbackMap)
             .sort((a, b) => feedbackMap[b].date[3] - feedbackMap[a].date[3])
             .map((position, index) => {
               return (
-                index <= paginationIndex + 14 &&
+                index < paginationIndex + feedbackPerPage &&
                 index >= paginationIndex && (
                   <FeedbackEntry
                     key={position}
@@ -80,9 +135,7 @@ const Feedback = () => {
                 )
               );
             })}
-          <div className="Load-More-Container">
-            <div className="Load-More-Button">Load More Feedback</div>
-          </div>
+          {navFeedbackBar}
         </div>
       </div>
     </Fragment>

@@ -1,11 +1,10 @@
 import * as React from "react";
 import { createTheme } from "@mui/material/styles";
-import TextField, { TextFieldProps } from "@mui/material/TextField";
-import { useSelector } from "react-redux";
+import TextField from "@mui/material/TextField";
 import { ThemeProvider } from "@emotion/react";
 
 export function ThemedTextField(props) {
-  const toggledLight = useSelector((state) => state.toggleLight);
+  //const toggledLight = useSelector((state) => state.toggleLight);
 
   const themedTextFieldStyling = createTheme({
     components: {
