@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import { AFK_Dialogue } from "./components/summary.svgs";
 import {
   Left_Dialogue,
   Right_Dialogue,
@@ -29,22 +30,25 @@ export const Summary = () => {
           <p className="Left-Dialogue">{Left_Dialogue}</p>
           <div className="Skin-Selector">
             <div className="Skin-Navigator">
+              <div className="Portrait">CurrentImage</div>
+            </div>
+            <div className="Portrait-Container">
               <div className="Arrow-Container" onClick={prevImage}>
                 {darkMode
                   ? navArraySvgs.left_arrow_dark
                   : navArraySvgs.left_arrow_light}
               </div>
-              <div className="Portrait">CurrentImage</div>
+              {SkinsArray[currentSkinIndex].name}
               <div className="Arrow-Container" onClick={nextImage}>
                 {darkMode
                   ? navArraySvgs.right_arrow_dark
                   : navArraySvgs.right_arrow_light}
               </div>
             </div>
-            {SkinsArray[currentSkinIndex].name}
           </div>
           <p className="Right-Dialogue">{Right_Dialogue}</p>
         </div>
+        <div className="AFK-container">{AFK_Dialogue}</div>
       </div>
     </Fragment>
   );

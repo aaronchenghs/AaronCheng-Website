@@ -53,7 +53,7 @@ $borderRadius: 4px;
     transform: skewY(45deg);
     @include themed() {
       background-color: darken(t($primary), 25%);
-      box-shadow: 10px 0px 10px t($shadow-color);
+      box-shadow: 10px -1px 10px t($shadow-color);
     }
   }
 
@@ -98,6 +98,7 @@ $borderRadius: 4px;
 
     &::before {
       //bottom
+      transition: all $buttonTransitionTime;
       height: 17px;
       left: 12px;
       bottom: -18px;
@@ -109,12 +110,13 @@ $borderRadius: 4px;
 
     &::after {
       //right
+      transition: all $buttonTransitionTime;
       right: -20px;
       width: 20px;
       bottom: -8px;
       height: 98%;
       @include themed() {
-        box-shadow: 20px 5px 15px t($shadow-color);
+        box-shadow: 10px 3px 15px t($shadow-color);
       }
     }
   }
@@ -122,12 +124,11 @@ $borderRadius: 4px;
 
 .first-feedback-entry {
   @extend .feedback-entry;
-
   animation: slide-in-left 1.3s ease-out;
 }
 @keyframes slide-in-left {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-150%);
     opacity: 0;
   }
   to {

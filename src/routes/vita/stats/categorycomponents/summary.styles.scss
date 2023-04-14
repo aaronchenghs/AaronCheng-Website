@@ -4,9 +4,8 @@
   display: flex;
   flex-direction: column;
   width: 90%;
-  margin-top: 6vh;
+  margin-top: 7vh;
   min-height: 25vh;
-  border: 1px inset white;
 
   .Primer-Container {
     display: flex;
@@ -17,18 +16,43 @@
       color: t($text-color);
     }
     transition: $theme-transition all;
+    // @include themed() {
+    //   border-bottom: 3px dashed t($text-color);
+    //   border-top: 3px dashed t($text-color);
+    // }
+    padding-bottom: 2vh;
+    padding-top: 2vh;
   }
+
+  .Dialogue {
+    width: 35%;
+  }
+
   .Left-Dialogue {
+    @extend .Dialogue;
     text-align: left;
   }
   .Right-Dialogue {
+    @extend .Dialogue;
     text-align: right;
   }
   .arrow {
     height: 4.5vh;
     cursor: pointer;
   }
+  .cubes {
+    display: inline-flex;
+    vertical-align: top;
+  }
 
+  .Portrait-Container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+  }
   .Skin-Selector {
     display: flex;
     flex-direction: column;
@@ -36,11 +60,58 @@
     align-items: center;
     width: 35vw;
     user-select: none;
+
     .Skin-Navigator {
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      transform: translate(-1.5%, 0%);
+      margin-top: 15px;
+      margin-bottom: 8px;
+      height: 100%;
+      width: 70%;
+      @include themed() {
+        background-color: t($container-color);
+      }
+      transition: all $theme-transition;
+
+      &::before {
+        //bottom side
+        @extend .block;
+        @extend .bottom;
+        bottom: -8px;
+        height: 8px;
+        width: 100%;
+        left: 4px;
+        @include themed() {
+          box-shadow: 0px 5px 5px t($shadow-color);
+        }
+      }
+
+      &::after {
+        //right side
+        @extend .block;
+        @extend .side;
+        right: -8px;
+        height: 100%;
+        width: 8px;
+        bottom: -4px;
+        @include themed() {
+          box-shadow: 5px 0px 5px t($shadow-color);
+        }
+      }
+    }
+  }
+
+  .AFK-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5em;
+    width: 60%;
+    transition: all $theme-transition;
+    @include themed() {
+      color: t($text-color);
     }
   }
 }

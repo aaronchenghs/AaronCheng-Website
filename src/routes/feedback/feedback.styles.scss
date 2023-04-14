@@ -17,7 +17,7 @@ $borderRadius: 4px;
   .feedback-entries-container {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 20px;
     justify-content: center;
     align-items: center;
@@ -46,23 +46,25 @@ $borderRadius: 4px;
 
   .button-container {
     height: 1vmin;
-    margin-bottom: 3vh;
+    margin-bottom: 5vh;
   }
 
   .sign-in-button {
-    display: inline-block;
-    padding: 20px 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 15px 28px;
     transform: translate(-5%, -13%);
     font-family: $theme-font;
     text-decoration: none;
     font-size: 1.25em;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
-    margin-top: 1vh;
 
     @include themed() {
       background-color: t($primary);
-      color: t($text-color);
+      color: darken(t($text-color), 10%);
     }
     &::before {
       //bottom side
@@ -121,6 +123,60 @@ $borderRadius: 4px;
     font-family: $theme-font;
     @include themed() {
       color: darken(t($text-color), 20%);
+    }
+  }
+
+  .Load-More-Container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 55%;
+    margin-top: 15px;
+    transition: all $theme-transition;
+    @include themed() {
+      color: t($text-color);
+    }
+  }
+
+  .Load-More-Button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-2.5%, -2.5%);
+    height: 100%;
+    width: 35%;
+    height: 7vh;
+    @include themed() {
+      background-color: t($container-color);
+    }
+    transition: all $theme-transition;
+    border: none;
+
+    &::before {
+      //bottom side
+      @extend .block;
+      @extend .bottom;
+      bottom: -8px;
+      height: 8px;
+      width: 100%;
+      left: 4px;
+      @include themed() {
+        box-shadow: 0px 5px 5px t($shadow-color);
+      }
+    }
+
+    &::after {
+      //right side
+      @extend .block;
+      @extend .side;
+      right: -8px;
+      height: 100%;
+      width: 8px;
+      bottom: -4px;
+      @include themed() {
+        box-shadow: 5px 0px 5px t($shadow-color);
+      }
     }
   }
 }

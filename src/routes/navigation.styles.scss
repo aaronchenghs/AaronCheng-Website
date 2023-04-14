@@ -4,7 +4,7 @@
   height: 11vh;
   max-height: 150px;
   width: 75%;
-  margin-top: 1vh;
+  margin-top: 2vh;
   min-width: 771px;
 
   display: flex;
@@ -132,7 +132,7 @@
       color: t($text-color);
     }
     transition: color $theme-transition;
-    font-size: 0.9vw;
+    font-size: 0.85em;
   }
 
   .box:hover {

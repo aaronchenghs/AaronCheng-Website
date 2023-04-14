@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { useState } from "react";
 import PageHeader from "../components/pageHeader/pageheader.component";
 import FeedbackEntry from "./feedbackentry/feedbackentry.component";
 import FeedbackInput from "./feedbackinput/feedbackinput.component";
@@ -11,9 +12,17 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 import "./feedback.styles.scss";
-
+const GoogleLogo = (
+  <img
+    width="30"
+    alt='Google "G" Logo'
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+  />
+);
 const Feedback = () => {
   const dispatch = useDispatch();
+
+  const [paginationIndex, changePagination] = useState(0);
 
   const signedIn = useSelector((state) => state.signIn);
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
@@ -34,36 +43,46 @@ const Feedback = () => {
   return (
     <Fragment>
       <div className="Feedback-Page">
-        <PageHeader text={"Love Me, Hate Me, Post a Note ✏️"} />
+        <PageHeader text={"Leave Me a Note ✏️"} />
         <div className={feedbackContainerStyle}>
           {!messageGiven ? (
             signedIn ? (
               <FeedbackInput />
             ) : (
               <button className="sign-in-button" onClick={logGoogleUser}>
+                {GoogleLogo}
                 Sign in with Google to leave feedback
               </button>
             )
           ) : (
             <label className="post-submit-message">
-              Thank you for providing feedback!
+              ✅Thank you for providing feedback✅
             </label>
           )}
+        </div>
+        <div className="Load-More-Container">
+          <div className="Load-More-Button">Load More Feedback</div>
         </div>
         <div className="feedback-entries-container">
           {Object.keys(feedbackMap)
             .sort((a, b) => feedbackMap[b].date[3] - feedbackMap[a].date[3])
             .map((position, index) => {
               return (
-                <FeedbackEntry
-                  key={position}
-                  name={feedbackMap[position].name}
-                  message={feedbackMap[position].message}
-                  date={feedbackDTO.formatDate(feedbackMap[position].date)}
-                  first={index === 0 && messageGiven ? true : false}
-                />
+                index <= paginationIndex + 14 &&
+                index >= paginationIndex && (
+                  <FeedbackEntry
+                    key={position}
+                    name={feedbackMap[position].name}
+                    message={feedbackMap[position].message}
+                    date={feedbackDTO.formatDate(feedbackMap[position].date)}
+                    first={index === 0 && messageGiven ? true : false}
+                  />
+                )
               );
             })}
+          <div className="Load-More-Container">
+            <div className="Load-More-Button">Load More Feedback</div>
+          </div>
         </div>
       </div>
     </Fragment>
