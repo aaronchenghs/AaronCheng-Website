@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Checkbox, TextField } from "@mui/material";
 import { grey } from "@mui/material/colors";
+import { ThemedTextField } from "../../../custom_mui/themedTextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { Box } from "@mui/system";
 import Button from "@mui/material/Button";
@@ -49,7 +50,7 @@ const FeedbackInput = () => {
       >
         <div className="name-container">
           {anon ? (
-            <TextField
+            <ThemedTextField
               disabled
               id="filled-search"
               label="——"
@@ -58,7 +59,7 @@ const FeedbackInput = () => {
               style={{ width: "40%" }}
             />
           ) : (
-            <TextField
+            <ThemedTextField
               id="filled-search"
               label="Name"
               type="search"
@@ -79,7 +80,7 @@ const FeedbackInput = () => {
           />
         </div>
 
-        <TextField
+        <ThemedTextField
           className="this"
           id="filled-multiline-static"
           label="Message"

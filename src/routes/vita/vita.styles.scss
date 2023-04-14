@@ -28,10 +28,7 @@
     padding-top: 1vh;
     top: 0 !important;
     position: sticky !important;
-    z-index: 5;
-    @include themed() {
-      box-shadow: 15px 20px 25px t($shadow-color);
-    }
+    z-index: 1;
   }
 
   $buttonTransitionTime: 0.15s;
@@ -48,7 +45,7 @@
   $button-transform: translate(0%, 4%);
   $button-border-radius: 2px;
   $button-border-width: 0px;
-  $selectedTransform: translate(2%, 12%);
+  $selectedTransform: translate(0%, 10.5%);
 
   .button-consistency {
     font-size: $button-font-size;
@@ -67,6 +64,9 @@
       background-color: t($primary);
     }
     transition: all $buttonTransitionTime, background-color $theme-transition;
+    @include themed() {
+      box-shadow: 15px 20px 25px t($shadow-color);
+    }
 
     &::before {
       //bottom side

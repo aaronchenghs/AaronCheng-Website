@@ -36,11 +36,11 @@ const Navigation = () => {
             src={iconSrc}
             alt="Aaron-Cheng-Icon"
             border="0"
-            height="45px"
-            width="45px"
+            height="50px"
+            width="50px"
           />
           {websiteTitle}
-          {emotes[kaomojiIndex]}
+          <label className="kaomoji">{emotes[kaomojiIndex]}</label>
         </Link>
 
         <div className="nav-container">

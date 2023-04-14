@@ -1,32 +1,112 @@
 import * as React from "react";
-import { alpha, styled } from "@mui/material/styles";
-import InputBase from "@mui/material/InputBase";
-import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
+import { createTheme } from "@mui/material/styles";
 import TextField, { TextFieldProps } from "@mui/material/TextField";
-import FormControl from "@mui/material/FormControl";
-import { OutlinedInputProps } from "@mui/material/OutlinedInput";
+import { useSelector } from "react-redux";
+import { ThemeProvider } from "@emotion/react";
 
-export const themedTextField = styled(TextField)({
-  "& label.Mui-focused": {
-    color: "green",
-  },
-  "& .MuiInput-underline:after": {
-    borderBottomColor: "green",
-  },
-  "& .MuiOutlinedInput-root": {
-    "& fieldset": {
-      borderColor: "red",
-    },
-    "&:hover fieldset": {
-      borderColor: "yellow",
-    },
-    "&.Mui-focused fieldset": {
-      borderColor: "green",
-    },
-  },
-});
+export function ThemedTextField(props) {
+  const toggledLight = useSelector((state) => state.toggleLight);
 
-export default themedTextField = (props) => {
-  <TextField></TextField>;
-};
+  const themedTextFieldStyling = createTheme({
+    components: {
+      MuiTextField: {
+        variants: [
+          {
+            props: { variant: "filled" },
+            style: {
+              ".MuiInputLabel-root": {
+                color: "blue",
+
+                "&.Mui-focused": {
+                  color: "red",
+
+                  ".MuiInputLabel-asterisk": {
+                    color: "red",
+                  },
+                },
+
+                "&.Mui-error": {
+                  color: "red",
+
+                  ".MuiInputLabel-asterisk": {
+                    color: "red",
+                  },
+                },
+
+                ".MuiInputLabel-asterisk": {
+                  color: "red",
+
+                  "&.Mui-focused": {
+                    color: "red",
+                  },
+                },
+
+                "&.Mui-disabled": {
+                  color: "red",
+                },
+              },
+
+              ".MuiOutlinedInput-root": {
+                color: "red",
+
+                "&:hover": {
+                  ".MuiOutlinedInput-notchedOutline": {
+                    borderColor: "red",
+                  },
+                },
+
+                "&.Mui-focused": {
+                  ".MuiOutlinedInput-notchedOutline": {
+                    borderColor: "red",
+                  },
+                },
+
+                "&.Mui-error": {
+                  color: "red",
+
+                  ".MuiOutlinedInput-notchedOutline": {
+                    borderColor: "red",
+                  },
+                },
+
+                "&.Mui-disabled": {
+                  color: "red",
+
+                  ".MuiOutlinedInput-notchedOutline": {
+                    borderColor: "red",
+                  },
+                },
+              },
+            },
+          },
+        ],
+        defaultProps: {
+          size: "small",
+        },
+      },
+      MuiOutlinedInput: {
+        styleOverrides: {
+          notchedOutline: {
+            borderWidth: "2px",
+            borderColor: "red",
+          },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          input: {
+            "&.Mui-disabled": {
+              WebkitTextFillColor: "red",
+            },
+          },
+        },
+      },
+    },
+  });
+
+  return (
+    <ThemeProvider theme={themedTextFieldStyling}>
+      <TextField {...props} value={undefined} />
+    </ThemeProvider>
+  );
+}

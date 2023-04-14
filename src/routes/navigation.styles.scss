@@ -29,14 +29,15 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 2px;
+    user-select: none;
+    gap: 3px;
     @include themed() {
       color: t($text-color);
     }
     font-family: $theme-font;
     min-width: 230px;
 
-    font-size: 1.5vw;
+    font-size: 2.5em;
     min-width: 300px;
     padding-left: 2vw;
     text-decoration: none;
@@ -44,6 +45,11 @@
 
     @media screen and (max-width: 1460px) {
       font-size: 22px;
+    }
+
+    .kaomoji {
+      margin-left: 5px;
+      font-size: 0.85em;
     }
   }
 
