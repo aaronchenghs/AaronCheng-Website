@@ -105,11 +105,16 @@
   .AFK-container {
     display: flex;
     flex-direction: row;
-    font-size: 1.5em;
-    width: 60%;
+    justify-content: flex-end;
+    font-size: 1.6em;
+    width: 100%;
     transition: all $theme-transition;
+    margin-top: 5vh;
     @include themed() {
       color: t($text-color);
+    }
+    .AFK_dialogue {
+      width: 35%;
     }
   }
 }

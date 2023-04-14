@@ -48,7 +48,10 @@ export const Summary = () => {
           </div>
           <p className="Right-Dialogue">{Right_Dialogue}</p>
         </div>
-        <div className="AFK-container">{AFK_Dialogue}</div>
+        <div className="AFK-container">
+          <div className="AFK_pictures_container"></div>
+          <div className="AFK_dialogue">{AFK_Dialogue}</div>
+        </div>
       </div>
     </Fragment>
   );
