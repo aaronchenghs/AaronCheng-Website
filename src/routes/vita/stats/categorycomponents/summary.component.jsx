@@ -1,11 +1,10 @@
 import React, { Fragment } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { AFK_Dialogue } from "./components/summary.svgs";
+import { AFK_Dialogue, primerImages } from "./components/summary.svgs";
 import {
   Left_Dialogue,
   Right_Dialogue,
-  SkinsArray,
   navArraySvgs,
 } from "./components/summary.svgs";
 
@@ -13,16 +12,40 @@ import "./summary.styles.scss";
 
 export const Summary = () => {
   const [currentSkinIndex, SetSkinIndex] = useState(0);
+
   const darkMode = useSelector((state) => state.toggleLight);
+
   const prevImage = () => {
     SetSkinIndex(
-      (currentSkinIndex - 1 + SkinsArray.length) % SkinsArray.length
+      (currentSkinIndex - 1 + primerImages.length) % primerImages.length
     );
   };
-
   const nextImage = () => {
-    SetSkinIndex((currentSkinIndex + 1) % SkinsArray.length);
+    SetSkinIndex((currentSkinIndex + 1) % primerImages.length);
   };
+
+  const images = primerImages.map((image, index) => (
+    <img
+      key={index}
+      src={image.src}
+      className={`
+        ${index === currentSkinIndex ? "active" : ""}
+        ${
+          index === currentSkinIndex - 1 ||
+          (currentSkinIndex === 0 && index === primerImages.length - 1)
+            ? "previous"
+            : ""
+        }
+        ${
+          index === currentSkinIndex + 1 ||
+          (currentSkinIndex === primerImages.length - 1 && index === 0)
+            ? "next"
+            : ""
+        }
+      `}
+    />
+  ));
+
   return (
     <Fragment>
       <div className="Summary-Container">
@@ -30,7 +53,7 @@ export const Summary = () => {
           <p className="Left-Dialogue">{Left_Dialogue}</p>
           <div className="Skin-Selector">
             <div className="Skin-Navigator">
-              <div className="Portrait">CurrentImage</div>
+              <div className="Portrait">{images}</div>
             </div>
             <div className="Portrait-Container">
               <div className="Arrow-Container" onClick={prevImage}>
@@ -38,7 +61,7 @@ export const Summary = () => {
                   ? navArraySvgs.left_arrow_dark
                   : navArraySvgs.left_arrow_light}
               </div>
-              {SkinsArray[currentSkinIndex].name}
+              {primerImages[currentSkinIndex].imageName}
               <div className="Arrow-Container" onClick={nextImage}>
                 {darkMode
                   ? navArraySvgs.right_arrow_dark

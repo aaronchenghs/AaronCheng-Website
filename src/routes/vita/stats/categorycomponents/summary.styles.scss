@@ -49,16 +49,18 @@
     margin-top: 12px;
     align-items: center;
     justify-content: space-between;
-    width: 70%;
+    width: 65%;
   }
   .Skin-Selector {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 35vw;
+    width: 30vw;
     user-select: none;
 
+    $portrait-height: 50vh;
+    $portrait-width: 19vw;
     .Skin-Navigator {
       display: flex;
       flex-direction: row;
@@ -67,8 +69,8 @@
       transform: translate(-1.5%, 0%);
       margin-top: 15px;
       margin-bottom: 8px;
-      height: 100%;
-      width: 70%;
+      height: $portrait-height;
+      width: $portrait-width;
       @include themed() {
         background-color: t($container-color);
       }
@@ -78,10 +80,10 @@
         //bottom side
         @extend .block;
         @extend .bottom;
-        bottom: -8px;
-        height: 8px;
+        bottom: -12px;
+        height: 12px;
         width: 100%;
-        left: 4px;
+        left: 6px;
         @include themed() {
           box-shadow: 0px 5px 5px t($shadow-color);
         }
@@ -91,13 +93,43 @@
         //right side
         @extend .block;
         @extend .side;
-        right: -8px;
+        right: -12px;
         height: 100%;
-        width: 8px;
-        bottom: -4px;
+        width: 12px;
+        bottom: -6px;
         @include themed() {
           box-shadow: 5px 0px 5px t($shadow-color);
         }
+      }
+
+      .Portrait {
+        height: $portrait-height;
+        width: $portrait-width;
+        position: relative;
+        overflow: hidden;
+      }
+    }
+
+    .primerImage {
+      object-fit: fill;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
+
+      .active {
+        transform: translateX(0%);
+      }
+
+      .previous {
+        transform: translateX(-100%);
+      }
+
+      .next {
+        transform: translateX(100%);
       }
     }
   }

@@ -30,12 +30,17 @@ export const AFK_Dialogue = (
   </p>
 );
 
-export const SkinsArray = [
-  { name: "Skin1" },
-  { name: "Skin2" },
-  { name: "Skin3" },
-  { name: "Skin4" },
-  { name: "Skin5" },
+export const primerImages = [
+  {
+    src: "https://i.ibb.co/P6nw8KN/IMG-4216.png",
+    alt: "Me waiting for boba",
+    imageName: "Waiting for Boba",
+  },
+  {
+    src: "",
+    alt: "Just a test really",
+    imageName: "Test",
+  },
 ];
 
 export const AFKImages = {
