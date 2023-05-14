@@ -25,12 +25,24 @@
       border-bottom: 2px solid darken(t($primary), 8%);
       box-shadow: inset 0px 2px 10px t($shadow-color);
     }
+    overflow: hidden;
 
     .text {
       font-size: 1.7vw;
       font-family: $theme-font;
       @include themed() {
         color: t($text-color);
+      }
+      animation: slide-in-top 0.5s ease-out;
+    }
+    @keyframes slide-in-top {
+      from {
+        transform: translateY(-150%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0%);
+        opacity: 1;
       }
     }
   }

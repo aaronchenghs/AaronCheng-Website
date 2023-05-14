@@ -28,6 +28,7 @@ export const Summary = () => {
     <img
       key={index}
       src={image.src}
+      alt={image.alt}
       className={`
         ${index === currentSkinIndex ? "active" : ""}
         ${
