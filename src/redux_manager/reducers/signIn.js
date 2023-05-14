@@ -8,4 +8,14 @@ const signIn = (state = false, action) => {
   }
 };
 
+export const isLoadingFeedbacks = (state = true, action) => {
+  switch (action.type) {
+    case "loadedFeedbacks": {
+      return false;
+    }
+    default:
+      return state;
+  }
+};
+
 export default signIn;

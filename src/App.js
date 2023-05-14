@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getFeedbackStream } from "./utils/firebase/firebase.utils";
+import { loadedFeedbacks_action } from "./redux_manager/actions/auth.action";
 import { loadFeedbackAction } from "./redux_manager/actions/feedbackRender.action";
 import Navigation from "./routes/navigation.components";
 import ContactMe from "./routes/contactme/contactme.component";
@@ -22,9 +23,10 @@ const App = () => {
     const getFeedbackMap = async () => {
       const feedbackMap = await getFeedbackStream();
       dispatch(loadFeedbackAction(feedbackMap));
+      dispatch(loadedFeedbacks_action);
     };
     getFeedbackMap();
-  }, [messageGiven]); //Render on load in, on message given
+  }, [messageGiven, dispatch]); //Render on load in, on message given
 
   //color theme selector
   const darkMode = useSelector((state) => state.toggleLight);

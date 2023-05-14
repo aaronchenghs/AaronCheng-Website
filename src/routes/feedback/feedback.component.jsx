@@ -13,6 +13,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 
 import "./feedback.styles.scss";
+import { Skeleton } from "@mui/material";
 //google logo
 const GoogleLogo = (
   <img
@@ -43,6 +44,7 @@ const Feedback = () => {
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
   const feedbackMap = useSelector((state) => state.feedbackLoadReducer);
   const darkMode = useSelector((state) => state.toggleLight);
+  const isLoadingFeedbacks = useSelector((state) => state.isLoadingFeedbacks);
 
   //page navigation
   const incrementPagination = () => {
@@ -87,7 +89,9 @@ const Feedback = () => {
             : navArraySvgs.left_arrow_light}
         </div>
         {paginationIndex / feedbackPerPage + 1}/
-        {Math.ceil(feedbackMap.length / feedbackPerPage)}
+        {!isLoadingFeedbacks
+          ? Math.ceil(feedbackMap.length / feedbackPerPage)
+          : "..."}
         <div className="Feeback-Arrow-Container" onClick={incrementPagination}>
           {darkMode
             ? navArraySvgs.right_arrow_dark
@@ -117,24 +121,38 @@ const Feedback = () => {
             </label>
           )}
         </div>
-        {navFeedbackBar}
-        <div className="feedback-entries-container">
-          {Object.keys(feedbackMap)
-            .sort((a, b) => feedbackMap[b].date[3] - feedbackMap[a].date[3])
-            .map((position, index) => {
-              return (
-                index < paginationIndex + feedbackPerPage &&
-                index >= paginationIndex && (
-                  <FeedbackEntry
-                    key={position}
-                    name={feedbackMap[position].name}
-                    message={feedbackMap[position].message}
-                    date={feedbackDTO.formatDate(feedbackMap[position].date)}
-                    first={index === 0 && messageGiven ? true : false}
-                  />
-                )
-              );
-            })}
+        <div className="feedback-section-container">
+          {navFeedbackBar}
+          <div className="feedback-entries-container">
+            {!isLoadingFeedbacks ? (
+              Object.keys(feedbackMap)
+                .sort((a, b) => feedbackMap[b].date[3] - feedbackMap[a].date[3])
+                .map((position, index) => {
+                  return (
+                    index < paginationIndex + feedbackPerPage &&
+                    index >= paginationIndex && (
+                      <FeedbackEntry
+                        key={position}
+                        name={feedbackMap[position].name}
+                        message={feedbackMap[position].message}
+                        date={feedbackDTO.formatDate(
+                          feedbackMap[position].date
+                        )}
+                        first={index === 0 && messageGiven ? true : false}
+                      />
+                    )
+                  );
+                })
+            ) : (
+              //If is still loading, show loading skeleton
+              <Skeleton
+                variant="rectangular"
+                animation="wave"
+                width={"100%"}
+                height={"20vh"}
+              />
+            )}
+          </div>
           {navFeedbackBar}
         </div>
       </div>

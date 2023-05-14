@@ -8,7 +8,7 @@ $borderRadius: 4px;
 }
 
 .feedback-entry {
-  width: 50vw;
+  width: 100%;
   min-height: 15vh;
   max-height: 25vh;
   margin-bottom: 9px;
@@ -64,7 +64,7 @@ $borderRadius: 4px;
     justify-content: bottom;
     transition: all $theme-transition;
     font-weight: 400;
-    font-size: 1.1em;
+    font-size: 1.5em;
     padding-top: 3px;
     padding-left: 8px;
     @include themed() {
@@ -83,7 +83,7 @@ $borderRadius: 4px;
     height: 100%;
     padding-left: 8px;
     padding-top: 4px;
-    font-size: 1.1em;
+    font-size: 1.5em;
     overflow-y: hidden;
     transition: all $theme-transition;
   }

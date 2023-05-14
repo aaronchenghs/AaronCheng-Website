@@ -12,24 +12,29 @@ $borderRadius: 4px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 70vh;
 
+  .feedback-section-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 60%;
+  }
   .feedback-entries-container {
     display: flex;
     flex-direction: column;
-    margin-top: 5px;
-    margin-bottom: 20px;
     justify-content: center;
     align-items: center;
     width: 100%;
     user-select: none;
+    min-height: 30.5vh;
   }
   .give-feedback-container {
     width: 35vw;
     min-width: 600px;
     padding: 2vmin;
-    margin-bottom: 1vmin;
-    margin-top: 12px;
+    margin-bottom: 2.5vh;
+    margin-top: 0.5vh;
     border-radius: 10px;
     font-family: $theme-font;
     transition: all $theme-transition;
@@ -59,7 +64,7 @@ $borderRadius: 4px;
     transform: translate(-5%, -13%);
     font-family: $theme-font;
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.7em;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
     user-select: none;
@@ -130,8 +135,7 @@ $borderRadius: 4px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    width: 50%;
-    margin-top: 15px;
+    width: 100%;
     transition: all $theme-transition;
     @include themed() {
       color: t($text-color);
@@ -145,10 +149,9 @@ $borderRadius: 4px;
     justify-content: space-between;
     align-items: center;
     transform: translate(-2.5%, -2.5%);
-    height: 100%;
     font-size: 1.4em;
-    width: 20%;
-    height: 7vh;
+    width: 13%;
+    height: 5.5vh;
     @include themed() {
       background-color: t($container-color);
     }
