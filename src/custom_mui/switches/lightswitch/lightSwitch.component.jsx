@@ -3,7 +3,7 @@ import Switch from "@mui/material/Switch";
 
 export const LightSwitch = styled(Switch)(({ dark }) => ({
   width: 65,
-  height: 37,
+  height: 38,
   padding: 7.5,
 
   "& .MuiSwitch-switchBase": {

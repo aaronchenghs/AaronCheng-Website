@@ -11,23 +11,39 @@ const cubes = (
 );
 export const Left_Dialogue = (
   <p>
-    I'm Aaron, a Brazilian-American student at Louisiana State University with a
-    passion for UX and {cubes} - interning at Applied Research Associates as a
-    front-end software developer. I aim to innovate UI/UX with my visionary
-    outlook and 6-sided geometric objects.
+    I'm Aaron, a Brazilian-American student at Louisiana State University,
+    running around programming with my {cubes}. Thanks for clicking on my
+    website, and be sure to leave me a little note on the Feedback page when you
+    get the chance. This is sort of a resume website for now but overtime it
+    will become more of a personal site, have fun clicking around!
   </p>
 );
-export const Right_Dialogue = (
-  <p>
-    This is the right dialogue. I might remove it but it'll be here for now :)
-  </p>
-);
+export const Right_Dialogue = <p></p>;
 
 export const AFK_Dialogue = (
   <p>
     When I'm AFK, you can catch me whipping it up in the kitchen, trying to
     build muscle, or playing one of my favorite retro RPG's
   </p>
+);
+
+const gameSVGs = {
+  YGO: { src: "https://i.ibb.co/KrLs5Z6/Yugioh.png", name: "yugioh" },
+  Catan: { src: "https://i.ibb.co/fMVJR9M/catan.png", name: "catan" },
+};
+
+export const Games = (
+  <body className="list-body">
+    Message me about:
+    <ul className="game-list" style={{ listStyleType: "none" }}>
+      <li>
+        <img className="game-image" src={gameSVGs.YGO.src} />
+      </li>
+      <li>
+        <img className="game-image" src={gameSVGs.Catan.src} />
+      </li>
+    </ul>
+  </body>
 );
 
 export const primerImages = [

@@ -1,12 +1,12 @@
 @import "../../../../globals/_theme";
 
 .story-logLine {
-  margin-bottom: 4vh;
+  margin-bottom: 2vh;
   margin-left: 2vw;
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-size: 1.5em;
+  font-size: 1em;
   transition: border-color $theme-transition;
   @include themed() {
     border-bottom: 2px solid t($primary);
@@ -42,7 +42,7 @@
     .geo-line {
       font-size: 0.9em;
     }
-    font-size: 1.3em;
+    font-size: 0.9em;
     line-height: 100px;
     text-align: center;
     display: flex;
