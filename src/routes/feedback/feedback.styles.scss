@@ -52,7 +52,7 @@ $borderRadius: 4px;
 
   .button-container {
     height: 1vmin;
-    margin-bottom: 4vh;
+    margin-bottom: 7.5vh;
   }
 
   .sign-in-button {
@@ -68,6 +68,7 @@ $borderRadius: 4px;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
     user-select: none;
+    cursor: pointer;
 
     @include themed() {
       background-color: t($primary);
@@ -153,7 +154,7 @@ $borderRadius: 4px;
     width: 13%;
     height: 5.5vh;
     @include themed() {
-      background-color: t($container-color);
+      background-color: t($primary);
     }
     transition: all $theme-transition;
     border: none;
