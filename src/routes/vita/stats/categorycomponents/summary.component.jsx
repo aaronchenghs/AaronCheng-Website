@@ -1,13 +1,7 @@
 import React, { Fragment } from "react";
-import { useState } from "react";
 import { useSelector } from "react-redux";
-import { AFK_Dialogue, primerImages } from "./components/summary.svgs";
-import {
-  Left_Dialogue,
-  Right_Dialogue,
-  navArraySvgs,
-  Games,
-} from "./components/summary.svgs";
+import { AFK_Dialogue } from "./components/summary.svgs";
+import { Left_Dialogue, Right_Dialogue } from "./components/summary.svgs";
 
 import "./summary.styles.scss";
 
@@ -28,7 +22,6 @@ export const Summary = () => {
           <div className="AFK_pictures_container"></div>
           <div className="AFK_dialogue">{AFK_Dialogue}</div>
         </div>
-        {Games}
       </div>
     </Fragment>
   );
