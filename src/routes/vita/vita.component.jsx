@@ -6,7 +6,7 @@ import PageHeader from "../components/pageHeader/pageheader.component";
 const Vita = () => {
   return (
     <div className="Vita-Page">
-      <PageHeader text={"The Guide to Aaron Cheng ✔"} />
+      <PageHeader text={"Vita Aaron Cheng ✔"} />
       <div className="stats-container">
         <Stats />
       </div>

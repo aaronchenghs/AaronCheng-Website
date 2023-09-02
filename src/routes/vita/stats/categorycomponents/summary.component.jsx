@@ -11,9 +11,9 @@ export const Summary = () => {
   return (
     <Fragment>
       <div className="Summary-Container">
-        <div className="Primer-Container">
-          Coming Soon...
-          {/* <p className="Left-Dialogue">{Left_Dialogue}</p>
+        Coming Soon...
+        {/* <div className="Primer-Container">
+          <p className="Left-Dialogue">{Left_Dialogue}</p>
           <div className="Skin-Selector">
             <div className="Skin-Navigator"></div>
           </div>
@@ -21,8 +21,8 @@ export const Summary = () => {
         </div>
         <div className="AFK-container">
           <div className="AFK_pictures_container"></div>
-          <div className="AFK_dialogue">{AFK_Dialogue}</div> */}
-        </div>
+          <div className="AFK_dialogue">{AFK_Dialogue}</div>
+        </div> */}
       </div>
     </Fragment>
   );

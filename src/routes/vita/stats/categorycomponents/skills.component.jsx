@@ -31,7 +31,8 @@ const Skills = () => {
   return (
     <Fragment>
       <div className="stack">
-        {prog_skills.map((skill) => {
+        Coming Soon...
+        {/* {prog_skills.map((skill) => {
           return (
             <div
               className={
@@ -64,7 +65,7 @@ const Skills = () => {
               )}
             </div>
           );
-        })}
+        })} */}
       </div>
     </Fragment>
   );

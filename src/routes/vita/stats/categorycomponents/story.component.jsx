@@ -7,7 +7,8 @@ import "./story.styles.scss";
 export const Story = () => {
   return (
     <div className="category-block">
-      <div className="story-logLine">{story_text.log}</div>
+      Coming Soon...
+      {/* <div className="story-logLine">{story_text.log}</div>
       <div className="timeline-container">
         <div className="timeline-line" />
         <div className="geographic-origin-text-container">
@@ -37,7 +38,7 @@ export const Story = () => {
             text={story_text.college}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
