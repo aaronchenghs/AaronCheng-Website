@@ -6,7 +6,8 @@ export const Experience = () => {
   return (
     <Fragment>
       <div className="Experience-Container">
-        <label className="Time">Currently...</label>
+        Coming Soon...
+        {/* <label className="Time">Currently...</label>
 
         <div className="College-Container">
           <div className="College-Jobs">
@@ -54,7 +55,7 @@ export const Experience = () => {
               <p>{experience_svgs.Grocery.description}</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Fragment>
   );
