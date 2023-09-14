@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { Checkbox } from "@mui/material";
 import { ThemedTextField } from "../../../custom_mui/themedTextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -12,9 +13,11 @@ import "./feedbackinput.styles.scss";
 
 const FeedbackInput = () => {
   const dispatch = useDispatch();
-
+  const toggledLight = useSelector((state) => !state.toggleLight);
   //inputs states
   const [anon, toggleAnon] = useState(false);
+
+  const checkboxColor = toggledLight ? "#62807d" : "#063b5f";
 
   const [nameValue, setNameValue] = useState("");
   const handleNameChange = (event) => {
@@ -69,7 +72,13 @@ const FeedbackInput = () => {
           )}
           {""}
           <FormControlLabel
-            control={<Checkbox defaultChecked={false} size="small" />}
+            control={
+              <Checkbox
+                defaultChecked={false}
+                size="small"
+                style={{ color: checkboxColor }}
+              />
+            }
             label="Post Anonymously"
             onChange={() => toggleAnon(!anon)}
             style={{ color: "grey" }}
@@ -90,14 +99,29 @@ const FeedbackInput = () => {
           style={{ width: "97%" }}
           onChange={handleMessageChange}
         />
-        <Button
-          variant="contained"
-          style={{ width: "13%", margin: "8px" }}
-          onClick={submit}
-          disabled={messageValue === "" || (nameValue === "" && !anon)}
-        >
-          Post
-        </Button>
+        <div className="postButtonContainer">
+          <Button
+            variant="contained"
+            style={{
+              width: "13%",
+              margin: "8px",
+              backgroundColor:
+                messageValue === "" || (nameValue === "" && !anon)
+                  ? toggledLight
+                    ? ""
+                    : "gray"
+                  : undefined,
+              opacity:
+                messageValue === "" || (nameValue === "" && !anon)
+                  ? 1
+                  : undefined,
+            }}
+            onClick={submit}
+            disabled={messageValue === "" || (nameValue === "" && !anon)}
+          >
+            Post
+          </Button>
+        </div>
       </Box>
     </div>
   );

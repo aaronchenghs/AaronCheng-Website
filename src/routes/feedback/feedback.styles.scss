@@ -152,7 +152,8 @@ $borderRadius: 4px;
     transform: translate(-2.5%, -2.5%);
     font-size: 1.4em;
     width: 13%;
-    height: 5.5vh;
+    height: 5vh;
+    max-height: 33px;
     @include themed() {
       background-color: t($primary);
     }

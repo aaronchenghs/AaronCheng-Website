@@ -7,6 +7,8 @@ import { ThemeProvider } from "@emotion/react";
 const lightModeText = "#62807d";
 const darkModeText = "#dcdff1";
 
+const darkModeInputBackground = "#063b5f";
+
 export function ThemedTextField(props) {
   const toggledLight = useSelector((state) => !state.toggleLight);
 
@@ -38,7 +40,7 @@ export function ThemedTextField(props) {
 
                 "&:hover": {
                   ".MuiOutlinedInput-notchedOutline": {
-                    borderColor: toggledLight ? lightModeText : darkModeText,
+                    borderColor: toggledLight ? lightModeText : "#123f5a",
                   },
                 },
 
@@ -73,6 +75,25 @@ export function ThemedTextField(props) {
       },
       MuiInputBase: {
         styleOverrides: {
+          root: {
+            "&.MuiFilledInput-root": {
+              backgroundColor: toggledLight ? "" : darkModeInputBackground,
+              "&:before": {
+                borderBottom: `${toggledLight ? "1px" : "1px"} solid #4d4d4d`,
+              },
+              "&:after": {
+                borderBottom: `${toggledLight ? "2px" : "1px"} solid ${
+                  toggledLight ? lightModeText : darkModeText
+                }`,
+              },
+            },
+            "&.MuiFilledInput-root.Mui-focused": {
+              backgroundColor: toggledLight ? "" : darkModeInputBackground,
+            },
+            "&.MuiFilledInput-root:hover": {
+              backgroundColor: toggledLight ? "" : darkModeInputBackground,
+            },
+          },
           input: {
             color: toggledLight ? lightModeText : darkModeText,
             "&.Mui-disabled": {

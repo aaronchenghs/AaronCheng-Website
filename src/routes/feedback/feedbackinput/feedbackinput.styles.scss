@@ -17,3 +17,9 @@
 .nameinput {
   color: white !important;
 }
+
+.postButtonContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
