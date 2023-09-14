@@ -1,10 +1,14 @@
 import * as React from "react";
+import { useSelector } from "react-redux";
 import { createTheme } from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import { ThemeProvider } from "@emotion/react";
 
+const lightModeText = "#62807d";
+const darkModeText = "#dcdff1";
+
 export function ThemedTextField(props) {
-  //const toggledLight = useSelector((state) => state.toggleLight);
+  const toggledLight = useSelector((state) => !state.toggleLight);
 
   const themedTextFieldStyling = createTheme({
     components: {
@@ -14,66 +18,42 @@ export function ThemedTextField(props) {
             props: { variant: "filled" },
             style: {
               ".MuiInputLabel-root": {
-                color: "blue",
+                color: toggledLight ? lightModeText : darkModeText,
 
                 "&.Mui-focused": {
-                  color: "red",
-
-                  ".MuiInputLabel-asterisk": {
-                    color: "red",
-                  },
+                  color: toggledLight ? lightModeText : darkModeText,
                 },
 
                 "&.Mui-error": {
                   color: "red",
-
-                  ".MuiInputLabel-asterisk": {
-                    color: "red",
-                  },
-                },
-
-                ".MuiInputLabel-asterisk": {
-                  color: "red",
-
-                  "&.Mui-focused": {
-                    color: "red",
-                  },
                 },
 
                 "&.Mui-disabled": {
-                  color: "red",
+                  WebkitTextFillColor: "grey",
                 },
               },
 
               ".MuiOutlinedInput-root": {
-                color: "red",
+                color: toggledLight ? lightModeText : darkModeText,
 
                 "&:hover": {
                   ".MuiOutlinedInput-notchedOutline": {
-                    borderColor: "red",
+                    borderColor: toggledLight ? lightModeText : darkModeText,
                   },
                 },
 
                 "&.Mui-focused": {
                   ".MuiOutlinedInput-notchedOutline": {
-                    borderColor: "red",
+                    borderColor: toggledLight ? lightModeText : darkModeText,
                   },
                 },
 
                 "&.Mui-error": {
                   color: "red",
-
-                  ".MuiOutlinedInput-notchedOutline": {
-                    borderColor: "red",
-                  },
                 },
 
                 "&.Mui-disabled": {
-                  color: "red",
-
-                  ".MuiOutlinedInput-notchedOutline": {
-                    borderColor: "red",
-                  },
+                  WebkitTextFillColor: "grey",
                 },
               },
             },
@@ -87,15 +67,16 @@ export function ThemedTextField(props) {
         styleOverrides: {
           notchedOutline: {
             borderWidth: "2px",
-            borderColor: "red",
+            borderColor: toggledLight ? lightModeText : darkModeText,
           },
         },
       },
       MuiInputBase: {
         styleOverrides: {
           input: {
+            color: toggledLight ? lightModeText : darkModeText,
             "&.Mui-disabled": {
-              WebkitTextFillColor: "red",
+              WebkitTextFillColor: "grey",
             },
           },
         },

@@ -55,10 +55,10 @@ const statsCategories = [
     title: "Summary",
     state: "summary",
   },
-  {
-    title: "Skills",
-    state: "skills",
-  },
+  // {
+  //   title: "Skills",
+  //   state: "skills",
+  // },
   {
     title: "Experience",
     state: "experience",

@@ -4,10 +4,16 @@
   gap: 15px;
   display: flex;
   flex-direction: column;
+  color: white;
 }
 .name-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  color: white;
+}
+
+.nameinput {
+  color: white !important;
 }
