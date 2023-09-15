@@ -121,6 +121,8 @@
   }
 
   .logo {
+    min-width: 30px;
+    min-height: 30px;
     max-width: 45px;
     max-height: 45px;
     transition: transform 0.25s ease-out;

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Stats from "./stats/stats.component";
 import "./vita.styles.scss";
 import PageHeader from "../components/pageHeader/pageheader.component";
