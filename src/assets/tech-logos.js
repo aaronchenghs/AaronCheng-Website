@@ -7,6 +7,8 @@ export const techLogos = {
   SASS: "https://upload.wikimedia.org/wikipedia/commons/9/96/Sass_Logo_Color.svg",
   PYTHON: "https://img.icons8.com/color/48/null/python--v1.png",
   REACT: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+  REDUX:
+    "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-redux-an-open-source-javascript-library-for-managing-application-state-logo-color-tal-revivo.png",
   FIREBASE: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
   MUI: "https://img.icons8.com/color/48/null/material-ui.png",
   DART: "https://upload.wikimedia.org/wikipedia/commons/9/91/Dart-logo-icon.svg",
