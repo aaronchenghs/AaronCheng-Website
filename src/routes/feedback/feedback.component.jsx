@@ -19,7 +19,7 @@ const GoogleLogo = (
   <img
     width="30"
     alt='Google "G" Logo'
-    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+    src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
   />
 );
 
@@ -81,22 +81,20 @@ const Feedback = () => {
     : "button-container";
 
   const navFeedbackBar = (
-    <div className="Load-More-Container">
-      <div className="Load-More-Button">
-        <div className="Feeback-Arrow-Container" onClick={decrementPagination}>
-          {darkMode
-            ? navArraySvgs.left_arrow_dark
-            : navArraySvgs.left_arrow_light}
-        </div>
-        {paginationIndex / feedbackPerPage + 1}/
-        {!isLoadingFeedbacks
-          ? Math.ceil(feedbackMap.length / feedbackPerPage)
-          : "..."}
-        <div className="Feeback-Arrow-Container" onClick={incrementPagination}>
-          {darkMode
-            ? navArraySvgs.right_arrow_dark
-            : navArraySvgs.right_arrow_light}
-        </div>
+    <div className="Load-More-Button">
+      <div className="Feeback-Arrow-Container" onClick={decrementPagination}>
+        {darkMode
+          ? navArraySvgs.left_arrow_dark
+          : navArraySvgs.left_arrow_light}
+      </div>
+      {paginationIndex / feedbackPerPage + 1}/
+      {!isLoadingFeedbacks
+        ? Math.ceil(feedbackMap.length / feedbackPerPage)
+        : "..."}
+      <div className="Feeback-Arrow-Container" onClick={incrementPagination}>
+        {darkMode
+          ? navArraySvgs.right_arrow_dark
+          : navArraySvgs.right_arrow_light}
       </div>
     </div>
   );
@@ -153,7 +151,6 @@ const Feedback = () => {
               />
             )}
           </div>
-          {navFeedbackBar}
         </div>
       </div>
     </Fragment>
