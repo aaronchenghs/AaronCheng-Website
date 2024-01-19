@@ -1,7 +1,5 @@
 import React, { Fragment } from "react";
 import { useSelector } from "react-redux";
-import { AFK_Dialogue } from "./components/summary.svgs";
-import { Left_Dialogue, Right_Dialogue } from "./components/summary.svgs";
 
 import "./summary.styles.scss";
 

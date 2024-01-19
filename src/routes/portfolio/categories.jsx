@@ -20,6 +20,16 @@ export const projects = [
     ],
   },
   {
+    id: 5,
+    title: "Geaux Enroll",
+    href: "https://github.com/aaronchenghs/geaux_enroll",
+    imgPath: "https://i.ibb.co/Tt9yyzm/nodes.png",
+    description: `Geaux Enroll is my Interface Design course project. It is an interactive demo inspired by the
+    poor quality of course scheduling software and workflows in university, representing a possible design improvement to this system. 
+    Run a demo of my React app in the README of the github repo linked through this title bar.`,
+    icons: [techLogos.TS, techLogos.REACT, techLogos.REDUX, techLogos.SASS],
+  },
+  {
     id: 2,
     title: "ARC: This Website!",
     href: "https://github.com/aaronchenghs/AaronCheng-Website",
@@ -54,16 +64,5 @@ export const projects = [
     description: `Akon is an awesome music-playing and utilities bot I designed one winter, based on my
     favorite Senegalese singer. Click this title bar to get it's source code!`,
     icons: [techLogos.PYTHON, techLogos.DISCORD],
-  },
-
-  {
-    id: 5,
-    title: "Geaux Enroll",
-    href: "https://github.com/aaronchenghs/geaux_enroll",
-    imgPath: "https://i.ibb.co/HDQ5xX1/Akon.png",
-    description: `Geaux Enroll is my Interface Design course project. It is an interactive demo inspired by the
-    poor quality of course scheduling software and workflows in university. Run a demo of my React app in the README of
-    the github repo linked through this title bar.`,
-    icons: [techLogos.TS, techLogos.REACT, techLogos.REDUX, techLogos.SASS],
   },
 ];

@@ -28,12 +28,13 @@
     overflow: hidden;
 
     .text {
-      font-size: 1.7vw;
+      font-size: 25px;
       font-family: $theme-font;
       @include themed() {
         color: t($text-color);
       }
       animation: slide-in-top 0.5s ease-out;
+      text-align: center;
     }
     @keyframes slide-in-top {
       from {
