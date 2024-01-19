@@ -5,7 +5,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  min-width: $page-minimum-width;
+  min-height: 100vh;
   @include themed() {
     background-color: t($background);
   }
@@ -17,12 +17,3 @@
   display: none;
   width: 8px;
 }
-
-// ::-webkit-scrollbar-track {
-//   display: none;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   display: none;
-//   border-radius: 3px;
-// }

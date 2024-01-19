@@ -3,15 +3,14 @@
 .bottombar {
   height: 11vh;
   max-height: 150px;
-  width: 75%;
+  width: 78%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   margin-bottom: 2vh;
   border-radius: 10px;
   margin-top: 4vh;
-  min-width: $page-minimum-width;
-  min-width: 771px;
   transition: background-color $theme-transition, box-shadow $theme-transition;
 
   // @include themed() {

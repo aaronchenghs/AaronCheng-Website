@@ -1,15 +1,13 @@
 @import "../globals/theme.scss";
 
 .navigation {
-  height: 11vh;
-  max-height: 150px;
   width: 78%;
   margin-top: 2vh;
-  min-width: 771px;
 
   display: flex;
   justify-content: space-between;
   align-content: space-between;
+
   align-items: center;
   border-radius: 10px;
   margin-bottom: 2.5vh;
@@ -19,6 +17,9 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
+
+    flex-wrap: wrap;
     padding-right: 1.5vw;
     height: 70%;
     transition: all $theme-transition;
@@ -35,7 +36,6 @@
       color: t($text-color);
     }
     font-family: $theme-font;
-    min-width: 230px;
 
     font-size: 2.5em;
     min-width: 300px;
@@ -144,6 +144,19 @@
 
     .logo {
       transform: scale(1.1);
+    }
+  }
+
+  @media screen and (max-width: 970px) {
+    justify-content: center;
+    align-content: center;
+    .home-box {
+      justify-content: center;
+      align-content: center;
+    }
+    .nav-container {
+      justify-content: center;
+      align-content: center;
     }
   }
 }
