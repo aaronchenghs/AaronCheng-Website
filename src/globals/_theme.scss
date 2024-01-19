@@ -19,11 +19,12 @@ $themes: (
     sub-primary: #0863a0,
     background-center: white,
     background-sides: #f5f4ec,
-    background: #f3f1e3,
-    text-color: #62807d,
+    background: #e7e3d0,
+    /* Muted, pale beige for a soft contrast */ text-color: #62807d,
     border-color: black,
-    container-color: #f1e6d8,
-    shadow-color: rgba(106, 106, 106, 0.6),
+    container-color: rgb(229, 220, 204),
+    /* Earthy, light brown/tan to complement the green */ shadow-color:
+      rgba(106, 106, 106, 0.6),
   ),
   dark: (
     primary: #123f5a,
