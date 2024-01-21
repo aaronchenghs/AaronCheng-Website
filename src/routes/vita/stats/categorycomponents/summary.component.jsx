@@ -7,22 +7,40 @@ export const Summary = () => {
   const darkMode = useSelector((state) => state.toggleLight);
 
   return (
-    <Fragment>
-      <div className="Summary-Container">
-        Coming Soon...
-        {/* <div className="Primer-Container">
-          <p className="Left-Dialogue">{Left_Dialogue}</p>
-          <div className="Skin-Selector">
-            <div className="Skin-Navigator"></div>
-          </div>
-          <p className="Right-Dialogue">{Right_Dialogue}</p>
-        </div>
-        <div className="AFK-container">
-          <div className="AFK_pictures_container"></div>
-          <div className="AFK_dialogue">{AFK_Dialogue}</div>
-        </div> */}
+    <div className="category-block">
+      Coming Soon...
+      {/* <div className="story-logLine">{story_text.log}</div>
+    <div className="timeline-container">
+      <div className="timeline-line" />
+      <div className="geographic-origin-text-container">
+        <GeoEntry
+          img1={story_svgs.US_flag}
+          img2={story_svgs.BR_flag}
+          text={story_text.parents}
+        />
+        <GeoEntry
+          img1={story_svgs.IA_flag}
+          img2={story_svgs.corn}
+          text={story_text.born}
+        />
+        <GeoEntry
+          img1={story_svgs.HI_flag}
+          img2={story_svgs.FL_flag}
+          text={story_text.moved}
+        />
+        <GeoEntry
+          img1={story_svgs.LA_flag}
+          img2={story_svgs.crawfish}
+          text={story_text.louisiana}
+        />
+        <GeoEntry
+          img1={story_svgs.CS}
+          img2={story_svgs.LSU}
+          text={story_text.college}
+        />
       </div>
-    </Fragment>
+    </div> */}
+    </div>
   );
 };
 export default Summary;

@@ -29,45 +29,40 @@ function createIconsImages(skill) {
 const Skills = () => {
   const [selectedSkill, selectskill] = useState("");
   return (
-    <Fragment>
-      <div className="stack">
-        Coming Soon...
-        {/* {prog_skills.map((skill) => {
-          return (
-            <div
-              className={
-                `skill-instance` +
-                `${skill.name === selectedSkill ? " selected-skill" : ""}`
-              }
-              style={{
-                backgroundColor: skill.color,
-              }}
-              onClick={() => {
-                skill.name === selectedSkill
-                  ? selectskill("")
-                  : selectskill(skill.name);
-              }}
-              key={skill.name}
-            >
-              <div className="title-container">
-                {createIconsImages(skill)}
-                <label style={{ paddingLeft: "10px" }}>{skill.name}</label>
-              </div>
-              {skill.name === selectedSkill && (
-                <div className="skill-content">
-                  <div className="skill-description">{skill.description}</div>
-                  {skill.related && (
-                    <div className="skill-related">
-                      <strong>Related:</strong> {skill.related}
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-          );
-        })} */}
+    <div className="category-block">
+      Coming Soon...
+      {/* <div className="story-logLine">{story_text.log}</div>
+    <div className="timeline-container">
+      <div className="timeline-line" />
+      <div className="geographic-origin-text-container">
+        <GeoEntry
+          img1={story_svgs.US_flag}
+          img2={story_svgs.BR_flag}
+          text={story_text.parents}
+        />
+        <GeoEntry
+          img1={story_svgs.IA_flag}
+          img2={story_svgs.corn}
+          text={story_text.born}
+        />
+        <GeoEntry
+          img1={story_svgs.HI_flag}
+          img2={story_svgs.FL_flag}
+          text={story_text.moved}
+        />
+        <GeoEntry
+          img1={story_svgs.LA_flag}
+          img2={story_svgs.crawfish}
+          text={story_text.louisiana}
+        />
+        <GeoEntry
+          img1={story_svgs.CS}
+          img2={story_svgs.LSU}
+          text={story_text.college}
+        />
       </div>
-    </Fragment>
+    </div> */}
+    </div>
   );
 };
 export default Skills;

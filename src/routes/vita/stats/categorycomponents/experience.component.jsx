@@ -4,60 +4,40 @@ import "./experience.styles.scss";
 
 export const Experience = () => {
   return (
-    <Fragment>
-      <div className="Experience-Container">
-        Coming Soon...
-        {/* <label className="Time">Currently...</label>
-
-        <div className="College-Container">
-          <div className="College-Jobs">
-            <div className="Experience-Block-ARA">
-              <div className="Image-Container">{experience_svgs.ARA.image}</div>
-              <p>{experience_svgs.ARA.description}</p>
-            </div>
-            <div className="Experience-Block-Exodus">
-              <div className="Image-Container">
-                {experience_svgs.Exodus.image}
-              </div>
-              <p>{experience_svgs.Exodus.description}</p>
-            </div>
-          </div>
-          <div className="Experience-Block-LSU">
-            <div className="Image-Container">{experience_svgs.LSU.image}</div>
-            <p>{experience_svgs.LSU.description}</p>
-          </div>
-        </div>
-
-        <label className="Time">In the past...</label>
-        <div className="College-Container">
-          <div className="Experience-Block-HS">
-            <div className="Image-Container">
-              {experience_svgs.BRMHS.image}{" "}
-            </div>
-            <p>{experience_svgs.BRMHS.description}</p>
-          </div>
-          <div className="Highschool-Jobs">
-            <div className="Experience-Block">
-              <div className="Image-Container">
-                {experience_svgs.Sushi.image}
-              </div>
-              <p>{experience_svgs.Sushi.description}</p>
-            </div>
-            <div className="Experience-Block">
-              <div className="Image-Container">{experience_svgs.Tea.image}</div>
-              <p>{experience_svgs.Tea.description}</p>
-            </div>
-
-            <div className="Experience-Block">
-              <div className="Image-Container">
-                {experience_svgs.Grocery.image}
-              </div>
-              <p>{experience_svgs.Grocery.description}</p>
-            </div>
-          </div>
-        </div> */}
+    <div className="category-block">
+      Coming Soon...
+      {/* <div className="story-logLine">{story_text.log}</div>
+    <div className="timeline-container">
+      <div className="timeline-line" />
+      <div className="geographic-origin-text-container">
+        <GeoEntry
+          img1={story_svgs.US_flag}
+          img2={story_svgs.BR_flag}
+          text={story_text.parents}
+        />
+        <GeoEntry
+          img1={story_svgs.IA_flag}
+          img2={story_svgs.corn}
+          text={story_text.born}
+        />
+        <GeoEntry
+          img1={story_svgs.HI_flag}
+          img2={story_svgs.FL_flag}
+          text={story_text.moved}
+        />
+        <GeoEntry
+          img1={story_svgs.LA_flag}
+          img2={story_svgs.crawfish}
+          text={story_text.louisiana}
+        />
+        <GeoEntry
+          img1={story_svgs.CS}
+          img2={story_svgs.LSU}
+          text={story_text.college}
+        />
       </div>
-    </Fragment>
+    </div> */}
+    </div>
   );
 };
 export default Experience;

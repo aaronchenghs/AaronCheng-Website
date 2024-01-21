@@ -18,9 +18,8 @@ const Home = () => {
   return (
     <Fragment>
       <div className={`RealHome-Page ${homePageFadedIn ? "" : "home-fade-in"}`}>
-        <div className="intro-container">
-          <Introduction />
-        </div>
+        <Introduction />
+
         <div className="button-container">
           <VentureButton />
         </div>

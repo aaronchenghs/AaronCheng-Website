@@ -151,7 +151,8 @@
     }
   }
 
-  @media screen and (max-width: 970px) {
+  @media screen and (max-width: 972px) {
+    flex-direction: column;
     justify-content: center;
     align-content: center;
     .home-box {
