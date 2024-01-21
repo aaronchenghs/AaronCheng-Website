@@ -196,9 +196,14 @@ $borderRadius: 4px;
     justify-content: center;
     height: 100%;
     width: 100%;
+
+    background: none;
+    background-color: transparent;
+    border: none;
+
+    transform: translate(2.5%, 2.5%);
   }
   .arrow {
-    height: 25px;
-    cursor: pointer;
+    height: 100%;
   }
 }

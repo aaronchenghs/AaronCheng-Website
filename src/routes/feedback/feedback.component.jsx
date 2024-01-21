@@ -6,7 +6,6 @@ import FeedbackInput from "./feedbackinput/feedbackinput.component";
 import { useSelector, useDispatch } from "react-redux";
 import { signin_action } from "../../redux_manager/actions/auth.action";
 import { feedbackDTO } from "../../utils/firebase/firebase.utils";
-import { navArraySvgs } from "../vita/stats/categorycomponents/components/summary.svgs";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
@@ -14,6 +13,7 @@ import {
 
 import "./feedback.styles.scss";
 import { Skeleton } from "@mui/material";
+
 //google logo
 const GoogleLogo = (
   <img
@@ -82,20 +82,19 @@ const Feedback = () => {
 
   const navFeedbackBar = (
     <div className="Load-More-Button">
-      <div className="Feeback-Arrow-Container" onClick={decrementPagination}>
-        {darkMode
-          ? navArraySvgs.left_arrow_dark
-          : navArraySvgs.left_arrow_light}
-      </div>
+      <button
+        className="Feeback-Arrow-Container"
+        onClick={decrementPagination}
+        disabled={paginationIndex === 0}
+      ></button>
       {paginationIndex / feedbackPerPage + 1}/
       {!isLoadingFeedbacks
         ? Math.ceil(feedbackMap.length / feedbackPerPage)
         : "..."}
-      <div className="Feeback-Arrow-Container" onClick={incrementPagination}>
-        {darkMode
-          ? navArraySvgs.right_arrow_dark
-          : navArraySvgs.right_arrow_light}
-      </div>
+      <button
+        className="Feeback-Arrow-Container"
+        onClick={incrementPagination}
+      ></button>
     </div>
   );
 
