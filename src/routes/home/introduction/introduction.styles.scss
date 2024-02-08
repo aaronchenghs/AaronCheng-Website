@@ -2,6 +2,8 @@
 $buttonTransitionTime: 0.07s;
 $borderRadius: 4px;
 
+$mobile-width: 900px;
+
 %test {
   position: absolute;
   content: "";
@@ -19,8 +21,8 @@ $borderRadius: 4px;
 
 .text-container {
   @include themed() {
-    border-top: 1px solid t($sub-primary);
-    border-bottom: 1px solid t($sub-primary);
+    border-top: 1px solid t($primary);
+    border-bottom: 1px solid t($primary);
   }
   border-radius: 2px;
   height: 90%;
@@ -30,6 +32,11 @@ $borderRadius: 4px;
   align-items: center;
   justify-content: center;
   transition: all $theme-transition;
+
+  @media screen and (max-width: $mobile-width) {
+    width: 95%;
+    padding: 15px;
+  }
 }
 
 .text {

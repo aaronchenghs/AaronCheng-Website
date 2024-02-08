@@ -86,15 +86,16 @@ const Feedback = () => {
         className="Feeback-Arrow-Container"
         onClick={decrementPagination}
         disabled={paginationIndex === 0}
-      ></button>
+      >
+        {"<"}
+      </button>
       {paginationIndex / feedbackPerPage + 1}/
       {!isLoadingFeedbacks
         ? Math.ceil(feedbackMap.length / feedbackPerPage)
         : "..."}
-      <button
-        className="Feeback-Arrow-Container"
-        onClick={incrementPagination}
-      ></button>
+      <button className="Feeback-Arrow-Container" onClick={incrementPagination}>
+        {">"}
+      </button>
     </div>
   );
 
