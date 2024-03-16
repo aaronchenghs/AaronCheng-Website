@@ -1,6 +1,6 @@
 @import "../../../globals/_theme.scss";
+@import "../feedback.styles.scss";
 $buttonTransitionTime: 0.5s;
-$borderRadius: 4px;
 %test {
   position: absolute;
   content: "";
@@ -27,6 +27,12 @@ $borderRadius: 4px;
   @include themed() {
     background-color: t($container-color);
     color: t($text-color);
+  }
+
+  @media screen and (max-width: $smallScreenWidth) {
+    transform: translate(0%, 0%);
+    padding: 0vh;
+    min-width: 0px;
   }
 
   &::before {
@@ -118,6 +124,12 @@ $borderRadius: 4px;
       @include themed() {
         box-shadow: 10px 3px 15px t($shadow-color);
       }
+    }
+
+    @media screen and (max-width: $smallScreenWidth) {
+      transform: translate(-1%, -1%);
+      padding: 0vh;
+      min-width: 0px;
     }
   }
 }

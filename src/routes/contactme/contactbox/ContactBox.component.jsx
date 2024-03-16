@@ -12,10 +12,10 @@ const ContactBox = ({ icon }) => {
         rel="noreferrer"
       >
         <img className="contact-icon" src={icon.path} alt={`[  icon]`} />
-        <div className="icon-text">{icon.name}</div>
+        <h2 className="icon-text">{icon.name}</h2>
       </a>
       <div className="contact-description-container">
-        <div className="description">{icon.description}</div>
+        <body className="description">{icon.description}</body>
         <a className="tag" href={icon.link} target="_blank" rel="noreferrer">
           {icon.tag}
         </a>

@@ -76,6 +76,7 @@ $buttonTransitionTime: 0.1s;
     }
 
     .text-box {
+      position: relative;
       color: #dcdff1;
       display: none;
       position: absolute;
@@ -99,7 +100,9 @@ $buttonTransitionTime: 0.1s;
         justify-content: center;
         align-items: center;
         gap: 0.5em;
+        pointer-events: none;
         .tech-icon {
+          pointer-events: auto;
           height: 1.6em;
           width: 1.6em;
         }

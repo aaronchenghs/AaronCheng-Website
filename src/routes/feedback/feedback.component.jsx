@@ -13,6 +13,14 @@ import {
 
 import "./feedback.styles.scss";
 import { Skeleton } from "@mui/material";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowRightAlt,
+  ArrowRightRounded,
+  KeyboardArrowLeft,
+  KeyboardArrowRight,
+} from "@mui/icons-material";
 
 //google logo
 const GoogleLogo = (
@@ -80,21 +88,26 @@ const Feedback = () => {
     ? "give-feedback-container"
     : "button-container";
 
+  const currentPage = paginationIndex / feedbackPerPage + 1;
+  const lastPage = !isLoadingFeedbacks
+    ? Math.ceil(feedbackMap.length / feedbackPerPage)
+    : "...";
   const navFeedbackBar = (
     <div className="Load-More-Button">
       <button
-        className="Feeback-Arrow-Container"
+        className="Feedback-Arrow-Container"
         onClick={decrementPagination}
         disabled={paginationIndex === 0}
       >
-        {"<"}
+        <KeyboardArrowLeft />
       </button>
-      {paginationIndex / feedbackPerPage + 1}/
-      {!isLoadingFeedbacks
-        ? Math.ceil(feedbackMap.length / feedbackPerPage)
-        : "..."}
-      <button className="Feeback-Arrow-Container" onClick={incrementPagination}>
-        {">"}
+      {currentPage}/{lastPage}
+      <button
+        className="Feedback-Arrow-Container"
+        onClick={incrementPagination}
+        disabled={currentPage === lastPage}
+      >
+        <KeyboardArrowRight />
       </button>
     </div>
   );

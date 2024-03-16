@@ -1,6 +1,8 @@
 @import "../../globals/_theme.scss";
 $buttonTransitionTime: 0.05s;
 $borderRadius: 4px;
+$smallScreenWidth: 832px;
+
 %test {
   position: absolute;
   content: "";
@@ -19,6 +21,11 @@ $borderRadius: 4px;
     justify-content: flex-end;
     align-items: flex-end;
     width: 60%;
+
+    @media screen and (max-width: $smallScreenWidth) {
+      width: 95%;
+      min-width: 0;
+    }
   }
   .feedback-entries-container {
     display: flex;
@@ -124,6 +131,10 @@ $borderRadius: 4px;
       }
       transition: all $buttonTransitionTime, background-color 0.1s;
     }
+
+    @media screen and (max-width: $smallScreenWidth) {
+      transform: translate(-1%, -1%);
+    }
   }
 
   .post-submit-message {
@@ -202,6 +213,7 @@ $borderRadius: 4px;
     border: none;
 
     transform: translate(2.5%, 2.5%);
+    padding: 0px;
   }
   .arrow {
     height: 100%;
