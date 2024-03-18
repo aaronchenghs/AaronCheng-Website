@@ -31,11 +31,19 @@ $smallScreenWidth: 832px;
   .feedback-entries-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     user-select: none;
     min-height: 30.5vh;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-right: 5px;
+
+    @include themed() {
+      background-color: t($primary);
+    }
   }
   .give-feedback-container {
     width: 35vw;
@@ -45,7 +53,10 @@ $smallScreenWidth: 832px;
     margin-top: 0.5vh;
     border-radius: 10px;
     font-family: $theme-font;
-    transition: all $theme-transition;
+
+    transition: color $theme-transition;
+    transition: background-color $theme-transition;
+    transition: border-color $theme-transition;
 
     display: flex;
     flex-direction: column;

@@ -33,7 +33,7 @@
     position: sticky !important;
     z-index: 1;
 
-    @media screen and (max-width: $smallScreenWidth) {
+    @media screen and (max-width: 1200px) {
       width: 95%;
       min-width: 0;
     }
