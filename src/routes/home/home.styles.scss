@@ -89,8 +89,11 @@ $borderRadius: 4px;
     }
   }
 
-  @media screen and (max-width: 900px) {
+  @media screen and (max-width: 1750px) {
     height: 100%;
     flex-direction: column;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 85%;
   }
 }

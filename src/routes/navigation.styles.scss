@@ -2,7 +2,7 @@
 
 .navigation {
   width: 80%;
-  margin-top: 2vh;
+  margin-top: 2.5vh;
 
   display: flex;
   justify-content: space-between;
@@ -12,6 +12,10 @@
   border-radius: 10px;
   margin-bottom: 2.5vh;
   transition: all $theme-transition;
+
+  @media screen and (max-width: 972px) {
+    gap: 12px;
+  }
 
   .nav-container {
     display: flex;
@@ -37,14 +41,14 @@
     }
     font-family: $theme-font;
 
-    font-size: 2.5em;
+    font-size: 2rem;
     min-width: 300px;
     padding-left: 2vw;
     text-decoration: none;
     transition: transform 0.25s ease-out, color $theme-transition;
 
     @media screen and (max-width: 1460px) {
-      font-size: 22px;
+      font-size: 1.5rem;
     }
 
     .kaomoji {

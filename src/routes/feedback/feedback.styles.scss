@@ -11,9 +11,10 @@ $smallScreenWidth: 832px;
 .Feedback-Page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  min-height: 76vh;
 
   .feedback-section-container {
     display: flex;
@@ -71,7 +72,7 @@ $smallScreenWidth: 832px;
     transform: translate(-5%, -13%);
     font-family: $theme-font;
     text-decoration: none;
-    font-size: 1.6em;
+    font-size: 1.5rem;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
     user-select: none;
@@ -134,6 +135,8 @@ $smallScreenWidth: 832px;
 
     @media screen and (max-width: $smallScreenWidth) {
       transform: translate(-1%, -1%);
+      width: 95%;
+      justify-content: center;
     }
   }
 
@@ -158,6 +161,7 @@ $smallScreenWidth: 832px;
     transform: translate(-2.5%, -2.5%);
     font-size: 1.4em;
     width: 8%;
+    max-width: 150px;
     height: 5vh;
     max-height: 45px;
     min-width: 90px;
@@ -166,6 +170,7 @@ $smallScreenWidth: 832px;
 
     @include themed() {
       background-color: t($primary);
+      color: t($text-color);
     }
     transition: all $theme-transition, transform 0.3s;
     border: none;
@@ -198,6 +203,11 @@ $smallScreenWidth: 832px;
       @include themed() {
         box-shadow: 5px 0px 5px t($shadow-color);
       }
+    }
+
+    @media screen and (max-width: 972px) {
+      bottom: 100px;
+      right: 25px;
     }
   }
   .Feedback-Arrow-Container {

@@ -1,7 +1,7 @@
 @import "../../../globals/_theme.scss";
+@import "../../feedback/feedback.styles.scss";
 $buttonTransitionTime: 0.07s;
 $borderRadius: 4px;
-$smallScreenWidth: 832px;
 
 %test {
   position: absolute;
@@ -28,6 +28,10 @@ $contact-sidesgap: 2.5rem;
   @include themed() {
     background-color: t($container-color);
     color: t($text-color);
+  }
+
+  @media screen and (max-height: 700px) {
+    height: 20vh;
   }
 
   &::before {
@@ -122,6 +126,16 @@ $contact-sidesgap: 2.5rem;
     margin-left: $contact-sidesgap;
     margin-right: calc($contact-sidesgap/2.5);
     height: 5vmin;
+    @media screen and (max-width: $smallScreenWidth) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: $smallScreenWidth) {
+    justify-content: center;
+    gap: 3px;
+    margin-right: 0;
   }
 
   .icon-text {
