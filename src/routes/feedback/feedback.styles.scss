@@ -44,6 +44,7 @@ $smallScreenWidth: 832px;
     @include themed() {
       background-color: t($primary);
     }
+    transition: background-color $buttonTransitionTime;
   }
   .give-feedback-container {
     width: 35vw;
