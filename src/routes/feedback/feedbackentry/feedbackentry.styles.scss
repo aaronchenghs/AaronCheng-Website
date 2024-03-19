@@ -30,7 +30,7 @@ $buttonTransitionTime: 0.5s;
   }
 
   @media screen and (max-width: $smallScreenWidth) {
-    transform: translate(0%, 0%);
+    transform: translate(-1%, -1%);
     padding: 0vh;
     min-width: 0px;
   }
@@ -102,6 +102,10 @@ $buttonTransitionTime: 0.5s;
       box-shadow: 20px 10px 10px t($shadow-color);
     }
 
+    @media screen and (max-width: $smallScreenWidth) {
+      transform: translate(-2%, -2%);
+    }
+
     &::before {
       //bottom
       transition: all $buttonTransitionTime;
@@ -124,12 +128,6 @@ $buttonTransitionTime: 0.5s;
       @include themed() {
         box-shadow: 10px 3px 15px t($shadow-color);
       }
-    }
-
-    @media screen and (max-width: $smallScreenWidth) {
-      transform: translate(-1%, -1%);
-      padding: 0vh;
-      min-width: 0px;
     }
   }
 }

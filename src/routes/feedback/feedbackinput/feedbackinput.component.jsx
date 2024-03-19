@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Checkbox } from "@mui/material";
 import { ThemedTextField } from "../../../custom_mui/themedTextField";
@@ -27,7 +27,19 @@ const FeedbackInput = () => {
   const handleMessageChange = (event) => {
     setMessageValue(event.target.value);
   };
-  //
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isNarrowScreen = windowWidth <= 660;
+  const textFieldWidth = isNarrowScreen ? "90%" : "60%";
 
   //on submit button click
   const submit = async () => {
@@ -58,7 +70,7 @@ const FeedbackInput = () => {
               label="——"
               type="search"
               variant="filled"
-              style={{ width: "40%" }}
+              style={{ width: textFieldWidth }}
             />
           ) : (
             <ThemedTextField
@@ -66,7 +78,7 @@ const FeedbackInput = () => {
               label="Name"
               type="search"
               variant="filled"
-              style={{ width: "40%" }}
+              style={{ width: textFieldWidth }}
               onChange={handleNameChange}
             />
           )}

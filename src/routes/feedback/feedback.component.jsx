@@ -13,14 +13,7 @@ import {
 
 import "./feedback.styles.scss";
 import { Skeleton } from "@mui/material";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowRightAlt,
-  ArrowRightRounded,
-  KeyboardArrowLeft,
-  KeyboardArrowRight,
-} from "@mui/icons-material";
+import { KeyboardArrowLeft, KeyboardArrowRight } from "@mui/icons-material";
 
 //google logo
 const GoogleLogo = (

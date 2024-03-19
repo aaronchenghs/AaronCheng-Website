@@ -99,7 +99,7 @@
     transition: box-shadow $theme-transition;
 
     @include themed() {
-      box-shadow: 3px 3px 6px inset t($shadow-color);
+      box-shadow: 2px 3px 3px inset t($shadow-color);
     }
 
     .logo-container {
@@ -156,6 +156,8 @@
   }
 
   @media screen and (max-width: 972px) {
+    width: 100%;
+
     flex-direction: column;
     justify-content: center;
     align-content: center;
@@ -164,8 +166,58 @@
       align-content: center;
     }
     .nav-container {
+      padding-right: 0px;
       justify-content: center;
       align-content: center;
+    }
+  }
+
+  @media screen and (max-width: 433px) {
+    .home-box {
+      justify-content: center;
+      align-content: center;
+    }
+    .nav-container {
+      width: 100%;
+      gap: 2px;
+      justify-content: space-around;
+    }
+
+    .box {
+      width: auto;
+      min-width: 70px;
+      padding: 0px 5px 0px 5px;
+
+      -moz-osx-font-smoothing: grayscale;
+      transition: transform 0.1s ease-out;
+    }
+
+    .logo-container {
+      height: auto;
+      width: auto;
+    }
+    .logo {
+      min-width: 0px;
+      min-height: 0px;
+      max-width: 35px;
+      max-height: 35px;
+      transform: scale(1);
+    }
+    .logo-title {
+      font-size: 0.65em;
+    }
+    .selected-box {
+      width: auto;
+      min-width: 70px;
+      padding: 0px 5px 0px 5px;
+
+      -moz-osx-font-smoothing: grayscale;
+      transition: transform 0.1s ease-out;
+
+      .logo-container {
+        height: auto;
+        width: auto;
+      }
     }
   }
 }

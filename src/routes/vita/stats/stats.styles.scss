@@ -20,7 +20,7 @@ $bio-min-height: 35vh;
   transition: all $theme-transition;
   justify-content: flex-start;
   align-items: flex-start;
-  font-size: 1.2vw;
+  font-size: 1.2rem;
 
   @include themed() {
     background-color: t($container-color);

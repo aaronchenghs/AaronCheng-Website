@@ -136,6 +136,7 @@ $contact-sidesgap: 2.5rem;
     justify-content: center;
     gap: 3px;
     margin-right: 0;
+    padding-left: 6px;
   }
 
   .icon-text {
@@ -143,6 +144,15 @@ $contact-sidesgap: 2.5rem;
     @include themed() {
       color: lighten(t($primary), 5%);
     }
+
+    @media screen and (max-width: $smallScreenWidth) {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+  }
+
+  @media screen and (max-width: $smallScreenWidth) {
+    flex-direction: column;
   }
 }
 

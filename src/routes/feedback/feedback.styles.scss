@@ -24,7 +24,7 @@ $smallScreenWidth: 832px;
     width: 60%;
 
     @media screen and (max-width: $smallScreenWidth) {
-      width: 95%;
+      width: 90%;
       min-width: 0;
     }
   }
@@ -67,6 +67,12 @@ $smallScreenWidth: 832px;
       background-color: t($container-color);
       border: solid 3px t($primary);
       color: t($text-color);
+    }
+
+    @media screen and (max-width: 660px) {
+      width: 90%;
+      min-width: 100px;
+      padding: 1vmin;
     }
   }
 
@@ -147,7 +153,7 @@ $smallScreenWidth: 832px;
 
     @media screen and (max-width: $smallScreenWidth) {
       transform: translate(-1%, -1%);
-      width: 95%;
+      width: 90%;
       justify-content: center;
     }
   }
