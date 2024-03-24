@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from "react";
-import VentureButton from "./explore_button/venturebutton.component.jsx";
-import Introduction from "./introduction/introduction.component.jsx";
+import { Link } from "react-router-dom";
+import IntroductionBlock from "./introduction/introduction.component.jsx";
 import { homeFade } from "../../redux_manager/actions/homeFade.action.js";
 import { useDispatch, useSelector } from "react-redux";
 import "./home.styles.scss";
@@ -18,10 +18,12 @@ const Home = () => {
   return (
     <Fragment>
       <div className={`RealHome-Page ${homePageFadedIn ? "" : "home-fade-in"}`}>
-        <Introduction />
+        <IntroductionBlock />
 
         <div className="button-container">
-          <VentureButton />
+          <Link className="toVenturesButton" to="/vita">
+            Explore
+          </Link>
         </div>
       </div>
     </Fragment>

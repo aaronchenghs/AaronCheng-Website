@@ -4,7 +4,7 @@ import { introText, nameText } from "../categories";
 
 import "./introduction.styles.scss";
 
-const Introduction = () => {
+const IntroductionBlock = () => {
   return (
     <div className="intro-container">
       <div className="image-container">
@@ -19,4 +19,4 @@ const Introduction = () => {
     </div>
   );
 };
-export default Introduction;
+export default IntroductionBlock;
