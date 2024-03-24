@@ -52,19 +52,15 @@ export default Stats;
 
 const statsCategories = [
   {
-    title: "Summary",
+    title: "Experience",
     state: "summary",
   },
-  // {
-  //   title: "Skills",
-  //   state: "skills",
-  // },
   {
-    title: "Experience",
+    title: "Ventures",
     state: "experience",
   },
   {
-    title: "Story",
+    title: "In Progress",
     state: "story",
   },
 ];
