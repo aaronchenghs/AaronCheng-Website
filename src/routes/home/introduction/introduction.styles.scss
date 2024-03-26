@@ -2,8 +2,6 @@
 $buttonTransitionTime: 0.07s;
 $borderRadius: 4px;
 
-$mobile-width: 900px;
-
 %test {
   position: absolute;
   content: "";
@@ -23,7 +21,11 @@ $mobile-width: 900px;
     box-shadow: 0 4px 8px 0 t($shadow-color);
   }
 
-  @media screen and (max-width: 1300px) {
+  @media screen and (max-width: $mobile-width) {
+    width: 30%;
+  }
+
+  @media screen and (max-width: 500px) {
     width: 60%;
   }
 
