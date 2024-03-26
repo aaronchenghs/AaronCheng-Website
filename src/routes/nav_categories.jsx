@@ -1,7 +1,7 @@
 import { ReactComponent as Portfolio } from "../assets/nav-logos/portfolio.svg";
 import { ReactComponent as Contact } from "../assets/nav-logos/contact.svg";
 import { ReactComponent as Feedback } from "../assets/nav-logos/feedback.svg";
-import { ReactComponent as Vita } from "../assets/nav-logos/Vita.svg";
+import { ReactComponent as Vita } from "../assets/nav-logos/vita.svg";
 
 import { ReactComponent as VitaDark } from "../assets/nav-logos/vita-dark.svg";
 import { ReactComponent as PortfolioDark } from "../assets/nav-logos/portfolio-dark.svg";

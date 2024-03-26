@@ -16,12 +16,15 @@ $mobile-width: 900px;
   width: 25%;
   background-color: transparent;
   transition: all $theme-transition;
+  margin-top: 10px;
 
-  @media screen and (max-width: $mobile-width) {
-    width: 80%;
   @include themed() {
     border: 3px solid t($primary);
     box-shadow: 0 4px 8px 0 t($shadow-color);
+  }
+
+  @media screen and (max-width: 1300px) {
+    width: 60%;
   }
 
   img {
@@ -34,8 +37,8 @@ $mobile-width: 900px;
 
 .text-container {
   @include themed() {
-    border-top: 1px solid t($primary);
-    border-bottom: 1px solid t($primary);
+    border-top: 2px solid t($primary);
+    border-bottom: 2px solid t($primary);
   }
   border-radius: 2px;
   height: 90%;
@@ -47,8 +50,9 @@ $mobile-width: 900px;
   transition: all $theme-transition;
 
   @media screen and (max-width: $mobile-width) {
-    width: 95%;
+    width: 91%;
     padding: 15px;
+    margin-bottom: 15px;
   }
 }
 
