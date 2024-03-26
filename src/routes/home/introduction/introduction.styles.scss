@@ -17,6 +17,10 @@ $mobile-width: 900px;
   background-color: red;
 
   transition: all $theme-transition;
+
+  @media screen and (max-width: $mobile-width) {
+    width: 80%;
+  }
 }
 
 .text-container {
