@@ -1,6 +1,8 @@
 @import "../../globals/_theme.scss";
 $buttonTransitionTime: 0.05s;
 $borderRadius: 4px;
+$smallScreenWidth: 832px;
+
 %test {
   position: absolute;
   content: "";
@@ -9,9 +11,10 @@ $borderRadius: 4px;
 .Feedback-Page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  min-height: 76vh;
 
   .feedback-section-container {
     display: flex;
@@ -19,15 +22,29 @@ $borderRadius: 4px;
     justify-content: flex-end;
     align-items: flex-end;
     width: 60%;
+
+    @media screen and (max-width: $smallScreenWidth) {
+      width: 90%;
+      min-width: 0;
+    }
   }
   .feedback-entries-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     user-select: none;
     min-height: 30.5vh;
+    border-radius: 5px;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-right: 5px;
+
+    @include themed() {
+      background-color: t($primary);
+    }
+    transition: background-color $buttonTransitionTime;
   }
   .give-feedback-container {
     width: 35vw;
@@ -37,7 +54,10 @@ $borderRadius: 4px;
     margin-top: 0.5vh;
     border-radius: 10px;
     font-family: $theme-font;
-    transition: all $theme-transition;
+
+    transition: color $theme-transition;
+    transition: background-color $theme-transition;
+    transition: border-color $theme-transition;
 
     display: flex;
     flex-direction: column;
@@ -47,6 +67,12 @@ $borderRadius: 4px;
       background-color: t($container-color);
       border: solid 3px t($primary);
       color: t($text-color);
+    }
+
+    @media screen and (max-width: 660px) {
+      width: 90%;
+      min-width: 100px;
+      padding: 1vmin;
     }
   }
 
@@ -64,7 +90,7 @@ $borderRadius: 4px;
     transform: translate(-5%, -13%);
     font-family: $theme-font;
     text-decoration: none;
-    font-size: 1.6em;
+    font-size: 1.5rem;
     transition: all $buttonTransitionTime, background-color $theme-transition;
     border-width: 0px;
     user-select: none;
@@ -124,6 +150,12 @@ $borderRadius: 4px;
       }
       transition: all $buttonTransitionTime, background-color 0.1s;
     }
+
+    @media screen and (max-width: $smallScreenWidth) {
+      transform: translate(-1%, -1%);
+      width: 90%;
+      justify-content: center;
+    }
   }
 
   .post-submit-message {
@@ -147,6 +179,7 @@ $borderRadius: 4px;
     transform: translate(-2.5%, -2.5%);
     font-size: 1.4em;
     width: 8%;
+    max-width: 150px;
     height: 5vh;
     max-height: 45px;
     min-width: 90px;
@@ -155,6 +188,7 @@ $borderRadius: 4px;
 
     @include themed() {
       background-color: t($primary);
+      color: t($text-color);
     }
     transition: all $theme-transition, transform 0.3s;
     border: none;
@@ -188,6 +222,11 @@ $borderRadius: 4px;
         box-shadow: 5px 0px 5px t($shadow-color);
       }
     }
+
+    @media screen and (max-width: 972px) {
+      bottom: 75px;
+      right: 25px;
+    }
   }
   .Feedback-Arrow-Container {
     display: flex;
@@ -202,6 +241,7 @@ $borderRadius: 4px;
     border: none;
 
     transform: translate(2.5%, 2.5%);
+    padding: 0px;
   }
   .arrow {
     height: 100%;

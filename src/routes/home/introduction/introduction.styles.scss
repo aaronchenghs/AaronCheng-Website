@@ -12,14 +12,23 @@ $mobile-width: 900px;
 
 .image-container {
   border-radius: 2px;
-  height: 100%;
-  width: 30%;
-  background-color: red;
-
+  height: 80%;
+  width: 25%;
+  background-color: transparent;
   transition: all $theme-transition;
 
   @media screen and (max-width: $mobile-width) {
     width: 80%;
+  @include themed() {
+    border: 3px solid t($primary);
+    box-shadow: 0 4px 8px 0 t($shadow-color);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 0;
   }
 }
 

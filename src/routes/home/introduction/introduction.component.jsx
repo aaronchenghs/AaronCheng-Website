@@ -1,13 +1,14 @@
 import React from "react";
+import headshot from "../../../assets/headshot.jpg";
 import { introText, nameText } from "../categories";
 
 import "./introduction.styles.scss";
 
-const Introduction = () => {
+const IntroductionBlock = () => {
   return (
     <div className="intro-container">
       <div className="image-container">
-        <img src="imagehere" alt="profile" border="0" />
+        <img src={headshot} alt="profile" border="0" />
       </div>
       <div className="text-container">
         <div className="name-text">
@@ -18,4 +19,4 @@ const Introduction = () => {
     </div>
   );
 };
-export default Introduction;
+export default IntroductionBlock;

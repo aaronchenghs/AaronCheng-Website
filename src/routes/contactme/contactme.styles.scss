@@ -1,4 +1,5 @@
 @import "../../globals/theme.scss";
+@import "../feedback/feedback.styles.scss";
 
 .ContactMe-Page {
   display: flex;
@@ -14,5 +15,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: $smallScreenWidth) {
+      width: 90%;
+      min-width: 0;
+    }
   }
 }

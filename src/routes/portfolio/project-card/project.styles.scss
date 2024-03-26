@@ -1,4 +1,5 @@
 @import "../../../globals/_theme";
+@import "../../feedback/feedback.styles.scss";
 $buttonTransitionTime: 0.1s;
 %test {
   position: absolute;
@@ -18,6 +19,10 @@ $buttonTransitionTime: 0.1s;
   border-width: 0px;
   height: 35vh;
   width: 40vw;
+
+  @media screen and (max-width: (calc($smallScreenWidth + 80px))) {
+    width: 95%;
+  }
 
   @include themed() {
     background-color: t($primary);
@@ -76,6 +81,7 @@ $buttonTransitionTime: 0.1s;
     }
 
     .text-box {
+      position: relative;
       color: #dcdff1;
       display: none;
       position: absolute;
@@ -99,7 +105,9 @@ $buttonTransitionTime: 0.1s;
         justify-content: center;
         align-items: center;
         gap: 0.5em;
+        pointer-events: none;
         .tech-icon {
+          pointer-events: auto;
           height: 1.6em;
           width: 1.6em;
         }

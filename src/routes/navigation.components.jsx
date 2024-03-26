@@ -1,36 +1,56 @@
-import { Outlet, Link } from "react-router-dom";
-import { Fragment, useState } from "react";
+import { Fragment, useState, useMemo } from "react";
+import React from "react";
+import { Outlet, Link, useLocation } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { categories, websiteTitle } from "./nav_categories";
-import { useDispatch, useSelector } from "react-redux";
 import { emotes } from "../assets/text-lists/emotes";
-import { home } from "../redux_manager/actions/nav.action";
 
 import "./navigation.styles.scss";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const [kaomojiIndex, incrementKaomoji] = useState(0);
-  //darkmode toggle for icon SVGs
+  const location = useLocation(); // Use useLocation hook to access current route
+  const [kaomojiIndex, setKaomojiIndex] = useState(0);
   const darkMode = useSelector((state) => state.toggleLight);
-  //embedded icon state
-  const selectedNav = useSelector((state) => state.navReducer);
 
-  const iconSrc = darkMode
-    ? "https://i.ibb.co/QYg1k53/Aaron-Cheng-Icon-Dark.png"
-    : "https://i.ibb.co/WPQccQk/Aaron-Cheng-Icon.png";
+  const iconSrc = useMemo(
+    () =>
+      darkMode
+        ? "https://i.ibb.co/QYg1k53/Aaron-Cheng-Icon-Dark.png"
+        : "https://i.ibb.co/WPQccQk/Aaron-Cheng-Icon.png",
+    [darkMode]
+  );
+
+  const handleKaomojiIncrement = () => {
+    setKaomojiIndex((prevIndex) => (prevIndex + 1) % emotes.length);
+  };
+
+  const renderLink = (category) => {
+    const isActive = location.pathname === category.to;
+    const Component = darkMode ? category.darkcomponent : category.component;
+
+    return (
+      <div
+        className={isActive ? "selected-box" : "box"}
+        key={category.title}
+        onClick={() => !isActive && dispatch(category.action())}
+      >
+        <Link className="logo-container" to={category.to}>
+          <Component className="logo" />
+          <div className="logo-title">{category.title}</div>
+        </Link>
+      </div>
+    );
+  };
 
   return (
     <Fragment>
       <div className="navigation">
         <Link
           className="home-box"
-          onClick={() => {
-            dispatch(home);
-            incrementKaomoji(
-              (kaomojiIndex - 1 + emotes.length) % emotes.length
-            );
-          }}
+          onClick={handleKaomojiIncrement}
           to="/"
+          aria-label="Go to home"
         >
           <img
             src={iconSrc}
@@ -42,42 +62,11 @@ const Navigation = () => {
           {websiteTitle}
           <label className="kaomoji">{emotes[kaomojiIndex]}</label>
         </Link>
-
-        <div className="nav-container">
-          {categories.map((category) => {
-            return selectedNav === category.state ? (
-              <div className="selected-box" key={category.title}>
-                <Link className="logo-container" to={category.to}>
-                  {darkMode ? (
-                    <category.darkcomponent className="logo" />
-                  ) : (
-                    <category.component className="logo" />
-                  )}
-                  <div className="logo-title">{category.title}</div>
-                </Link>
-              </div>
-            ) : (
-              <div
-                className="box"
-                key={category.title}
-                onClick={() => dispatch(category.action)}
-              >
-                <Link className="logo-container" to={category.to}>
-                  {darkMode ? (
-                    <category.darkcomponent className="logo" />
-                  ) : (
-                    <category.component className="logo" />
-                  )}
-                  <div className="logo-title">{category.title}</div>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
+        <div className="nav-container">{categories.map(renderLink)}</div>
       </div>
-
       <Outlet />
     </Fragment>
   );
 };
-export default Navigation;
+
+export default React.memo(Navigation);

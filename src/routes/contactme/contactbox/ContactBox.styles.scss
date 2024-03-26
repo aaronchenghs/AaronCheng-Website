@@ -1,4 +1,5 @@
 @import "../../../globals/_theme.scss";
+@import "../../feedback/feedback.styles.scss";
 $buttonTransitionTime: 0.07s;
 $borderRadius: 4px;
 
@@ -29,6 +30,10 @@ $contact-sidesgap: 2.5rem;
     color: t($text-color);
   }
 
+  @media screen and (max-height: 700px) {
+    height: 20vh;
+  }
+
   &::before {
     //bottom side
     @extend %test;
@@ -53,6 +58,11 @@ $contact-sidesgap: 2.5rem;
     @include themed() {
       background-color: darken(t($primary), 25%);
     }
+  }
+
+  @media screen and (max-width: $smallScreenWidth) {
+    width: 100%;
+    min-width: 0;
   }
 }
 
@@ -80,6 +90,26 @@ $contact-sidesgap: 2.5rem;
       box-shadow: 17px 10px 15px t($shadow-color);
     }
   }
+
+  @media screen and (max-width: $smallScreenWidth) {
+    transform: translate(0%, 0%);
+
+    &::before {
+      //bottom
+      bottom: -18px;
+      height: 17px;
+      width: 100%;
+      left: 9px;
+    }
+
+    &::after {
+      //right
+      right: -17px;
+      height: 100%;
+      width: 16px;
+      bottom: -10px;
+    }
+  }
 }
 
 .contact-thumb {
@@ -96,19 +126,39 @@ $contact-sidesgap: 2.5rem;
     margin-left: $contact-sidesgap;
     margin-right: calc($contact-sidesgap/2.5);
     height: 5vmin;
+    @media screen and (max-width: $smallScreenWidth) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media screen and (max-width: $smallScreenWidth) {
+    justify-content: center;
+    gap: 3px;
+    margin-right: 0;
+    padding-left: 6px;
   }
 
   .icon-text {
-    font-size: 1.3vw;
+    font-size: 1rem;
     @include themed() {
       color: lighten(t($primary), 5%);
     }
+
+    @media screen and (max-width: $smallScreenWidth) {
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+  }
+
+  @media screen and (max-width: $smallScreenWidth) {
+    flex-direction: column;
   }
 }
 
 .contact-thumb:hover {
   .icon-text {
-    font-size: 3vmin;
+    font-size: 1.2rem;
   }
 }
 
@@ -135,6 +185,6 @@ $contact-sidesgap: 2.5rem;
   flex-direction: column;
   align-items: center;
   width: 75%;
-  font-size: 1vw;
+  font-size: 1rem;
   text-align: center;
 }

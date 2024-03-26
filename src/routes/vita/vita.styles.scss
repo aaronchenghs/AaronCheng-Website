@@ -1,10 +1,13 @@
 @import "../../globals/theme";
+@import "../feedback//feedback.styles.scss";
+
 .Vita-Page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
+  min-height: 76vh;
   transition: all $theme-transition;
 
   .stats-container {
@@ -29,6 +32,11 @@
     top: 0 !important;
     position: sticky !important;
     z-index: 1;
+
+    @media screen and (max-width: 1200px) {
+      width: 95%;
+      min-width: 0;
+    }
   }
 
   $buttonTransitionTime: 0.15s;
@@ -39,7 +47,7 @@
     transition: all $buttonTransitionTime, background-color $theme-transition;
   }
 
-  $button-height: 100%;
+  $button-height: 90%;
   $button-width: 25%;
   $button-font-size: 1.25em;
   $button-transform: translate(0%, 4%);
@@ -53,6 +61,7 @@
     border-width: $button-border-width;
     height: $button-height;
     width: $button-width;
+    min-height: 50px;
   }
 
   .categoryButton {
@@ -68,6 +77,11 @@
       box-shadow: 15px 20px 25px t($shadow-color);
     }
     cursor: pointer;
+
+    @media screen and (max-width: $smallScreenWidth) {
+      width: 100%;
+      min-width: 0;
+    }
 
     &::before {
       //bottom side
@@ -144,8 +158,13 @@
     .category-text {
       margin-left: 5px;
       margin-right: 5px;
+      font-size: 1.5rem;
       @include themed() {
         color: t($text-color);
+      }
+
+      @media screen and (max-width: $smallScreenWidth) {
+        font-size: 90%;
       }
     }
   }
@@ -191,9 +210,23 @@
     .category-text {
       margin-left: 5px;
       margin-right: 5px;
-      cursor: pointer;
+      font-size: 1.5rem;
       @include themed() {
         color: t($text-color);
+      }
+
+      @media screen and (max-width: $smallScreenWidth) {
+        font-size: 90%;
+      }
+
+      @media screen and (max-width: 390px) {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 80%;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }
