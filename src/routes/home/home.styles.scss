@@ -127,12 +127,12 @@ $borderRadius: 4px;
     @extend %block;
     bottom: -16px;
     height: 17px;
-    width: 99.4%;
+    width: 99.5%;
     left: 8px;
     transform: skewX(45deg);
     transition: all $buttonTransitionTime, background-color $theme-transition;
     @include themed() {
-      background-color: darken(t($primary), 10%);
+      background-color: darken(t($primary), 14%);
     }
   }
 

@@ -17,6 +17,7 @@ $mobile-width: 900px;
   background-color: transparent;
   transition: all $theme-transition;
   margin-top: 10px;
+  max-width: 300px;
 
   @include themed() {
     border: 3px solid t($primary);
@@ -32,6 +33,7 @@ $mobile-width: 900px;
     height: 100%;
     object-fit: cover;
     border: 0;
+    user-select: none;
   }
 }
 
@@ -41,7 +43,7 @@ $mobile-width: 900px;
     border-bottom: 2px solid t($primary);
   }
   border-radius: 2px;
-  height: 90%;
+  height: 80%;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -53,6 +55,15 @@ $mobile-width: 900px;
     width: 91%;
     padding: 15px;
     margin-bottom: 15px;
+  }
+  @media screen and (max-width: 1300px) {
+    border-top: none;
+    border-bottom: none;
+    @include themed() {
+      border-color: t($container-color);
+    }
+    padding-top: 10px;
+    padding-bottom: 15px;
   }
 }
 
