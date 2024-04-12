@@ -57,15 +57,13 @@ $borderRadius: 4px;
     width: 91%;
     padding: 15px;
     margin-bottom: 15px;
-  }
-  @media screen and (max-width: 1300px) {
     border-top: none;
     border-bottom: none;
+    padding-top: 10px;
+    padding-bottom: 15px;
     @include themed() {
       border-color: t($container-color);
     }
-    padding-top: 10px;
-    padding-bottom: 15px;
   }
 }
 
