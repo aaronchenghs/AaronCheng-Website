@@ -23,11 +23,44 @@ export const projects = [
     id: 5,
     title: "Geaux Enroll",
     href: "https://github.com/aaronchenghs/geaux_enroll",
-    imgPath: "https://i.ibb.co/Tt9yyzm/nodes.png",
+    imgPath: "https://i.ibb.co/GcNR7rR/Capture.png",
     description: `Geaux Enroll is my Interface Design course project. It is an interactive demo inspired by the
     poor quality of course scheduling software and workflows in university, representing a possible design improvement to this system. 
-    Run a demo of my React app in the README of the github repo linked through this title bar.`,
+    A link to the deployed build is at the top of my repo's README, click the title bar.`,
     icons: [techLogos.TS, techLogos.REACT, techLogos.REDUX, techLogos.SASS],
+  },
+  {
+    id: 6,
+    title: "Youtube Sentiment Analyzer",
+    href: "https://github.com/aaronchenghs/youtube-sentiment-analyzer-server",
+    imgPath: "https://i.ibb.co/vB5K4xC/comment-sect.png",
+    description: `This is a machine learning project with a complete front-end and back-end. It is built to analyze the comments of a user-inputted youtube
+    video and predict the sentiment of the comments. The front-end is built with Next.js and the back-end is a Flask server. Pandas is the machine learning
+    library of choice. Click the title bar to access the git repository 
+    for the python backend whose README links to the front-end repo, with instruction on how to try this app out for yourself.`,
+    icons: [
+      techLogos.PYTHON,
+      techLogos.PANDAS,
+      techLogos.FLASK,
+      techLogos.TS,
+      techLogos.NEXT,
+      techLogos.SASS,
+    ],
+  },
+  {
+    id: 7,
+    title: "Palatte Passport",
+    href: "https://github.com/aaronchenghs/Code_Bros",
+    imgPath: "https://i.ibb.co/h8wVkgn/Capture.png",
+    description: `Palatte Passport is a web app using the Yelp API to help users find restaurants based on a trip they are planning, and schedule meals for each day of the trip. This React app was 
+    built for an LSU-hosted hackathon, which won first prize after the 24 hour time limit and presentation. Click the title bar to access the git repository and instruction on how to demo this app.`,
+    icons: [
+      techLogos.TS,
+      techLogos.REACT,
+      techLogos.REDUX,
+      techLogos.MUI,
+      techLogos.SASS,
+    ],
   },
   {
     id: 2,
@@ -48,7 +81,7 @@ export const projects = [
   {
     id: 3,
     title: "Exodus",
-    href: "https://blog.exodusgbw.io/",
+    href: "https://www.exodusgbw.io/",
     imgPath: "https://i.ibb.co/nscswNs/Thumb6.jpg",
     description: `Exodus is a web-hosted RPG metaverse game on the Decentraland platform. I worked remotely
     on this game during my first internship as a front-end programmer, functionalizing 2D-interfaces 

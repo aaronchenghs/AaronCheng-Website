@@ -32,6 +32,10 @@ $buttonTransitionTime: 0.1s;
     @include themed() {
       box-shadow: 33px 33px 12px t($shadow-color);
     }
+
+    @media screen and (max-width: $smallScreenWidth) {
+      transform: translate(-2%, -2%);
+    }
   }
 
   &::before {
@@ -81,6 +85,8 @@ $buttonTransitionTime: 0.1s;
     }
 
     .text-box {
+      display: flex;
+      flex-direction: column;
       position: relative;
       color: #dcdff1;
       display: none;
@@ -96,16 +102,21 @@ $buttonTransitionTime: 0.1s;
       overflow-y: auto;
       overscroll-behavior: contain;
 
-      .techs-box {
-        position: absolute;
-        right: 0;
-        bottom: 0;
+      .desc {
+        padding-bottom: 5px;
+        padding-right: 2px;
+      }
+
+      .techs {
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        gap: 4px;
         align-items: center;
-        gap: 0.5em;
-        pointer-events: none;
+        justify-content: flex-end;
+        padding: 7px 0px 5px 0px;
+
+        @include themed() {
+          border-top: 1px dashed t(primary);
+        }
         .tech-icon {
           pointer-events: auto;
           height: 1.6em;
@@ -132,7 +143,7 @@ $buttonTransitionTime: 0.1s;
     text-decoration: none;
     @include themed() {
       box-shadow: 1px -4px 15px t($shadow-color);
-      color: t($text-color);
+      color: darken(t($text-color), 11%);
     }
   }
 }

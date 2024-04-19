@@ -6,8 +6,10 @@ const Project = ({ project }) => {
     <div className="card-container" key={project.id}>
       <div className="project-image">
         <div className="text-box">
-          {project.description}
-          <div className="techs-box">
+          <div className="desc">{project.description}</div>
+
+          <div className="techs">
+            {" "}
             <strong>Utilities:</strong>
             {project.icons.map((icon, id) => {
               return (
