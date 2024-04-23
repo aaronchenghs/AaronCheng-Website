@@ -1,4 +1,5 @@
 @import "../../../../globals/_theme.scss";
+@import "../../vita.styles.scss";
 .Summary-Container {
   @extend .fade-in;
   display: flex;
@@ -7,169 +8,12 @@
   width: 90%;
   margin-top: 7vh;
   min-height: 25vh;
+}
+.categoryButtonSummary {
+  @extend .categoryButton;
+  width: auto;
 
-  .Primer-Container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 2em;
-    @include themed() {
-      color: t($text-color);
-    }
-    transition: $theme-transition all;
-
-    padding-bottom: 2vh;
-    padding-top: 1vh;
-    min-height: 45vh;
-  }
-
-  .Dialogue {
-    width: 35%;
-    font-size: 1.5rem;
-  }
-
-  .Left-Dialogue {
-    @extend .Dialogue;
-    text-align: left;
-  }
-  .Right-Dialogue {
-    @extend .Dialogue;
-    text-align: right;
-  }
-  .arrow {
-    height: 4.5vh;
-    cursor: pointer;
-  }
-  .cubes {
-    display: inline-flex;
-    vertical-align: top;
-  }
-
-  .Portrait-Container {
-    display: flex;
-    flex-direction: row;
-    margin-top: 12px;
-    align-items: center;
-    justify-content: space-between;
-    width: 65%;
-  }
-  .Skin-Selector {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30vw;
-    user-select: none;
-
-    $portrait-height: 50vh;
-    $portrait-width: 19vw;
-    .Skin-Navigator {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      transform: translate(-0.5%, -0.5%);
-      margin-top: 15px;
-      margin-bottom: 8px;
-      height: $portrait-height;
-      width: $portrait-width;
-      @include themed() {
-        background-color: t($container-color);
-      }
-      transition: all $theme-transition;
-
-      &::before {
-        //bottom side
-        @extend .block;
-        @extend .bottom;
-        bottom: -12px;
-        height: 12px;
-        width: 100%;
-        left: 6px;
-        @include themed() {
-          box-shadow: 0px 5px 5px t($shadow-color);
-        }
-      }
-
-      &::after {
-        //right side
-        @extend .block;
-        @extend .side;
-        right: -12px;
-        height: 100%;
-        width: 12px;
-        bottom: -6px;
-        @include themed() {
-          box-shadow: 5px 0px 5px t($shadow-color);
-        }
-      }
-
-      .Portrait {
-        height: $portrait-height;
-        width: $portrait-width;
-        position: relative;
-        overflow: hidden;
-      }
-    }
-
-    .primerImage {
-      object-fit: fill;
-
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-
-      .active {
-        transform: translateX(0%);
-      }
-
-      .previous {
-        transform: translateX(-100%);
-      }
-
-      .next {
-        transform: translateX(100%);
-      }
-    }
-  }
-
-  .AFK-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    font-size: 1.6em;
-    width: 100%;
-    transition: all $theme-transition;
-    margin-top: 5vh;
-    @include themed() {
-      color: t($text-color);
-    }
-    .AFK_dialogue {
-      width: 35%;
-      font-size: 1.3rem;
-    }
-  }
-
-  .list-body {
-    @include themed() {
-      color: t($text-color);
-    }
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 6vw;
-  }
-  .game-list {
-    @include themed() {
-      color: t($text-color);
-    }
-    padding-left: 5px;
-    .game-image {
-      width: 100%;
-    }
+  @media screen and (max-width: $smallScreenWidth) {
+    width: 95%;
   }
 }

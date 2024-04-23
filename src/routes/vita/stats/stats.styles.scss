@@ -19,8 +19,12 @@ $bio-min-height: 35vh;
   text-decoration: none;
   transition: all $theme-transition;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   font-size: 1.2rem;
+
+  @media screen and (max-width: 1300px) {
+    width: 90%;
+  }
 
   @include themed() {
     background-color: t($container-color);
@@ -53,6 +57,26 @@ $bio-min-height: 35vh;
     transition: all $theme-transition;
     @include themed() {
       background-color: darken(t($primary), 25%);
+    }
+  }
+
+  label {
+    transition: all $theme-transition;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+
+    @include themed() {
+      color: darken(t($text-color), 15);
+    }
+    .resume {
+      @include themed() {
+        background-color: t(text-color);
+        color: darken(t($text-color), 15);
+      }
     }
   }
 }

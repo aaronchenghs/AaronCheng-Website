@@ -1,7 +1,7 @@
 @import "../../globals/_theme.scss";
 $buttonTransitionTime: 0.05s;
 $borderRadius: 4px;
-$smallScreenWidth: 832px;
+$smallScreenWidth: $mobile-width;
 
 %test {
   position: absolute;

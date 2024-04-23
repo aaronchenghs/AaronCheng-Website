@@ -1,45 +1,31 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
+import ArticleIcon from "@mui/icons-material/Article";
 
 import "./summary.styles.scss";
 
 export const Summary = () => {
   const darkMode = useSelector((state) => state.toggleLight);
 
+  const handleDownloadResume = () => {
+    const link = document.createElement("a");
+    link.href = `${process.env.PUBLIC_URL}/AaronCheng_Resume2024.pdf`;
+    link.download = "AaronCheng_Resume2024.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="category-block">
-      Coming Soon...
-      {/* <div className="story-logLine">{story_text.log}</div>
-    <div className="timeline-container">
-      <div className="timeline-line" />
-      <div className="geographic-origin-text-container">
-        <GeoEntry
-          img1={story_svgs.US_flag}
-          img2={story_svgs.BR_flag}
-          text={story_text.parents}
-        />
-        <GeoEntry
-          img1={story_svgs.IA_flag}
-          img2={story_svgs.corn}
-          text={story_text.born}
-        />
-        <GeoEntry
-          img1={story_svgs.HI_flag}
-          img2={story_svgs.FL_flag}
-          text={story_text.moved}
-        />
-        <GeoEntry
-          img1={story_svgs.LA_flag}
-          img2={story_svgs.crawfish}
-          text={story_text.louisiana}
-        />
-        <GeoEntry
-          img1={story_svgs.CS}
-          img2={story_svgs.LSU}
-          text={story_text.college}
-        />
-      </div>
-    </div> */}
+      <p> More Coming Soon...</p>
+      <button onClick={handleDownloadResume} className="categoryButtonSummary">
+        <label>
+          {" "}
+          <ArticleIcon />
+          Download Resume (.pdf)
+        </label>
+      </button>
     </div>
   );
 };

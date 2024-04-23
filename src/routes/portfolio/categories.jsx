@@ -49,10 +49,10 @@ export const projects = [
   },
   {
     id: 7,
-    title: "Palatte Passport",
+    title: "Palate Passport",
     href: "https://github.com/aaronchenghs/Code_Bros",
     imgPath: "https://i.ibb.co/h8wVkgn/Capture.png",
-    description: `Palatte Passport is a web app using the Yelp API to help users find restaurants based on a trip they are planning, and schedule meals for each day of the trip. This React app was 
+    description: `Palate Passport is a web app using the Yelp API to help users find restaurants based on a trip they are planning, and schedule meals for each day of the trip. This React app was 
     built for an LSU-hosted hackathon, which won first prize after the 24 hour time limit and presentation. Click the title bar to access the git repository and instruction on how to demo this app.`,
     icons: [
       techLogos.TS,
