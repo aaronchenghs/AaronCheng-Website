@@ -1,0 +1,33 @@
+@import "../../../../globals/_theme.scss";
+.image-container {
+  display: inline-block;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all $theme-transition;
+
+  @include themed() {
+    background-color: darken(t($primary), 5%);
+  }
+
+  .loading-wheel {
+    transition: all $theme-transition;
+    @include themed() {
+      color: lighten(t($primary), 10%);
+    }
+  }
+}

@@ -91,3 +91,9 @@ $borderRadius: 4px;
   transition: all $theme-transition;
   text-align: center;
 }
+
+.headshot {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

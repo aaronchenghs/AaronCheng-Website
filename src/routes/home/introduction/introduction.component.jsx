@@ -1,5 +1,6 @@
 import React from "react";
 import headshot from "../../../assets/headshot.jpg";
+import Image from "../../components/common/Image/image.jsx";
 import { introText, nameText } from "../categories";
 
 import "./introduction.styles.scss";
@@ -8,7 +9,7 @@ const IntroductionBlock = () => {
   return (
     <div className="intro-container">
       <div className="image-container">
-        <img src={headshot} alt="profile" border="0" />
+        <Image src={headshot} className={"headshot"} alt="profile" border="0" />
       </div>
       <div className="text-container">
         <div className="name-text">

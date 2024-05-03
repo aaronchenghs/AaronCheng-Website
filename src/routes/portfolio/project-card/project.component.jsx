@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "../../components/common/Image/image.jsx";
 import "./project.styles.scss";
 
 const Project = ({ project }) => {
@@ -13,7 +14,7 @@ const Project = ({ project }) => {
             <strong>Utilities:</strong>
             {project.icons.map((icon, id) => {
               return (
-                <img
+                <Image
                   className="tech-icon"
                   src={icon}
                   alt={"tech logo"}
@@ -23,7 +24,7 @@ const Project = ({ project }) => {
             })}
           </div>
         </div>
-        <img
+        <Image
           className="bgImage"
           src={project.imgPath}
           alt={project.alt}
