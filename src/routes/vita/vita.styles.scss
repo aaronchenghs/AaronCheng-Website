@@ -1,5 +1,20 @@
 @import "../../globals/theme";
-@import "../feedback//feedback.styles.scss";
+@import "../feedback/feedback.styles.scss";
+$buttonTransitionTime: 0.15s;
+
+%test {
+  position: absolute;
+  content: "";
+  transition: all $buttonTransitionTime, background-color $theme-transition;
+}
+
+$button-height: 90%;
+$button-width: 25%;
+$button-font-size: 1.25em;
+$button-transform: translate(0%, 4%);
+$button-border-radius: 2px;
+$button-border-width: 0px;
+$selectedTransform: translate(0%, 10.5%);
 
 .Vita-Page {
   display: flex;
@@ -38,155 +53,80 @@
       min-width: 0;
     }
   }
+}
 
-  $buttonTransitionTime: 0.15s;
+.button-consistency {
+  font-size: $button-font-size;
+  border-radius: $button-border-radius;
+  border-width: $button-border-width;
+  height: $button-height;
+  width: $button-width;
+  min-height: 50px;
+}
 
-  %test {
-    position: absolute;
-    content: "";
-    transition: all $buttonTransitionTime, background-color $theme-transition;
+.categoryButton {
+  @extend .button-consistency;
+  display: inline-block;
+  font-family: $theme-font;
+  transform: translate(-4%, -4%);
+  max-width: 80%;
+  transition: all $buttonTransitionTime, background-color $theme-transition;
+
+  @include themed() {
+    background-color: t($primary);
+    box-shadow: 15px 20px 25px t($shadow-color);
+  }
+  cursor: pointer;
+
+  @media screen and (max-width: $smallScreenWidth) {
+    width: 100%;
+    min-width: 0;
   }
 
-  $button-height: 90%;
-  $button-width: 25%;
-  $button-font-size: 1.25em;
-  $button-transform: translate(0%, 4%);
-  $button-border-radius: 2px;
-  $button-border-width: 0px;
-  $selectedTransform: translate(0%, 10.5%);
-
-  .button-consistency {
-    font-size: $button-font-size;
-    border-radius: $button-border-radius;
-    border-width: $button-border-width;
-    height: $button-height;
-    width: $button-width;
-    min-height: 50px;
-  }
-
-  .categoryButton {
-    @extend .button-consistency;
-    display: inline-block;
-    font-family: $theme-font;
-    transform: translate(-4%, -4%);
+  &::before {
+    //bottom side
+    @extend %test;
+    bottom: -16px;
+    height: 16px;
+    width: 100%;
+    left: 8px;
+    transform: skewX(45deg);
     @include themed() {
-      background-color: t($primary);
-    }
-    transition: all $buttonTransitionTime, background-color $theme-transition;
-    @include themed() {
-      box-shadow: 15px 20px 25px t($shadow-color);
-    }
-    cursor: pointer;
-
-    @media screen and (max-width: $smallScreenWidth) {
-      width: 100%;
-      min-width: 0;
-    }
-
-    &::before {
-      //bottom side
-      @extend %test;
-      bottom: -16px;
-      height: 16px;
-      width: 100%;
-      left: 8px;
-      transform: skewX(45deg);
-      @include themed() {
-        background-color: darken(t($primary), 14%);
-      }
-    }
-
-    &::after {
-      // right side
-      @extend %test;
-      right: -15px;
-      height: 100%;
-      width: 16px;
-      bottom: -8px;
-      transform: skewY(45deg);
-      @include themed() {
-        background-color: darken(t($primary), 25%);
-      }
-    }
-
-    &:active {
-      transform: $selectedTransform;
-
-      &::before {
-        //bottom side
-        @extend %test;
-        bottom: -15px;
-        height: 17px;
-        width: 100%;
-        left: 8px;
-        transform: skewX(45deg);
-
-        bottom: -5px;
-        height: 6px;
-        left: 3px;
-
-        @include themed() {
-          background-color: darken(t($primary), 17%);
-        }
-      }
-
-      &::after {
-        // right side
-        @extend %test;
-        right: -15px;
-        height: 96%;
-        bottom: -7px;
-        transform: skewY(45deg);
-
-        right: -5px;
-        width: 6px;
-        bottom: -1px;
-
-        @include themed() {
-          background-color: darken(t($primary), 25%);
-        }
-      }
-    }
-
-    &:hover {
-      transition: all $buttonTransitionTime, background-color 0.1s;
-      @include themed() {
-        background-color: lighten(t($primary), 10%);
-      }
-    }
-
-    .category-text {
-      margin-left: 5px;
-      margin-right: 5px;
-      font-size: 1.5rem;
-      @include themed() {
-        color: t($text-color);
-      }
-
-      @media screen and (max-width: $smallScreenWidth) {
-        font-size: 90%;
-      }
+      background-color: darken(t($primary), 14%);
     }
   }
 
-  .categoryButtonSelected {
-    @extend .categoryButton;
+  &::after {
+    // right side
+    @extend %test;
+    right: -15px;
+    height: 100%;
+    width: 16px;
+    bottom: -8px;
+    transform: skewY(45deg);
+    @include themed() {
+      background-color: darken(t($primary), 25%);
+    }
+  }
+
+  &:active {
     transform: $selectedTransform;
 
     &::before {
       //bottom side
       @extend %test;
       bottom: -15px;
-      height: 14px;
+      height: 17px;
       width: 100%;
       left: 8px;
       transform: skewX(45deg);
+
       bottom: -5px;
       height: 6px;
       left: 3px;
 
       @include themed() {
-        background-color: darken(t($primary), 14%);
+        background-color: darken(t($primary), 17%);
       }
     }
 
@@ -206,28 +146,87 @@
         background-color: darken(t($primary), 25%);
       }
     }
+  }
 
-    .category-text {
-      margin-left: 5px;
-      margin-right: 5px;
-      font-size: 1.5rem;
-      @include themed() {
-        color: t($text-color);
-      }
+  &:hover {
+    transition: all $buttonTransitionTime, background-color 0.1s;
+    @include themed() {
+      background-color: lighten(t($primary), 10%);
+    }
+  }
 
-      @media screen and (max-width: $smallScreenWidth) {
-        font-size: 90%;
-      }
+  .category-text {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 1.5rem;
+    @include themed() {
+      color: t($text-color);
+    }
 
-      @media screen and (max-width: 390px) {
-        margin-left: 0;
-        margin-right: 0;
-        font-size: 80%;
+    @media screen and (max-width: $smallScreenWidth) {
+      font-size: 90%;
+    }
+  }
+}
 
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
+.categoryButtonSelected {
+  @extend .categoryButton;
+  transform: $selectedTransform;
+
+  &::before {
+    //bottom side
+    @extend %test;
+    bottom: -15px;
+    height: 14px;
+    width: 100%;
+    left: 8px;
+    transform: skewX(45deg);
+    bottom: -5px;
+    height: 6px;
+    left: 3px;
+
+    @include themed() {
+      background-color: darken(t($primary), 14%);
+    }
+  }
+
+  &::after {
+    // right side
+    @extend %test;
+    right: -15px;
+    height: 96%;
+    bottom: -7px;
+    transform: skewY(45deg);
+
+    right: -5px;
+    width: 6px;
+    bottom: -1px;
+
+    @include themed() {
+      background-color: darken(t($primary), 25%);
+    }
+  }
+
+  .category-text {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 1.5rem;
+    @include themed() {
+      color: t($text-color);
+    }
+
+    @media screen and (max-width: $smallScreenWidth) {
+      font-size: 90%;
+    }
+
+    @media screen and (max-width: 390px) {
+      margin-left: 0;
+      margin-right: 0;
+      font-size: 80%;
+
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 }

@@ -15,7 +15,7 @@ $borderRadius: 4px;
   width: 100%;
   height: 67.5vh;
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 1300px) {
     height: 100%;
   }
 }
@@ -41,6 +41,7 @@ $borderRadius: 4px;
   margin-top: 35px;
   height: 50vh;
   width: 55%;
+  min-width: 780px;
 
   display: flex;
   flex-direction: row;
@@ -50,6 +51,15 @@ $borderRadius: 4px;
   font-family: $theme-font;
   text-decoration: none;
   transition: all $theme-transition;
+
+  @media screen and (max-width: $mobile-width) {
+    min-width: 0px;
+    width: 85%;
+    height: 100%;
+    min-height: 350px;
+    gap: 10px;
+    flex-direction: column;
+  }
 
   @include themed() {
     background-color: t($container-color);
@@ -85,16 +95,6 @@ $borderRadius: 4px;
       box-shadow: 10px 0px 10px t($shadow-color);
     }
   }
-
-  @media screen and (max-width: 1300px) {
-    height: none;
-    min-height: 350px;
-    gap: 10px;
-    flex-direction: column;
-  }
-  @media screen and (max-width: 1000px) {
-    width: 85%;
-  }
 }
 
 // explore button styles
@@ -126,12 +126,12 @@ $borderRadius: 4px;
     @extend %block;
     bottom: -16px;
     height: 17px;
-    width: 99.4%;
+    width: 99.5%;
     left: 8px;
     transform: skewX(45deg);
     transition: all $buttonTransitionTime, background-color $theme-transition;
     @include themed() {
-      background-color: darken(t($primary), 10%);
+      background-color: darken(t($primary), 14%);
     }
   }
 

@@ -1,7 +1,7 @@
 @import "../../globals/_theme.scss";
 $buttonTransitionTime: 0.05s;
 $borderRadius: 4px;
-$smallScreenWidth: 832px;
+$smallScreenWidth: $mobile-width;
 
 %test {
   position: absolute;
@@ -152,9 +152,20 @@ $smallScreenWidth: 832px;
     }
 
     @media screen and (max-width: $smallScreenWidth) {
-      transform: translate(-1%, -1%);
+      max-height: 86px;
+      margin-bottom: 10px;
+      transform: translate(-2%, -2%);
       width: 90%;
       justify-content: center;
+
+      &:active {
+        transform: translate(0%, 4%);
+        &::before {
+          bottom: -5px;
+          height: 6px;
+          left: 3px;
+        }
+      }
     }
   }
 
@@ -178,8 +189,8 @@ $smallScreenWidth: 832px;
 
     transform: translate(-2.5%, -2.5%);
     font-size: 1.4em;
+
     width: 8%;
-    max-width: 150px;
     height: 5vh;
     max-height: 45px;
     min-width: 90px;
@@ -226,6 +237,9 @@ $smallScreenWidth: 832px;
     @media screen and (max-width: 972px) {
       bottom: 75px;
       right: 25px;
+
+      max-width: none;
+      width: 10%;
     }
   }
   .Feedback-Arrow-Container {

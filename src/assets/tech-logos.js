@@ -20,4 +20,7 @@ export const techLogos = {
     "https://upload.wikimedia.org/wikipedia/commons/9/95/Android_Studio_Icon_3.6.svg",
   DCL: "https://cryptologos.cc/logos/decentraland-mana-logo.svg?v=024",
   DISCORD: "https://img.icons8.com/fluency/48/null/discord-logo.png",
+  FLASK: "https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg",
+  PANDAS: "https://upload.wikimedia.org/wikipedia/commons/2/22/Pandas_mark.svg",
+  NEXT: "https://upload.wikimedia.org/wikipedia/commons/8/8e/Nextjs-logo.svg",
 };
