@@ -1,4 +1,2 @@
-export const nameText = `Welcome to Aaron Cheng's website.`;
-export const introText = `I'm a student 
-and avid software developer always on the hunt for new opportunities. 
-I specialize in front-end development and have a deep interest in data abstraction and UX.`;
+export const nameText = `Welcome to Aaron Cheng's site.`;
+export const introText = `I'm a software developer and LSU grad currently working on a variety of web and desktop projects. Check out my projects or give me a shout. `;

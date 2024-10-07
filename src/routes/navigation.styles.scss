@@ -45,7 +45,7 @@
     min-width: 300px;
     padding-left: 2vw;
     text-decoration: none;
-    transition: transform 0.25s ease-out, color $theme-transition;
+    transition: transform 0.05s ease-out, color $theme-transition;
 
     @media screen and (max-width: 1460px) {
       font-size: 1.5rem;
@@ -59,10 +59,6 @@
 
   .home-box:visited {
     text-decoration: none;
-  }
-
-  .home-box:hover {
-    transform: scale(1.05);
   }
 
   .home-box:active {
@@ -85,7 +81,7 @@
     border-radius: $box-radius;
 
     -moz-osx-font-smoothing: grayscale;
-    transition: transform 0.25s ease-out;
+    transition: transform 0.1s ease-out;
   }
 
   .selected-box {
@@ -96,10 +92,10 @@
     border-radius: $box-radius;
     max-width: $box-maxwidth;
     -moz-osx-font-smoothing: grayscale;
-    transition: box-shadow $theme-transition;
+    transition: box-shadow 0.1s;
 
     @include themed() {
-      box-shadow: 2px 3px 3px inset t($shadow-color);
+      box-shadow: 4px 4px 2px inset t($shadow-color);
     }
 
     .logo-container {
@@ -147,11 +143,11 @@
     transition: transform 0.3s ease-out;
 
     @include themed() {
-      box-shadow: 2px 1px 4px inset t($shadow-color);
+      box-shadow: 2px 3px 3px inset t($shadow-color);
     }
 
     .logo {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
   }
 
