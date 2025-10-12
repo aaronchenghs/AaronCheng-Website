@@ -9,10 +9,19 @@
 
   .cards-container {
     margin-top: 1.8vh;
+    margin-bottom: 6vh;
     width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5vh;
+  }
+
+  .certs-container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 }
