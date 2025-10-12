@@ -21,7 +21,7 @@ const Home = () => {
         <IntroductionBlock />
 
         <div className="button-container">
-          <Link className="toVenturesButton" to="/vita">
+          <Link className="toVenturesButton" to="/portfolio">
             Explore
           </Link>
         </div>
