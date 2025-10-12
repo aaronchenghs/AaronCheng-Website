@@ -1,19 +1,14 @@
 import React, { Fragment, useState } from "react";
 
 import "./stats.styles.scss";
-import Summary from "./categorycomponents/summary.component";
 import Skills from "./categorycomponents/skills.component";
 import Experience from "./categorycomponents/experience.component";
 import Story from "./categorycomponents/story.component";
 
 export const Stats = () => {
-  //Button state
   const [CategorySelection, SetCategorySelection] = useState("summary");
-  //Select category display
   const renderSelection = (selection) => {
     switch (selection) {
-      case "summary":
-        return <Summary />;
       case "skills":
         return <Skills />;
       case "experience":

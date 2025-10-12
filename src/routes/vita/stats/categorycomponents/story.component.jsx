@@ -1,7 +1,3 @@
-import React, { Fragment } from "react";
-import { story_svgs, story_text } from "./components/story.svgs";
-import GeoEntry from "./components/geo_entry.component";
-
 import "./story.styles.scss";
 
 export const Story = () => {

@@ -1,5 +1,3 @@
-import React, { Fragment } from "react";
-import { experience_svgs } from "./components/experience.svgs";
 import "./experience.styles.scss";
 
 export const Experience = () => {

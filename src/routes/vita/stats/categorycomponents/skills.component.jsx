@@ -1,33 +1,6 @@
-import React, { Fragment, useState } from "react";
-import { prog_skills } from "./components/skills.svgs";
-
 import "./skills.styles.scss";
 
-function createIconsImages(skill) {
-  let iconHeight = "100%";
-  let iconWidth = "58px";
-  return (
-    <Fragment>
-      <img
-        src={skill.src}
-        height={iconHeight}
-        width={iconWidth}
-        alt={skill.name}
-      />
-      {skill.extra && (
-        <img
-          src={skill.extra.src}
-          height={iconHeight}
-          width={iconWidth}
-          alt={skill.extra.name}
-        />
-      )}
-    </Fragment>
-  );
-}
-
 const Skills = () => {
-  const [selectedSkill, selectskill] = useState("");
   return (
     <div className="category-block">
       Coming Soon...

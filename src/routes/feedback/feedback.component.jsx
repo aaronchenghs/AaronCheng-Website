@@ -37,17 +37,13 @@ const feedbackPerPage = 10;
 const Feedback = () => {
   const dispatch = useDispatch();
 
-  //pagination state
   const [paginationIndex, changePagination] = useState(0);
 
-  //global state imports
   const signedIn = useSelector((state) => state.signIn);
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
   const feedbackMap = useSelector((state) => state.feedbackLoadReducer);
-  const darkMode = useSelector((state) => state.toggleLight);
   const isLoadingFeedbacks = useSelector((state) => state.isLoadingFeedbacks);
 
-  //page navigation
   const incrementPagination = () => {
     if (paginationIndex + feedbackPerPage < feedbackMap.length) {
       changePagination(paginationIndex + feedbackPerPage);
@@ -61,7 +57,6 @@ const Feedback = () => {
     }
   };
 
-  //login
   const logGoogleUser = async () => {
     try {
       const { user } = await signInWithGooglePopup();
@@ -148,7 +143,6 @@ const Feedback = () => {
                   );
                 })
             ) : (
-              //If is still loading, show loading skeleton
               <Skeleton
                 variant="rectangular"
                 animation="wave"
