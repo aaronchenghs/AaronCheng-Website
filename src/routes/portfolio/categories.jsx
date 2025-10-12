@@ -87,7 +87,7 @@ export const projects = [
     on this game during my first internship as a front-end programmer, functionalizing 2D-interfaces 
     using TypeScript and the Decentraland SDK. It's recieved a quarter-million grant from it's community! 
     Click this title bar to view it's webpage for more details.`,
-    icons: [techLogos.TS, techLogos.NODE, techLogos.DCL],
+    icons: [techLogos.TS, techLogos.NODE],
   },
   {
     id: 4,

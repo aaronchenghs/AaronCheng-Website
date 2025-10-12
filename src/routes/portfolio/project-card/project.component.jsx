@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "../../components/common/Image/image.jsx";
 import "./project.styles.scss";
 
@@ -10,7 +9,6 @@ const Project = ({ project }) => {
           <div className="desc">{project.description}</div>
 
           <div className="techs">
-            {" "}
             <strong>Utilities:</strong>
             {project.icons.map((icon, id) => {
               return (

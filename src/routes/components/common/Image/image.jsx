@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
-import "./image.styles.scss"; // Ensure you have the CSS file for styles
+import "./image.styles.scss";
 
 const Image = ({ src, alt, id, className }) => {
   const [isLoading, setIsLoading] = useState(true);
