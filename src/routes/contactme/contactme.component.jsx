@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import ContactBox from "./contactbox/ContactBox.component";
 import { Contact_HeaderText, iconInfos } from "./categories";
 import PageHeader from "../components/pageHeader/pageheader.component";

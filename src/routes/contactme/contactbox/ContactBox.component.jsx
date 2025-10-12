@@ -1,5 +1,3 @@
-import React from "react";
-
 import "./ContactBox.styles.scss";
 
 const ContactBox = ({ icon }) => {
@@ -11,7 +9,7 @@ const ContactBox = ({ icon }) => {
         target="_blank"
         rel="noreferrer"
       >
-        <img className="contact-icon" src={icon.path} alt={`[  icon]`} />
+        <img className="contact-icon" src={icon.path} alt={`[icon]`} />
         <h2 className="icon-text">{icon.name}</h2>
       </a>
       <div className="contact-description-container">
