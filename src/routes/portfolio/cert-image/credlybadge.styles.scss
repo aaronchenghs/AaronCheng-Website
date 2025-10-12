@@ -1,29 +1,43 @@
-.credly-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* ./cert-image/credlybadge.styles.scss */
+.cert-badge {
+  display: inline-block;
   padding: 0.5rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+  will-change: transform;
+  text-decoration: none;
 
-  .credly-badge,
-  .credly-fallback img,
-  iframe {
-    transform-origin: center;
-    transition: 0.25s transform ease;
-
-    &:hover {
-      transform: scale(1.06);
-    }
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 0.75rem 1.25rem rgba(0, 0, 0, 0.15);
   }
 }
 
+.cert-badge__img {
+  display: block;
+  width: 220px; /* adjust as needed */
+  height: auto;
+  transform: scale(1);
+  transition: transform 120ms ease;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.cert-badge:hover .cert-badge__img,
+.cert-badge:focus-visible .cert-badge__img {
+  transform: scale(1.06);
+}
+
+/* responsive tweaks */
 @media (max-width: 576px) {
-  .credly-wrapper iframe {
-    width: 200px !important;
+  .cert-badge__img {
+    width: 180px;
   }
 }
-
-@media (min-width: 990px) {
-  .credly-wrapper iframe {
-    width: 300px !important;
+@media (min-width: 992px) {
+  .cert-badge__img {
+    width: 260px;
   }
 }

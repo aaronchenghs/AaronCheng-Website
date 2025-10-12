@@ -20,7 +20,7 @@ const Portfolio = () => {
         <PageHeader text={"My Certifications ✅"} />
         <div className="certs-container">
           {certs.map((cert) => (
-            <CredlyBadge cert={cert} key={cert.id} />
+            <CredlyBadge key={cert.id} cert={cert} />
           ))}
         </div>
       </div>
