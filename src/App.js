@@ -10,14 +10,13 @@ import Portfolio from "./routes/portfolio/portfolio.component";
 import Feedback from "./routes/feedback/feedback.component";
 import Home from "./routes/home/home.component";
 import Vita from "./routes/vita/vita.component";
-import BottomBar from "./routes/bottombar.components";
+import Footer from "./routes/footer.component";
 
 import "./App.scss";
 
 const App = () => {
   const dispatch = useDispatch();
 
-  //feedback map selector, query on website load, on messageGiven
   const messageGiven = useSelector((state) => state.toggleMessageGiven);
   useEffect(() => {
     const getFeedbackMap = async () => {
@@ -26,9 +25,8 @@ const App = () => {
       dispatch(loadedFeedbacks_action);
     };
     getFeedbackMap();
-  }, [messageGiven, dispatch]); //Render on load in, on message given
+  }, [messageGiven, dispatch]);
 
-  //color theme selector
   const darkMode = useSelector((state) => state.toggleLight);
   return (
     <div className={"theme " + (darkMode ? "theme--dark" : "theme--light")}>
@@ -42,7 +40,7 @@ const App = () => {
             <Route path="feedback" element={<Feedback />} />
           </Route>
         </Routes>
-        <BottomBar />
+        <Footer />
       </div>
     </div>
   );

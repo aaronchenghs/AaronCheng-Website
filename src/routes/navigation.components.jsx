@@ -9,7 +9,7 @@ import "./navigation.styles.scss";
 
 const Navigation = () => {
   const dispatch = useDispatch();
-  const location = useLocation(); // Use useLocation hook to access current route
+  const location = useLocation();
   const [kaomojiIndex, setKaomojiIndex] = useState(0);
   const darkMode = useSelector((state) => state.toggleLight);
 
