@@ -56,7 +56,7 @@ $buttonTransitionTime: 0.09s;
       font-size: 1rem;
       border-width: 0px;
       cursor: pointer;
-      transition: all $buttonTransitionTime;
+      transition: all $buttonTransitionTime, background-color $theme-transition;
       user-select: none;
 
       @include themed() {
@@ -72,7 +72,8 @@ $buttonTransitionTime: 0.09s;
         width: 99%;
         left: 5px;
         transform: skewX(45deg);
-        transition: all $buttonTransitionTime;
+        transition: all $buttonTransitionTime,
+          background-color $theme-transition;
         @include themed() {
           background-color: darken(t($primary), 14%);
         }
@@ -86,7 +87,8 @@ $buttonTransitionTime: 0.09s;
         width: 10px;
         bottom: -5px;
         transform: skewY(45deg);
-        transition: all $buttonTransitionTime;
+        transition: all $buttonTransitionTime,
+          background-color $theme-transition;
         @include themed() {
           background-color: darken(t($primary), 30%);
         }
