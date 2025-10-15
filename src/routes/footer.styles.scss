@@ -1,5 +1,5 @@
 @import "../globals/_theme.scss";
-$buttonTransitionTime: 0.06s;
+$buttonTransitionTime: 0.09s;
 
 .footer {
   justify-content: space-between;
@@ -57,6 +57,8 @@ $buttonTransitionTime: 0.06s;
       border-width: 0px;
       cursor: pointer;
       transition: all $buttonTransitionTime;
+      user-select: none;
+
       @include themed() {
         background-color: t($primary);
         color: t($text-color);
@@ -65,8 +67,8 @@ $buttonTransitionTime: 0.06s;
       &::before {
         //bottom side
         @extend %block;
-        bottom: -9px;
-        height: 9px;
+        bottom: -10px;
+        height: 10px;
         width: 100%;
         left: 5px;
         transform: skewX(45deg);
@@ -91,14 +93,14 @@ $buttonTransitionTime: 0.06s;
       }
 
       &:active {
-        transform: translate(-7%, -3%);
+        transform: translate(-7%, -4%);
         margin-left: 10px;
         margin-top: 10px;
 
         &::before {
           bottom: -5px;
           height: 6px;
-          left: 3px;
+          left: 4px;
         }
 
         &::after {

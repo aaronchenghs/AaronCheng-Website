@@ -17,7 +17,7 @@ const Footer = () => {
           <LightSwitch
             dark={toggledLight.toString()}
             onClick={() => {
-              dispatch(toggle());
+              dispatch(toggle);
             }}
           />
         </div>
