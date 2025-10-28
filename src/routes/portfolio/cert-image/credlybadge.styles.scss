@@ -1,4 +1,3 @@
-/* ./cert-image/credlybadge.styles.scss */
 .cert-badge {
   display: inline-block;
   padding: 0.5rem;
@@ -17,7 +16,7 @@
 
 .cert-badge__img {
   display: block;
-  width: 220px; /* adjust as needed */
+  width: 220px;
   height: auto;
   transform: scale(1);
   transition: transform 120ms ease;
@@ -30,14 +29,13 @@
   transform: scale(1.06);
 }
 
-/* responsive tweaks */
 @media (max-width: 576px) {
   .cert-badge__img {
-    width: 180px;
+    width: 140px;
   }
 }
 @media (min-width: 992px) {
   .cert-badge__img {
-    width: 260px;
+    width: 210px;
   }
 }
