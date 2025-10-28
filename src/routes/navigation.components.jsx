@@ -4,7 +4,6 @@ import { Outlet, Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { categories, websiteTitle } from "./nav_categories";
 import { emotes } from "../assets/text-lists/emotes";
-
 import "./navigation.styles.scss";
 
 const Navigation = () => {
@@ -17,7 +16,7 @@ const Navigation = () => {
     () =>
       darkMode
         ? "https://i.ibb.co/QYg1k53/Aaron-Cheng-Icon-Dark.png"
-        : "https://i.ibb.co/WPQccQk/Aaron-Cheng-Icon.png",
+        : "https://i.ibb.co/1J6W5tj0/Aaron-Cheng-Icon.png",
     [darkMode]
   );
 

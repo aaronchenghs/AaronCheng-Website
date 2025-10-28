@@ -18,16 +18,15 @@ $mobile-width: 950px;
 
 $themes: (
   light: (
-    primary: #87b1ac,
-    sub-primary: #0863a0,
-    background-center: white,
-    background-sides: #f5f4ec,
-    background: #e7e3d0,
-    /* Muted, pale beige for a soft contrast */ text-color: #62807d,
-    border-color: black,
-    container-color: rgb(229, 220, 204),
-    /* Earthy, light brown/tan to complement the green */ shadow-color:
-      rgba(106, 106, 106, 0.6),
+    primary: #386641,
+    sub-primary: #bc4749,
+    background-center: #fefae0,
+    background-sides: #faedcd,
+    background: #e9edc9,
+    text-color: #1e2812,
+    border-color: #dda15e,
+    container-color: #ccd5ae,
+    shadow-color: rgba(50, 40, 25, 0.4),
   ),
   dark: (
     primary: #00385a,
