@@ -12,15 +12,14 @@ import {
 import { uuidv4 } from "@firebase/util";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALwWzbaZgeh762wvQ7SMbnKfxopuIVf58",
-  authDomain: "cheng-website-db.firebaseapp.com",
-  projectId: "cheng-website-db",
-  storageBucket: "cheng-website-db.appspot.com",
-  messagingSenderId: "2045352654",
-  appId: "1:2045352654:web:425432764e643c7bcb0e9f",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
-// Initialize Firebase
 initializeApp(firebaseConfig);
 
 const provider = new GoogleAuthProvider();
@@ -33,7 +32,6 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 export const database = getFirestore();
 
-//userdoc CREATE
 export const createUserDocumentFromAuth = async (userAuth) => {
   const userDocRef = doc(database, "users", userAuth.uid);
 
@@ -54,13 +52,11 @@ export const createUserDocumentFromAuth = async (userAuth) => {
   }
   return userDocRef;
 };
-//feedbackdoc CREATE
 export const createFeedbackDocument = async (FeedbackName, FeedbackMessage) => {
   const feedbackDocRef = doc(database, "feedback", uuidv4());
 
   const feedbackSnapshot = await getDoc(feedbackDocRef);
   if (!feedbackSnapshot.exists()) {
-    //store date as string
     const dateObj = new Date();
     const year = dateObj.getFullYear();
     const month = String(dateObj.getMonth() + 1).padStart(2, "0");
@@ -81,7 +77,6 @@ export const createFeedbackDocument = async (FeedbackName, FeedbackMessage) => {
   return feedbackDocRef;
 };
 
-//feedbackdoc GET
 export const getFeedbackStream = async () => {
   const q = query(collection(database, "feedback"));
   const queryCollection = await getDocs(q);
@@ -92,7 +87,7 @@ export const getFeedbackStream = async () => {
       new feedbackDTO(
         doc.data().FeedbackName,
         doc.data().FeedbackMessage,
-        doc.data().date,
+        doc.data().date
       )
     );
     return true;
@@ -108,7 +103,7 @@ export class feedbackDTO {
     this.date = date;
   }
 
-  static formatDate(dateArray){
+  static formatDate(dateArray) {
     return `${dateArray[0]}/${dateArray[1]}/${dateArray[2]}`;
   }
 }
